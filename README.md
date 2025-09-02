@@ -3,6 +3,10 @@
 ## Download GitHub folder (zip)
 https://download-directory.github.io/
 
+## Hálózat
+\\ckik-pdc\diakok\2022_C\felhasznalonev
+\\ckik-pdc\Kozos
+
 ## Tantárgyak - 12. osztály
 - Asztali alkalmazások (4), IKT (3)
 - Webprogramozás (3)
