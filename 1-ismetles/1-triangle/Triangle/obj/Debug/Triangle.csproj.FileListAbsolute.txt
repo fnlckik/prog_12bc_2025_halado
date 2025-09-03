@@ -1,0 +1,8 @@
+H:\25-26\prog_12bc_2025_halado\1-ismetles\1-triangle\Triangle\bin\Debug\Triangle.exe.config
+H:\25-26\prog_12bc_2025_halado\1-ismetles\1-triangle\Triangle\bin\Debug\Triangle.exe
+H:\25-26\prog_12bc_2025_halado\1-ismetles\1-triangle\Triangle\bin\Debug\Triangle.pdb
+H:\25-26\prog_12bc_2025_halado\1-ismetles\1-triangle\Triangle\obj\Debug\Triangle.csproj.AssemblyReference.cache
+H:\25-26\prog_12bc_2025_halado\1-ismetles\1-triangle\Triangle\obj\Debug\Triangle.csproj.CoreCompileInputs.cache
+H:\25-26\prog_12bc_2025_halado\1-ismetles\1-triangle\Triangle\obj\Debug\Triangle.exe
+H:\25-26\prog_12bc_2025_halado\1-ismetles\1-triangle\Triangle\obj\Debug\Triangle.pdb
+H:\25-26\prog_12bc_2025_halado\1-ismetles\1-triangle\Triangle\obj\Debug\Triangle.exe.config
