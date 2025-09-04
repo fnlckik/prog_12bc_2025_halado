@@ -5,6 +5,11 @@ namespace Triangle
 {
     internal class Program
     {
+        static bool IsTriangle(double a, double b, double c)
+        {
+            return a + b > c && b + c > a && c + a > b;
+        }
+
         static void F1(Random r)
         {
             Console.WriteLine("1. feladat:");
@@ -12,7 +17,7 @@ namespace Triangle
             int b = r.Next(1, 21);
             int c = r.Next(1, 21);
             Console.WriteLine($"Oldalak: {a} {b} {c}");
-            if (a + b > c && b + c > a && c + a > b)
+            if (IsTriangle(a, b, c))
             {
                 Console.WriteLine("Szerkeszthető!");
             }
@@ -27,6 +32,33 @@ namespace Triangle
             Random r = new Random();
             F1(r);
             F2(r);
+            double area = Area(3, 4, 5); // 6
+            Console.WriteLine("3. feladat:");
+            Console.WriteLine($"Terület: {area}");
+            Console.WriteLine($"Terület: {Area(1, 2, 3)}");
+            Console.WriteLine($"Terület: {Area(1, 2, 5)}");
+
+            Console.WriteLine($"Legnagyobb szög: {LargestAngle(3, 4, 5)}");
+            Console.WriteLine($"Legnagyobb szög: {LargestAngle(4, 5, 3)}");
+            Console.WriteLine($"Legnagyobb szög: {LargestAngle(3, 13, 12)}");
+        }
+
+        private static double LargestAngle(double a, double b, double c)
+        {
+            if (a > c) (a, c) = (c, a);
+            if (b > c) (b, c) = (c, b);
+            // Tfh a legnagyobb c.
+            double angle = Math.Acos((a * a + b * b - c * c) / (2 * a * b));
+            return angle / Math.PI * 180;
+        }
+
+        private static double Area(double a, double b, double c)
+        {
+            if (!IsTriangle(a, b, c)) return double.NaN; // early return
+            double s = (a + b + c) / 2;
+            //return Math.Pow(s*(s-a)*(s-b)*(s-c), 1/2d);
+            // Jó lenne jelezni, ha a gyökvonás nem értelmes!
+            return Math.Sqrt(s * (s - a) * (s - b) * (s - c));
         }
 
         static bool Equals(int x, int y, int z)
