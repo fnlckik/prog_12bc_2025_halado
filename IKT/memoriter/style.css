@@ -1,0 +1,13 @@
+#poem {
+    background-color: antiquewhite;
+    padding: 0.5em;
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+}
+
+input[type="button"] {
+    margin: 0.5em;
+    padding: 0.5em 1em;
+}
+

@@ -1,0 +1,23 @@
+const poem = 
+`Isten, áldd meg a magyart
+Jó kedvvel, bőséggel,
+Nyújts feléje védő kart,
+Ha küzd ellenséggel;
+Bal sors akit régen tép,
+Hozz rá víg esztendőt,
+Megbünhödte már e nép
+A multat s jövendőt!
+
+Őseinket felhozád
+Kárpát szent bércére,
+Általad nyert szép hazát
+Bendegúznak vére.
+S merre zúgnak habjai
+Tiszának, Dunának,
+Árpád hős magzatjai
+Felvirágozának.`;
+
+const poemDiv = document.querySelector("#poem");
+poemDiv.innerText = poem;
+
+const startBtn = document.querySelector("#start");
