@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 //using System.Threading;
 
 namespace Roulette
@@ -8,7 +9,7 @@ namespace Roulette
     internal class Program
     {
         // static: osztályszintű, nem kell példányosítani a használatához
-        static Random r = new Random();
+        static Random r;
         static HashSet<int> black, red;
 
         // Visszatérés: nyeremény mennyisége
@@ -45,8 +46,14 @@ namespace Roulette
         {
             while (money > 0)
             {
+                Console.Write("Játékmód (1 = szám, 2 = szín): ");
+                string mode = Console.ReadLine();
                 int bet = GetBet(money); // 1000
                 Console.Write("Szám / Szín: ");
+                if (mode == "1")
+                {
+                    // TODO
+                }
                 //int number = int.Parse(Console.ReadLine()); // 1
                 string color = Console.ReadLine(); // R, B
                 //money = money - bet + Plain(bet, number);
@@ -55,11 +62,19 @@ namespace Roulette
             }
         }
 
+        static bool IsWinnerColor(string color, int winner)
+        {
+            if (color == "R" && red.Contains(winner)) return true;
+            if (color == "B" && black.Contains(winner)) return true;
+            return false;
+        }
+
         static int RedBlack(int bet, string color)
         {
             int winner = r.Next(37);
-            Console.WriteLine($"Kapott szám: {winner}");
-            if (false) // TODO
+            char winnerColor = red.Contains(winner) ? 'R' : (black.Contains(winner) ? 'B' : 'G');
+            Console.WriteLine($"Kapott szám: {winner} ({winnerColor})");
+            if (IsWinnerColor(color, winner))
             {
                 Console.WriteLine($"Nyert!");
                 return 2 * bet;
@@ -73,7 +88,7 @@ namespace Roulette
 
         static void Main(string[] args)
         {
-            Random r = new Random();
+            r = new Random();
             ReadFromFile("szinek.txt");
             int money = 60000;
             Console.WriteLine($"Kezdőpénz: {money}");
