@@ -11,3 +11,14 @@ input[type="button"] {
     padding: 0.5em 1em;
 }
 
+.d-none {
+    display: none;
+}
+
+/* .red-background {
+    background-color: red !important;
+}
+
+.blue-color {
+    color: blue;
+} */

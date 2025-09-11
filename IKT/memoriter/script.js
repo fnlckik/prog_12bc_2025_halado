@@ -18,6 +18,15 @@ Tiszának, Dunának,
 Felvirágozának.`;
 
 const poemDiv = document.querySelector("#poem");
-poemDiv.innerText = poem;
 
 const startBtn = document.querySelector("#start");
+function startGame() {
+    poemDiv.innerText = poem;
+    // poemDiv.className = "";
+    poemDiv.classList.remove("d-none");
+    startBtn.removeEventListener("click", startGame);
+    startBtn.disabled = true;
+}
+// startBtn.onclick = startGame;
+// startBtn.addEventListener("click", startGame, {once: true});
+startBtn.addEventListener("click", startGame);
