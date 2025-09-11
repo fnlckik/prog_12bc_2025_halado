@@ -1,0 +1,13 @@
+5 6
+1
+Hawaii
+2
+Ciprus
+1
+Ciprus
+3
+Tahiti
+4
+Hawaii
+2
+Hawaii
