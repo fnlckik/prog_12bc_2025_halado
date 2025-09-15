@@ -18,10 +18,19 @@ Tiszának, Dunának,
 Felvirágozának.`;
 
 const poemDiv = document.querySelector("#poem");
+const words = poem.replaceAll("\n", "<br> ").split(" ");
+
+function createPoem() {
+    let s = "";
+    for (const word of words) {
+        s += word + " ";
+    }
+    return s;
+}
 
 const startBtn = document.querySelector("#start");
 function startGame() {
-    poemDiv.innerText = poem;
+    poemDiv.innerHTML = createPoem();
     // poemDiv.className = "";
     poemDiv.classList.remove("d-none");
     startBtn.removeEventListener("click", startGame);
