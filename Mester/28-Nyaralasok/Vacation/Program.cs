@@ -15,11 +15,76 @@ namespace Vacation
         static void Main(string[] args)
         {
             List<Vacation> vacations = new List<Vacation>();
-            ReadFromFile(vacations, out int studentCount, "be1.txt");
+            ReadFromFile(vacations, out int studentCount, "be2.txt");
             T1(vacations);
             T2(vacations, out Dictionary<int, int> vacationCounts);
             T3(vacations);
             T4(vacationCounts, studentCount);
+            T5(vacations);
+        }
+
+        static void GetStudentVacations(Dictionary<int, HashSet<string>> studentVacations, List<Vacation> vacations)
+        {
+            foreach (Vacation vacation in vacations)
+            {
+                int id = vacation.id;
+                string place = vacation.place;
+                if (studentVacations.ContainsKey(id))
+                {
+                    studentVacations[id].Add(place);
+                }
+                else
+                {
+                    studentVacations.Add(id, new HashSet<string> { place });
+                }
+            }
+        }
+
+        static void T5(List<Vacation> vacations)
+        {
+            Console.WriteLine("#");
+            Dictionary<int, HashSet<string>> studentVacations = new Dictionary<int, HashSet<string>>();
+            GetStudentVacations(studentVacations, vacations);
+
+            //foreach (int id in studentVacations.Keys)
+            //{
+            //    Console.Write(id + " ");
+            //    foreach (string place in studentVacations[id])
+            //    {
+            //        Console.Write(place + " ");
+            //    }
+            //    Console.WriteLine();
+            //}
+            int count = 0;
+            Dictionary<int, int> groups = new Dictionary<int, int>();
+            foreach (int id in studentVacations.Keys)
+            {
+                if (!groups.ContainsKey(id))
+                {
+                    SetGroups(ref count, groups, studentVacations, id);
+                }
+            }
+
+            //Console.WriteLine();
+            //foreach (int id in groups.Keys)
+            //{
+            //    Console.WriteLine($"{id} => {groups[id]}. csoport");
+            //}
+            Console.WriteLine(count);
+        }
+
+        static void SetGroups(ref int count, Dictionary<int, int> groups, Dictionary<int, HashSet<string>> studentVacations, int id)
+        {
+            count++;
+            groups.Add(id, count);
+            foreach (int other in studentVacations.Keys)
+            {
+                bool isSamePlaces = studentVacations[id].SetEquals(studentVacations[other]);
+                if (id != other && isSamePlaces)
+                {
+                    groups.Add(other, count);
+                }
+            }
         }
 
         static void T4(Dictionary<int, int> vacationCounts, int studentCount)
@@ -30,7 +95,8 @@ namespace Vacation
             {
                 i++;
             }
-            Console.WriteLine(i);
+            if (i <= studentCount) Console.WriteLine(i);
+            else Console.WriteLine(-1);
         }
 
         static void T3(List<Vacation> vacations)
