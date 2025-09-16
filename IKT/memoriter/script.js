@@ -20,10 +20,18 @@ Felvirágozának.`;
 const poemDiv = document.querySelector("#poem");
 const words = poem.replaceAll("\n", "<br> ").split(" ");
 
+// A szavak 23%-át hagyjuk ki (feladványnak).
 function createPoem() {
     let s = "";
     for (const word of words) {
-        s += word + " ";
+        if (word !== "<br>" && Math.random() < 0.23) {
+            s += `<input type="text"> `;
+        } else {
+            s += word + " ";
+        }
+        if (word.indexOf("<br>") >= 0) {
+            s += "<br>";
+        }
     }
     return s;
 }
