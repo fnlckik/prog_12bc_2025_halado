@@ -4,6 +4,7 @@
     text-align: center;
     width: fit-content;
     margin: auto;
+    line-height: 1.5em;
 }
 
 input[type="button"] {
