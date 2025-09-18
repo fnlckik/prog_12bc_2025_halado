@@ -22,12 +22,13 @@ const words = poem.replaceAll("\n", "<br> ").split(" ");
 const missing = [];
 
 // A szavak 23%-át hagyjuk ki (feladványnak).
-// "alma<br>" => "<input> " || "alma "
+// "alma,<br>" => "<input> " || "alma "
 function transformWord(word) {
-    const cleanWord = word.replace("<br>", "");
+    const cleanWord = word.replace("<br>", ""); // "alma,"
     if (word !== "<br>" && Math.random() < 0.23) {
-        missing.push(cleanWord);
-        return `<input type="text" size="${cleanWord.length}" maxlength="${cleanWord.length}"> `;
+        const correct = cleanWord.replaceAll(/\p{P}/gu, ""); // "alma"
+        missing.push(correct);
+        return `<input type="text" size="${correct.length}" maxlength="${correct.length}"> `;
     } else {
         return cleanWord + " ";
     }
@@ -49,11 +50,19 @@ function checkAnswer(answers, i) {
 }
 
 const checkBtn = document.querySelector("#check");
+const solveBtn = document.querySelector("#solve");
 function checkPoem(event) {
     if (event.key !== "Enter" && event.type !== "click") return;
     const answers = document.querySelectorAll("input[type='text']");
     for (let i = 0; i < answers.length; i++) {
         answers[i].style.backgroundColor = checkAnswer(answers, i) ? "lightgreen" : "pink";
+    }
+}
+
+function solvePoem() {
+    const answers = document.querySelectorAll("input[type='text']");
+    for (let i = 0; i < answers.length; i++) {
+        answers[i].value = missing[i];
     }
 }
 
@@ -67,6 +76,8 @@ function startGame() {
     checkBtn.addEventListener("click", checkPoem);
     checkBtn.disabled = false;
     poemDiv.addEventListener("keyup", checkPoem);
+    solveBtn.disabled = false;
+    solveBtn.addEventListener("click", solvePoem);
 }
 // startBtn.onclick = startGame;
 // startBtn.addEventListener("click", startGame, {once: true});
