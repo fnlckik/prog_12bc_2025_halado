@@ -82,3 +82,15 @@ function startGame() {
 // startBtn.onclick = startGame;
 // startBtn.addEventListener("click", startGame, {once: true});
 startBtn.addEventListener("click", startGame);
+
+const fileInput = document.querySelector("#file");
+function readFile(event) {
+    const file = event.target.files[0];
+    document.querySelector("h1").innerText = file.name.split(".")[0];
+    const fr = new FileReader();
+    fr.readAsText(file);
+    fr.addEventListener("load", () => {
+        console.log(fr.result);
+    });
+}
+fileInput.addEventListener("change", readFile);

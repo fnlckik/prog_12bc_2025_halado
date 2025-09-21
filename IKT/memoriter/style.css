@@ -23,3 +23,8 @@ input[type="button"] {
 .blue-color {
     color: blue;
 } */
+
+input[type="file"] {
+    display: block;
+    margin: 2em auto;
+}
