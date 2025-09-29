@@ -10,10 +10,46 @@ namespace UniqueBirds
         {
             List<List<int>> amounts = new List<List<int>>();
             ReadFromFile(amounts, "be1.txt");
-            ShowData(amounts);
-            Console.WriteLine(IsUnique(amounts, 0)); // false
-            Console.WriteLine(IsUnique(amounts, 1)); // true
-            Console.WriteLine(IsUnique(amounts, 2)); // true
+            //ShowData(amounts);
+            //Console.WriteLine(HasUnique(amounts, 0)); // false
+            //Console.WriteLine(HasUnique(amounts, 1)); // true
+            //Console.WriteLine(HasUnique(amounts, 2)); // true
+            //Console.WriteLine(HasUnique(amounts, 3)); // false
+            List<int> places = GetPlaces(amounts);
+            ShowPlaces(places);
+        }
+
+        static void ShowPlaces(List<int> places)
+        {
+            Console.WriteLine(places.Count);
+            foreach (int place in places)
+            {
+                Console.Write($"{place + 1} ");
+            }
+        }
+
+        static List<int> GetPlaces(List<List<int>> amounts)
+        {
+            List<int> places = new List<int>();
+            for (int i = 0; i < amounts.Count; i++)
+            {
+                if (HasUnique(amounts, i))
+                {
+                    places.Add(i);
+                }
+            }
+            return places;
+        }
+
+        // Van-e az index-edik helységen egyedi madár?
+        static bool HasUnique(List<List<int>> amounts, int index)
+        {
+            int j = 0; // j-edik madár
+            while (j < amounts[index].Count && !(amounts[index][j] > 0 && IsUnique(amounts, j)))
+            {
+                j++;
+            }
+            return j < amounts[index].Count;
         }
 
         // Egyedi-e az index-edik madár?
