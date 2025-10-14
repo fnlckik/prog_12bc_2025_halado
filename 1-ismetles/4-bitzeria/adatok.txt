@@ -1,0 +1,34 @@
+Kovacs Bela;1;8650
+Csípős nélkül kérem a gyrost!
+Szabo Anna;0;4720
+Extra sajtot kérek a pizzára!
+Nagy Peter;1;11300
+-
+Kiss Erika;0;6200
+-
+Farkas Dora;1;9800
+Jól átsütve kérem a pizzát!
+Toth Laszlo;0;7550
+-
+Toth Laszlo;1;10420
+Sok hagymát kérek a gyrosba!
+Kovacs Bela;0;7100
+-
+Molnar Andras;1;8700
+Extra csípősen kérem a burritót!
+Fekete Judit;1;14200
+Laktózmentes sajtot kérek a pizzára.
+Szabo Anna;0;6800
+-
+Horvath Levente;0;5100
+Gluténmentes tésztát kérek.
+Bognar Eszter;1;9600
+Csak kechuppal kérem a burgert.
+Lakatos Roland;0;8420
+Édesburgonya körettel kérem.
+Nagy Peter;1;7200
+Kevés sóval készüljön, kérem.
+Nagy Peter;0;13600
+Ne tegyenek uborkát a hamburgerbe!
+Papp Noemi;1;9150
+Tejföl nélkül kérem a lángost.
