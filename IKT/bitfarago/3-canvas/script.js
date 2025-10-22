@@ -24,30 +24,32 @@ let positions = [];
 
 function init() {
     positions = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 30; i++) {
         const pos = {
-            x: randint(0, 500),
-            y: randint(0, 500)
+            x: randint(0, 300),
+            y: randint(0, 500),
+            dx: randint(-1, 1),
+            dy: randint(-1, 1) // (dx, dy) az irányvektora
         };
         positions.push(pos);
     }
 }
 
+const img = new Image();
+img.src = "asteroid.png";
+
 function draw() {
     ctx.reset();
     // const img = document.createElement("img");
-    const img = new Image();
-    img.src = "asteroid.png";
-    img.onload = () => {
-        for (const pos of positions) {
-            ctx.drawImage(img, pos.x, pos.y, 50, 50);
-        }
+    for (const pos of positions) {
+        ctx.drawImage(img, pos.x, pos.y, 50, 50);
     }
 }
 
 function move() {
     for (let i = 0; i < positions.length; i++) {
-        positions[i].x += 10; // sebesség
+        positions[i].x += positions[i].dx; // sebesség
+        positions[i].y += positions[i].dy;
     }
 }
 
@@ -56,4 +58,25 @@ draw();
 setInterval(() => {
     move();
     draw();
-}, 50);
+}, 20);
+
+function handleClick(e) {
+    // Látható kliens területen hol vagyunk?
+    // console.log(`${e.clientX}, ${e.clientY}`);
+    
+    // Oldal tetejéhez képest hol vagyunk?
+    // console.log(`${e.pageX}, ${e.pageY}`);
+    
+    // A kattintott elem bal felső sarkához képest hol vagyunk?
+    // console.log(`${e.offsetX}, ${e.offsetY}`); !!!
+    
+    // Bal oldali monitor bal felső sarkához kélpest hol vagyunk?
+    // console.log(`${e.screenX}, ${e.screenY}`);
+
+    const x = e.offsetX;
+    const y = e.offsetY;
+    console.log(`(${x}, ${y})`);
+    const rgb = ctx.getImageData(x, y, 1, 1).data;
+    console.log(`(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`);
+}
+canvas.addEventListener("click", handleClick);
