@@ -28,10 +28,61 @@ namespace Hibakezeles
             //E1();
             //E2();
             //E3();
-            E4();
+            //E4();
+            //E5();
+            E6();
             Console.WriteLine("Program vége.");
         }
 
+        private static double Pythagoras(int a, int b)
+        {
+            if (a <= 0 || b <= 0)
+            {
+                throw new ArgumentException("A befogó nem lehet negatív vagy nulla!");
+            }
+            return Math.Sqrt(a * a + b * b);
+        }
+
+        private static void E6()
+        {
+            Console.WriteLine("6. példa: ");
+            Console.Write("Fájl neve: ");
+            string fileName = Console.ReadLine();
+            try
+            {
+                using (StreamReader sr = new StreamReader(fileName))
+                {
+                    string[] temp = sr.ReadLine().Split();
+                    int a = int.Parse(temp[0]);
+                    int b = int.Parse(temp[1]);
+                    double c = Pythagoras(a, b);
+                    Console.WriteLine($"Átfogó: {c:0.00}");
+                }
+            }
+            catch (Exception e) { Console.WriteLine(e.Message); }
+            Console.WriteLine();
+        }
+
+        private static void E5()
+        {
+            Console.WriteLine("5. példa: fájlba írás");
+            Console.Write("Fájl: ");
+            string fileName = Console.ReadLine();
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(fileName, true))
+                {
+                    sw.WriteLine("Sikeres fájlba írás!");
+                }
+            }
+            catch (Exception e) // UnauthorizedAccessException
+            {
+                Console.WriteLine(e.Message);
+            }
+            Console.WriteLine();
+        }
+
+        // finally: garantáltan végre fogja hajtani (akár hiba van akár nincs)
         private static void E4()
         {
             Console.WriteLine("4. példa: fájl hiányzik");
@@ -50,6 +101,7 @@ namespace Hibakezeles
             {
                 Console.WriteLine(e.Message);
                 Console.WriteLine("A fájlban csak egész számok legyenek!");
+                return;
             }
             catch (IndexOutOfRangeException e)
             {
@@ -62,9 +114,15 @@ namespace Hibakezeles
                 Console.WriteLine($"A fájlban lévő adatok {int.MinValue} és {int.MaxValue} között legyenek!");
             }
             catch (Exception e) { Console.WriteLine(e.Message); } //jogosultság
-            if (sr != null)
+            finally
             {
-                sr.Close();
+                //if (sr != null)
+                //{
+                //    sr.Close();
+                //}
+                // null-conditional operator: ?.
+                sr?.Close();
+                Console.WriteLine("Fájl sikeresen lezárva!");
             }
             Console.WriteLine();
         }
