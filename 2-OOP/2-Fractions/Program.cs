@@ -26,6 +26,24 @@ namespace _2_Fractions
             Fraction z = new Fraction(370368, 493824);
             Console.WriteLine($"{x} == {z}: {x == z}");
             Console.WriteLine($"{z} => {z.Simplify()}");
+            //Fraction w = new Fraction(-3, 4);
+            //Fraction v = new Fraction(3, -4);
+            //Console.WriteLine($"{w} == {v}: {v == w}");
+            //Fraction s = new Fraction(-3, -4);
+            //Console.WriteLine($"{x} == {s}: {s == x}");
+            //Console.WriteLine($"{w} => {w.Simplify()}");
+            //Console.WriteLine($"{v} => {v.Simplify()}");
+            //Console.WriteLine($"{s} => {s.Simplify()}");
+            //Console.WriteLine($"{x} == {w}: {x == w}");
+            Console.WriteLine();
+
+            // Aritmetikai operátorok
+            Fraction w = new Fraction(5, -6);
+            Console.WriteLine($"{x} * {w} = {x * w}");
+            Console.WriteLine($"{x} + {w} = {x + w}");
+            Console.WriteLine($"3 * {x} = {3 * x}");
+            Console.WriteLine($"3 * {x} = {x * 3}");
+            Console.WriteLine($"{x} - {w} = {x - w}");
         }
     }
 }
