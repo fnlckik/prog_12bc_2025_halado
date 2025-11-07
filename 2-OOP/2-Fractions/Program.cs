@@ -44,6 +44,18 @@ namespace _2_Fractions
             Console.WriteLine($"3 * {x} = {3 * x}");
             Console.WriteLine($"3 * {x} = {x * 3}");
             Console.WriteLine($"{x} - {w} = {x - w}");
+            Console.Clear();
+
+            // Indexer
+            try
+            {
+                Console.WriteLine($"{x} tört számlálója: {x["a"]} nevezője: {x["b"]}");
+                Console.WriteLine(x["c"]);
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }

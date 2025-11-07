@@ -21,6 +21,20 @@ namespace _2_Fractions
 
         public double Value { get => (double)a / b; }
 
+        // x["a"], x["b"]
+        public int this[string s]
+        {
+            get
+            {
+                if (s != "a" && s != "b")
+                {
+                    string message = "Egy tört lehetséges indexei: \"a\" és \"b\".";
+                    throw new IndexOutOfRangeException(message);
+                }
+                return s == "a" ? this.a : this.b;
+            }
+        }
+
         // => 2 / 3
         public override string ToString()
         {
