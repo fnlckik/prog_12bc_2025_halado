@@ -19,7 +19,8 @@ namespace _2_Fractions
             this.b = b;
         }
 
-        public double Value { get => (double)a / b; }
+        //public double Value { get => (double)a / b; }
+        public double Value => (double)a / b;
 
         // x["a"], x["b"]
         public int this[string s]

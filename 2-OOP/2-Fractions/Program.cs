@@ -56,6 +56,12 @@ namespace _2_Fractions
             {
                 Console.WriteLine(e.Message);
             }
+            Console.Clear();
+
+            // Algebra osztály
+            Algebra algebra = new Algebra("tortek.txt");
+            Console.WriteLine($"Törtek száma: {algebra.Fractions.Count}");
+            Console.WriteLine("Program vége.");
         }
     }
 }
