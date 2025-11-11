@@ -19,6 +19,12 @@ namespace _2_Fractions
             this.b = b;
         }
 
+        public Fraction(Fraction other)
+        {
+            this.a = other.a;
+            this.b = other.b;
+        }
+
         //public double Value { get => (double)a / b; }
         public double Value => (double)a / b;
 

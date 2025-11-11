@@ -60,8 +60,20 @@ namespace _2_Fractions
 
             // Algebra osztály
             Algebra algebra = new Algebra("tortek.txt");
-            Console.WriteLine($"Törtek száma: {algebra.Fractions.Count}");
+            //Console.WriteLine($"Törtek száma: {algebra.Fractions.Count}");
+            try
+            {
+                Fraction fr = algebra[0];
+                Console.WriteLine($"Első tört: {algebra[100]}");
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                Console.WriteLine(e.Message);
+            }
             Console.WriteLine("Program vége.");
+
+            Fraction sum = algebra.SumOfFractions();
+            Console.WriteLine($"Törtek összege: {sum}");
         }
     }
 }

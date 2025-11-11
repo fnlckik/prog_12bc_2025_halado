@@ -40,6 +40,29 @@ namespace _2_Fractions
             }
         }
 
-        public List<Fraction> Fractions => new List<Fraction>(fractions);
+        //public List<Fraction> Fractions => new List<Fraction>(fractions);
+
+        public Fraction this[int i]
+        {
+            get
+            {
+                if (i < 0 || i > fractions.Count-1)
+                {
+                    string msg = $"Hiba: kiindexelés. Az indexek értéke 0 és {fractions.Count - 1} között kell legyen.";
+                    throw new IndexOutOfRangeException(msg);
+                }
+                return new Fraction(fractions[i]);
+            }
+        }
+
+        public Fraction SumOfFractions()
+        {
+            Fraction s = new Fraction(0, 1);
+            foreach (Fraction fraction in fractions)
+            {
+                s += fraction; // s = s + fraction
+            }
+            return s;
+        }
     }
 }
