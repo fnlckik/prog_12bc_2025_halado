@@ -1,0 +1,23 @@
+Tankcsapda;rock;1989;Lukács László,Fejes Tamás,Sidi;gitár,dob,basszusgitár
+Quimby;alternatív;1991;Kiss Tibor,Varga Livius,Kárpáti József,Mikuli Ferenc;gitár,dob,basszusgitár
+Bagossy Brothers Company;pop rock;2013;Bagossy Norbert,Bagossy László,Balán Bálint,Ferenczi Tamás;gitár,basszusgitár,dob
+Road;metal;2004;Molnár Máté,Gazdag István,Gócza Imre,Kéri Péter;gitár,dob,basszusgitár
+Halott Pénz;pop;2004;Marsalkó Dávid,Prikidánovics Gergely,Élő Norbert,Kiss Dániel;billentyű,basszusgitár,dob
+Follow The Flow;pop;2016;Szakács Gergő,Fura Csé,BLR;billentyű
+Punnany Massif;pop;2003;Wolfie,Venekei András,Meszes Balázs;billentyű
+Hiperkarma;alternatív;2000;Bérczesi Róbert,Maszkura,Újvári Zoltán;gitár,dob
+Margaret Island;pop;2014;Lábas Viki,Fonyó Barbara,Tóth Kristóf,Törőcsik Kristóf;gitár,billentyű,dob
+Kowalsky meg a Vega;rock;2003;Kowalsky,Balázs Gyula,Lévy Balázs,Vajda Péter;gitár,basszusgitár,dob
+Blahalouisiana;pop rock;2012;Szőke Nikoletta,Mózner Zsófi,Kovács Zsombor,Trenka Gábor;gitár,basszusgitár,dob
+Honeybeast;pop;2011;Tarján Zsófia,Kokas Péter,Lázár Domokos,Domoszlai Péter;gitár,billentyű,dob
+Neoton Família;pop;1977;Csepregi Éva,Szőcs Judit,Végvári Ádám,Balázs Fecó;gitár,billentyű,dob
+Omega;rock;1962;Kóbor János,Benkő László,Mihály Tamás,Molnár György;gitár,billentyű,dob
+EDDA Művek;rock;1974;Pataky Attila,Gömöry Zsolt,Alapi István,Kemény Gábor;gitár,billentyű,dob
+Republic;rock;1990;Cipő,Bódi László,Patai Tamás,Halász Gábor,Boros Csaba;gitár,basszusgitár,dob
+The Biebers;pop;2010;Puskás Peti,Barna Péter,Jakab Péter,Schneider Ádám;gitár,billentyű,dob
+Carson Coma;indie rock;2018;Fekete Giorgio,Héra Barnabás,Kiss Bálint,Kun Bálint;gitár,basszusgitár,dob
+Elefánt;alternatív;2011;Szendrői Csaba,Tóth András,Szabó Szilárd,Kovács Zoltán;gitár,basszusgitár,dob
+Wellhello;pop;2014;Fluor Tomi,Diaz;billentyű
+ByeAlex és a Slepp;pop;2014;ByeAlex,Pető Barna,Szőke Márk,Fekete Balázs;gitár,basszusgitár,dob
+Depresszió;metal;1999;Halász Ferenc,Nagy Dávid,Hájgyula,Reisz Gábor;gitár,basszusgitár,dob
+Anna and the Barbies;rock;2004;Pásztor Anna,Pásztor Sámuel,Vikukel Dániel,Ágoston Béla;gitár,billentyű,dob
