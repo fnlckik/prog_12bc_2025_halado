@@ -15,10 +15,38 @@ namespace Bands
             this.bands = new List<Band>();
         }
 
+        // 0-tól (n-1)-ig helyett 1-től n-ig.
+        // manager[1] => bands[0];
+        public Band this[int i]
+        {
+            get
+            {
+                if (i < 1 || i > bands.Count)
+                {
+                    throw new IndexOutOfRangeException("Hiba! Nincs ilyen indexű zenekar.");
+                }
+                return bands[i-1];
+            }
+        }
+
         public void LoadFromFile(string fileName)
         {
-            StreamReader sr = new StreamReader(fileName);
-            while (!sr.EndOfStream)
+            try
+            {
+                using (StreamReader sr = new StreamReader(fileName))
+                {
+                    while (!sr.EndOfStream) ReadBand(sr);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        private void ReadBand(StreamReader sr)
+        {
+            try
             {
                 string[] temp = sr.ReadLine().Split(';');
                 string name = temp[0];
@@ -27,7 +55,19 @@ namespace Bands
                 Band band = new Band(name, genre, year, temp[3], temp[4]);
                 bands.Add(band);
             }
-            sr.Close();
+            catch (IndexOutOfRangeException e)
+            {
+                Console.WriteLine("Nem megfelelő adatok vannak a fájlban!");
+                Console.WriteLine("Minta: <Név>;<Műfaj>;<Alapítási_év>;<Tagok...>;<Hangszerek...>");
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine("Hiba: az alapítás éve nem egész szám.");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         public Band OldestBand()

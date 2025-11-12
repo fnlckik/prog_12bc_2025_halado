@@ -22,6 +22,11 @@ namespace Bands
 
         public Band(string name, string genre, int year, string members, string instruments)
         {
+            if (year < 0 || year > DateTime.Now.Year)
+            {
+                string msg = $"year. Az alapítás éve 0 és {DateTime.Now.Year} között legyen.";
+                throw new ArgumentOutOfRangeException(msg);
+            }
             this.name = name;
             this.genre = genre;
             this.foundedYear = year;
@@ -34,16 +39,38 @@ namespace Bands
             get => name;
             set
             {
-                if (value.Length >= 3)
+                if (value.Length < 3)
                 {
-                    this.name = value;
+                    throw new ArgumentException("Hiba: A zenekar neve legalább 3 karakter kell legyen.");
                 }
+                this.name = value;
             }
         }
 
         public HashSet<string> Instruments { get => new HashSet<string>(instruments); }
 
         public int MemberCount { get => members.Count; }
+
+        public static bool operator <(Band x, Band y)
+        {
+            return x.MemberCount < y.MemberCount;
+        }
+
+        public static bool operator >(Band x, Band y)
+        {
+            //return !(x < y); // x >= y
+            return x.MemberCount > y.MemberCount;
+        }
+
+        public static bool operator >=(Band x, Band y)
+        {
+            return !(x < y);
+        }
+
+        public static bool operator <=(Band x, Band y)
+        {
+            return !(x > y);
+        }
 
         public int Age()
         {

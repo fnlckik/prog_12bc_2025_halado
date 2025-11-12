@@ -8,6 +8,7 @@ namespace Bands
         {
             // Band osztály
             Band csharpers = new Band("Éleslátók", "pop");
+            //csharpers.Name = "Él";
             Console.WriteLine(csharpers);
             Console.WriteLine();
 
@@ -20,6 +21,22 @@ namespace Bands
 
             manager.OrderByMembersCount();
             manager.InstrumentFrequency();
+            Console.WriteLine();
+
+            //Console.Clear();
+
+            // --------------------------
+            //try
+            //{
+            //    Console.WriteLine(manager[1]); // Republic: 5
+            //    Console.WriteLine(manager[2]); // Quimby: 4
+            //    Console.WriteLine(manager[120]);
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e.Message);
+            //}
+            //Console.WriteLine(manager[1] < manager[2]); // false
         }
     }
 }
