@@ -29,6 +29,25 @@ namespace Bands
             }
         }
 
+        public static bool operator ==(Manager x, Manager y)
+        {
+            if (x.bands.Count != y.bands.Count) return false;
+            for (int i = 0; i < x.bands.Count; i++)
+            {
+                // Indexerrel rövidebb: x[i].Name != y[i].Name
+                if (x.bands[i].Name != y.bands[i].Name)
+                {
+                    return false;
+                }
+            }
+            return x.name == y.name;
+        }
+
+        public static bool operator !=(Manager x, Manager y)
+        {
+            return !(x == y);
+        }
+
         public void LoadFromFile(string fileName)
         {
             try
@@ -72,6 +91,11 @@ namespace Bands
 
         public Band OldestBand()
         {
+            if (bands.Count == 0)
+            {
+                string msg = "Nem tartozik egyetlen zenekar sem a menedzserhez!";
+                throw new InvalidOperationException(msg);
+            }
             Band oldest = bands[0];
             foreach (Band band in bands)
             {

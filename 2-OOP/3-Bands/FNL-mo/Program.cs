@@ -15,8 +15,15 @@ namespace Bands
             // Manager osztály
             Manager manager = new Manager("Farkas Norbert");
             manager.LoadFromFile("bands.txt");
-            Band oldest = manager.OldestBand();
-            Console.WriteLine($"Legrégebbi zenekar: {oldest}");
+            try
+            {
+                Band oldest = manager.OldestBand();
+                Console.WriteLine($"Legrégebbi zenekar: {oldest}");
+            }
+            catch (InvalidOperationException e)
+            {
+                Console.WriteLine(e.Message);
+            }
             Console.WriteLine();
 
             manager.OrderByMembersCount();
@@ -37,6 +44,11 @@ namespace Bands
             //    Console.WriteLine(e.Message);
             //}
             //Console.WriteLine(manager[1] < manager[2]); // false
+
+            //Manager m2 = new Manager("Farkas Norbert");
+            //m2.LoadFromFile("bands2.txt");
+            //m2.OrderByMembersCount();
+            //Console.WriteLine(manager == m2);
         }
     }
 }
