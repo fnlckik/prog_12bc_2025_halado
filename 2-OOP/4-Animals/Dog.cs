@@ -21,9 +21,14 @@ namespace _4_Animals
             this.breed = breed;
         }
 
-        public void MakeSound()
+        public override void MakeSound()
         {
             Console.WriteLine($"{this.name}: Vau!");
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + $" ({this.breed}) ";
         }
     }
 }

@@ -15,10 +15,11 @@ namespace _4_Animals
 
         public override string ToString()
         {
-            return $"{name} {age} éves. Osztály: {this.GetType()}";
+            return $"{name} {age} éves. Osztály: {this.GetType().Name}";
         }
 
-        public void MakeSound()
+        // virtual: felülírható leszármazott osztályban
+        public virtual void MakeSound()
         {
             Console.WriteLine("Általános állat hangok..");
         }
