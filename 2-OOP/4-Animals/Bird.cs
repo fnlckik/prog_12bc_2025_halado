@@ -13,6 +13,12 @@ namespace _4_Animals
             this.sound = sound;
         }
 
+        public override string ToString()
+        {
+            string fly = this.canFly ? "repül" : "nem repül";
+            return base.ToString() + $" [{fly}]";
+        }
+
         public override void MakeSound()
         {
             Console.WriteLine($"{this.name}: {this.sound}!");

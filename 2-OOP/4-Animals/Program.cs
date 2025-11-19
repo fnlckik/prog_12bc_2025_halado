@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace _4_Animals
 {
@@ -13,23 +14,46 @@ namespace _4_Animals
             //Dog xy = new Animal("xy", 2);
             Cat sanyi = new Cat("Sanyi", 8, "fekete");
             Bird rico = new Bird("Rico", 5, false, "Bumm"); // pingvin
+            Duck donald = new Duck("Donald", 7, "Háp");
+            List<Animal> animals = new List<Animal> { dumbo, ubul, scooby, sanyi, rico, donald };
 
             // ToString()
             Console.WriteLine("---------- ToString() ----------");
-            Console.WriteLine(dumbo);
-            Console.WriteLine(ubul);
-            Console.WriteLine(scooby);
-            Console.WriteLine(sanyi);
-            Console.WriteLine(rico);
+            //Console.WriteLine(dumbo);
+            //Console.WriteLine(ubul);
+            //Console.WriteLine(scooby);
+            //Console.WriteLine(sanyi);
+            //Console.WriteLine(rico);
+            foreach (Animal animal in animals)
+            {
+                Console.WriteLine(animal);
+            }
             Console.WriteLine();
 
             // MakeSound()
             Console.WriteLine("---------- MakeSound() ----------");
-            dumbo.MakeSound();
-            ubul.MakeSound();
-            scooby.MakeSound();
-            sanyi.MakeSound();
-            rico.MakeSound();
+            //dumbo.MakeSound();
+            //ubul.MakeSound();
+            //scooby.MakeSound();
+            //sanyi.MakeSound();
+            //rico.MakeSound();
+            foreach (Animal animal in animals)
+            {
+                animal.MakeSound();
+            }
+            Console.WriteLine();
+
+            // GivePaw()
+            Console.WriteLine("---------- GivePaw() ----------");
+            //ubul.GivePaw();
+            //Dog dog = scooby as Dog;
+            //dog.GivePaw();
+            foreach (Animal animal in animals)
+            {
+                //Dog dog = animal as Dog;
+                //dog?.GivePaw();
+                Console.WriteLine(animal is Dog);
+            }
         }
     }
 }

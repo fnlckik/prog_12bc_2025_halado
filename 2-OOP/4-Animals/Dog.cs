@@ -30,5 +30,10 @@ namespace _4_Animals
         {
             return base.ToString() + $" ({this.breed}) ";
         }
+
+        public void GivePaw()
+        {
+            Console.WriteLine($"{this.name} pacsit adott.");
+        }
     }
 }
