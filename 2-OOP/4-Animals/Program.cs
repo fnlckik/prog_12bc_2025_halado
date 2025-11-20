@@ -14,8 +14,12 @@ namespace _4_Animals
             //Dog xy = new Animal("xy", 2);
             Cat sanyi = new Cat("Sanyi", 8, "fekete");
             Bird rico = new Bird("Rico", 5, false, "Bumm"); // pingvin
-            Duck donald = new Duck("Donald", 7, "Háp");
-            List<Animal> animals = new List<Animal> { dumbo, ubul, scooby, sanyi, rico, donald };
+            Duck donald = new Duck("Donald", 7);
+            Parrot jago = new Parrot("Jago", 8, "AAAAAA", "piros");
+            List<Animal> animals = new List<Animal> 
+            { 
+                dumbo, ubul, scooby, sanyi, rico, donald, jago
+            };
 
             // ToString()
             Console.WriteLine("---------- ToString() ----------");
@@ -54,6 +58,15 @@ namespace _4_Animals
                 //dog?.GivePaw();
                 Console.WriteLine(animal is Dog);
             }
+            Console.WriteLine();
+
+            // GivePaw()
+            ubul.species = "Hüllő";
+            Console.WriteLine(ubul.species);
+            //Console.WriteLine("---------- GivePaw() ----------");
+            //Console.Write("Beszélj a papagájhoz: ");
+            //string text = Console.ReadLine();
+            //jago.Repeat(text);
         }
     }
 }

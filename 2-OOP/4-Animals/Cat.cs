@@ -9,6 +9,7 @@ namespace _4_Animals
         public Cat(string name, int age, string color) : base(name, age)
         {
             this.color = color;
+            this.species = "Emlős";
         }
 
         public override void MakeSound()

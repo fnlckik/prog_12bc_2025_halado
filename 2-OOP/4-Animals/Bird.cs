@@ -11,6 +11,7 @@ namespace _4_Animals
         {
             this.canFly = canFly;
             this.sound = sound;
+            this.species = "Szárnyas";
         }
 
         public override string ToString()

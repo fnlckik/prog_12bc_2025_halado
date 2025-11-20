@@ -2,7 +2,7 @@
 {
     internal class Duck : Bird
     {
-        public Duck(string name, int age, string sound) : base(name, age, true, sound)
+        public Duck(string name, int age) : base(name, age, true, "Háp")
         {
         }
     }

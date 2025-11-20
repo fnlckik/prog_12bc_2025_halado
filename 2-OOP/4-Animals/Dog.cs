@@ -19,6 +19,7 @@ namespace _4_Animals
         public Dog(string name, int age, string breed) : base(name, age)
         {
             this.breed = breed;
+            this.species = "Emlős";
         }
 
         public override void MakeSound()
