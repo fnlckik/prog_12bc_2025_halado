@@ -2,14 +2,19 @@
 
 namespace _4_Animals
 {
-    internal class Parrot : Bird
+    internal class Parrot : Bird, ITrickPerformer
     {
-        public string color;
+        private string color;
 
         public Parrot(string name, int age, string sound, string color)
                : base(name, age, true, sound)
         {
             this.color = color;
+        }
+
+        public void PerformTrick()
+        {
+            Console.WriteLine($"{this.name} viccet mesél.");
         }
 
         public void Repeat(string text)

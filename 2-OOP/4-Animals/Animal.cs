@@ -2,7 +2,7 @@
 
 namespace _4_Animals
 {
-    internal class Animal
+    internal abstract class Animal
     {
         // static: osztályszintű, nem objektumhoz tartozik
         public string name;
@@ -23,9 +23,13 @@ namespace _4_Animals
         }
 
         // virtual: felülírható leszármazott osztályban
-        public virtual void MakeSound()
-        {
-            Console.WriteLine("Általános állat hangok..");
-        }
+        //public virtual void MakeSound()
+        //{
+        //    Console.WriteLine("Általános állat hangok..");
+        //}
+
+        // abstract metódus: csak egy fejléc, nincs implementáció (törzs)
+        // Fontos! Abstract metódus csak abstract osztályban lehet!
+        public abstract void MakeSound();
     }
 }

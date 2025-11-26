@@ -12,7 +12,10 @@ namespace _4_Animals
 
     // A leszármazott osztálynak kötelező meghívni
     // az ősosztály konstruktorát.
-    internal class Dog : Animal
+
+    // A Dog örököl az Animal osztálytól.
+    // A Dog implementálja az ITrickPerformer interface-t.
+    internal class Dog : Animal, ITrickPerformer
     {
         public string breed; // fajta
 
@@ -22,6 +25,8 @@ namespace _4_Animals
             this.species = "Emlős";
         }
 
+        // Fontos! Abtract osztály leszármazottjának
+        // minden abstract metódust override-olni kell!
         public override void MakeSound()
         {
             Console.WriteLine($"{this.name}: Vau!");
@@ -35,6 +40,11 @@ namespace _4_Animals
         public void GivePaw()
         {
             Console.WriteLine($"{this.name} pacsit adott.");
+        }
+
+        public void PerformTrick()
+        {
+            Console.WriteLine($"{this.name} visszahozza a botot.");
         }
     }
 }

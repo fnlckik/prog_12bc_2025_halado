@@ -12,6 +12,9 @@ namespace _4_Animals
             this.species = "Emlős";
         }
 
+        // polimorfizmus: többalakúság
+        // Ugyanaz a metódus különböző alosztályokban
+        // más implementációval (törzzsel) rendelkezik.
         public override void MakeSound()
         {
             Console.WriteLine($"{this.name}: Miau!");

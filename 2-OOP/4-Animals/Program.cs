@@ -8,7 +8,8 @@ namespace _4_Animals
         static void Main(string[] args)
         {
             // Példányosítások
-            Animal dumbo = new Animal("Dumbo", 70);
+            // Fontos! Abstract osztályt nem lehet példányosítani.
+            //Animal dumbo = new Animal("Dumbo", 70);
             Dog ubul = new Dog("Ubul", 7, "beagle");
             Animal scooby = new Dog("Scooby", 12, "dán dog");
             //Dog xy = new Animal("xy", 2);
@@ -18,7 +19,7 @@ namespace _4_Animals
             Parrot jago = new Parrot("Jago", 8, "AAAAAA", "piros");
             List<Animal> animals = new List<Animal> 
             { 
-                dumbo, ubul, scooby, sanyi, rico, donald, jago
+                ubul, scooby, sanyi, rico, donald, jago
             };
 
             // ToString()
@@ -61,12 +62,32 @@ namespace _4_Animals
             Console.WriteLine();
 
             // GivePaw()
-            ubul.species = "Hüllő";
-            Console.WriteLine(ubul.species);
+            //ubul.species = "Hüllő";
+            //Console.WriteLine(ubul.species);
             //Console.WriteLine("---------- GivePaw() ----------");
             //Console.Write("Beszélj a papagájhoz: ");
             //string text = Console.ReadLine();
             //jago.Repeat(text);
+
+            // PerformTrick()
+            Console.WriteLine("---------- PerformTrick() ----------");
+            //ubul.PerformTrick();
+            //jago.PerformTrick();
+            foreach (Animal animal in animals)
+            {
+                //if (animal is Dog)
+                //{
+                //    Dog dog = animal as Dog;
+                //    dog.PerformTrick();
+                //}
+                //if (animal is Parrot)
+                //{
+                //    Parrot parrot = animal as Parrot;
+                //    parrot.PerformTrick();
+                //}
+                ITrickPerformer performer = animal as ITrickPerformer;
+                performer?.PerformTrick();
+            }
         }
     }
 }
