@@ -2,7 +2,8 @@
 
 namespace _4_Animals
 {
-    internal abstract class Animal
+    // abstract osztály: lehet benne abstract metódus
+    internal abstract class Animal : IComparable<Animal>
     {
         // static: osztályszintű, nem objektumhoz tartozik
         public string name;
@@ -31,5 +32,28 @@ namespace _4_Animals
         // abstract metódus: csak egy fejléc, nincs implementáció (törzs)
         // Fontos! Abstract metódus csak abstract osztályban lehet!
         public abstract void MakeSound();
+
+        public int CompareTo(object obj)
+        {
+            if (!(obj is Animal))
+            {
+                throw new ArgumentException("Nem állat a hasonlítandó.");
+            }
+            Animal other = obj as Animal;
+            // ...
+            throw new NotImplementedException();
+        }
+
+        // +: this > other (1)
+        // -: this < other (-1)
+        // 0: this == other
+        public int CompareTo(Animal other)
+        {
+            //if (this.age > other.age) return 1;
+            //if (this.age < other.age) return -1;
+            //return 0;
+            //return (-1)*(this.age - other.age);
+            throw new NotImplementedException();
+        }
     }
 }

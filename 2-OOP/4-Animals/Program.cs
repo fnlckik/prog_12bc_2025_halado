@@ -29,6 +29,7 @@ namespace _4_Animals
             //Console.WriteLine(scooby);
             //Console.WriteLine(sanyi);
             //Console.WriteLine(rico);
+            animals.Sort((a1, a2) => a1.age - a2.age);
             foreach (Animal animal in animals)
             {
                 Console.WriteLine(animal);

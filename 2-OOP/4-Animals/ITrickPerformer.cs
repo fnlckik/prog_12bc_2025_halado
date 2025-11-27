@@ -5,6 +5,8 @@
     // internal: adott assembly-ben látható
     internal interface ITrickPerformer
     {
+        //int Time { get; }
+
         void PerformTrick();
     }
 }
