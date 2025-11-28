@@ -17,9 +17,10 @@ namespace _4_Animals
             Bird rico = new Bird("Rico", 5, false, "Bumm"); // pingvin
             Duck donald = new Duck("Donald", 7);
             Parrot jago = new Parrot("Jago", 8, "AAAAAA", "piros");
+            PersianCat biggle = new PersianCat("Biggle", 5, "brown");
             List<Animal> animals = new List<Animal> 
             { 
-                ubul, scooby, sanyi, rico, donald, jago
+                ubul, scooby, sanyi, rico, donald, jago, biggle
             };
 
             // ToString()
@@ -88,6 +89,14 @@ namespace _4_Animals
                 //}
                 ITrickPerformer performer = animal as ITrickPerformer;
                 performer?.PerformTrick();
+            }
+            Console.WriteLine();
+
+            // Sleep()
+            Console.WriteLine("---------- Sleep() ----------");
+            foreach (Animal animal in animals)
+            {
+                animal.Sleep();
             }
         }
     }

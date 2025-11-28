@@ -55,5 +55,10 @@ namespace _4_Animals
             //return (-1)*(this.age - other.age);
             throw new NotImplementedException();
         }
+
+        public virtual void Sleep()
+        {
+            Console.WriteLine($"{this.name} alszik.");
+        }
     }
 }

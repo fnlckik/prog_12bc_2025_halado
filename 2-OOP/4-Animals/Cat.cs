@@ -2,7 +2,8 @@
 
 namespace _4_Animals
 {
-    internal class Cat : Animal
+    // sealed: nem lehet származtatni az osztályból
+    internal /*sealed*/ class Cat : Animal
     {
         public string color;
 
@@ -18,6 +19,12 @@ namespace _4_Animals
         public override void MakeSound()
         {
             Console.WriteLine($"{this.name}: Miau!");
+        }
+
+        // sealed: lezárt, nem lehet override-olni alosztályban
+        public sealed override void Sleep()
+        {
+            Console.WriteLine($"{this.name} alszik a billentyűzeten.");
         }
     }
 }
