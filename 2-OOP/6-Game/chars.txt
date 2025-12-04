@@ -1,0 +1,12 @@
+Archer Legolas 65 8 gyors
+Fighter Koponyatörő 130 22
+Fighter Ragnar 80 15
+Fighter Bjorn 95 18
+Fighter Thorvald 120 20
+Archer Sólyomszem 55 10
+Archer Nyílmester 40 10 gyors
+Archer FeketeÍjász 70 14
+Fighter Morgar 110 16
+Archer Vadász 45 7 gyors
+Archer Szélvész 50 11
+Fighter Kardfény 90 13
