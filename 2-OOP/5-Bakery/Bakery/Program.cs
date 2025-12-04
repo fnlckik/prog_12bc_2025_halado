@@ -7,8 +7,10 @@ namespace Bakery
         static void Main(string[] args)
         {
             //Console.WriteLine(Coffee.BASEPRICE);
-            Coffee c = new Coffee(true);
-            Console.WriteLine(c);
+            //Coffee c = new Coffee(true);
+            //Console.WriteLine(c);
+            Bakery bakery = new Bakery("products.txt");
+            bakery.ListProducts();
         }
     }
 }
