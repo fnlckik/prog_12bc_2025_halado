@@ -1,0 +1,5 @@
+Kávé tejes
+Sajtos_Pogácsa 50 150
+Krumplis_Pogácsa 40 120
+Kávé sima
+Tepertős_Pogácsa 70 130
