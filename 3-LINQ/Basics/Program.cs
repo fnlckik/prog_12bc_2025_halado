@@ -66,6 +66,23 @@ namespace Basics
             return result;
         }
 
+        static int Max(IEnumerable<int> collection)
+        {
+            IEnumerator<int> iterator = collection.GetEnumerator();
+            iterator.MoveNext();
+            int max = iterator.Current;
+            while (iterator.MoveNext())
+            {
+                //if (iterator.Current > max)
+                //{
+                //    max = iterator.Current;
+                //}
+                max = iterator.Current > max ? iterator.Current : max;
+                // s = s + iterator.Current
+            }
+            return max;
+        }
+
         static void Main(string[] args)
         {
             List<int> list = new List<int> { -2, -3, 1, 1, 6, -4, 9 };
@@ -83,7 +100,7 @@ namespace Basics
             Write("Pozitív elemek (halmaz):", F(set, IsPositive));
             Write("Pozitív elemek (tömb):", F(array, IsPositive));
             Write("Pozitív elemek (tömb):", array.Where(IsPositive));
-            Write("Pozitív elemek (tömb):", array.Where(x => x > 0));
+            Write("Pozitív elemek (tömb):", array.Where(x => x > 0)); // lambda expression
 
             // Páros elemek - kiválogatás
             Console.WriteLine();
@@ -105,6 +122,23 @@ namespace Basics
 
             // 2. Másolás: Select
             Write("Elemek négyzetei:", array.Select(x => x*x));
+
+            // Aggregáló függvények
+            // 3. Megszámolás: Count
+            Console.WriteLine("3. Pozitív elemek száma: " + array.Count(x => x > 0));
+
+            // 4. Összegzés: Sum, Average
+            Console.WriteLine("4. Elemek összege: " + array.Sum());
+            Console.WriteLine("4. Elemek átlaga: " + array.Average());
+
+            // 5. Minmax: Min, Max
+            Console.WriteLine("5. Legnagyobb elem: " + array.Max());
+
+            // 6. Sorozatszámítás: Aggregate
+            Console.WriteLine("6. Elemek összege: " + array.Aggregate((result, element) => result + element));
+            Console.WriteLine("6. Elemek szorzata: " + array.Aggregate((result, element) => result * element));
+            Console.WriteLine("6. Legnagyobb elem: " + array.Aggregate((result, element) => element > result ? element : result));
+            //Console.WriteLine(Max(array));
         }
     }
 }
