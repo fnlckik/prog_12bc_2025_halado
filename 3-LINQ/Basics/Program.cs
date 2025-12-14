@@ -139,6 +139,39 @@ namespace Basics
             Console.WriteLine("6. Elemek szorzata: " + array.Aggregate((result, element) => result * element));
             Console.WriteLine("6. Legnagyobb elem: " + array.Aggregate((result, element) => element > result ? element : result));
             //Console.WriteLine(Max(array));
+
+            // 7. Eldöntés: Any (Van-e adott tulajdonságú elem?)
+            Console.WriteLine("7. Van-e pozitív elem? " + array.Any(x => x > 0));
+
+            // 8. Eldöntés (optimista): All (Minden elem adott tulajdonságú?)
+            Console.WriteLine("8. Minden elem pozitív? " + array.All(x => x > 0));
+
+            // 9. Keresés: First, Last
+            Console.WriteLine("9. Az első pozitív elem: " + array.First(x => x > 0));
+            Console.WriteLine("9. Az utolsó pozitív elem: " + array.Last(x => x > 0));
+            int first = array.First(x => x > 0);
+            Console.WriteLine("9. Az első pozitív elem indexe: " + array.ToList().IndexOf(first));
+            Console.WriteLine("9. Az első pozitív elem indexe: " + array.ToList().FindIndex(x => x > 0));
+
+            // 10. Halmazkészítés: Distinct (egyedi elemek kiválogatása)
+            Write("10. Elemek duplikáció nélkül:", array.Distinct());
+
+            // 11. Unió, metszet, különbség: Union, Intersect, Except
+            Write("11. Unió (lista, tömb):", list.Union(array));
+            Write("11. Metszet (lista, tömb):", list.Intersect(array));
+            Write("11. Különbség (lista, tömb):", list.Except(array));
+
+            // 12. Rendezés: OrderBy
+            // a keySelector függvény TKey paramétere: definiálva van rá a CompareTo
+            Write("12. Rendezés (növekvő):", array.OrderBy(x => x));
+            Write("12. Rendezés (csökkenő):", array.OrderByDescending(x => x));
+
+            // ----------------------------------------------
+            Console.Clear();
+
+            // F1
+            int evenSum = array.Where(x => x % 2 == 0).Sum();
+            Console.WriteLine("1. Páros számok összege: " + evenSum);
         }
     }
 }
