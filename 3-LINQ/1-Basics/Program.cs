@@ -172,6 +172,21 @@ namespace Basics
             // F1
             int evenSum = array.Where(x => x % 2 == 0).Sum();
             Console.WriteLine("1. Páros számok összege: " + evenSum);
+
+            // F2
+            int minValue = array.Min();
+            int minCount = array.Count(x => x == array.Min());
+            Console.WriteLine("2. Minimumok száma: " + minCount);
+
+            // F3
+            //double avg = array.Average();
+            int biggestBelowAvg = array.Where(x => x < array.Average()).Max();
+            Console.WriteLine("3. A legnagyobb átlag alatti: " + biggestBelowAvg);
+
+            // F4
+            //IEnumerable<int> freq = array.Select(x => array.Count(y => y == x));
+            IEnumerable<int> doubles = array.Where(x => array.Count(y => y == x) == 2).Distinct();
+            Write("4. Duplán szereplő elemek:", doubles);
         }
     }
 }
