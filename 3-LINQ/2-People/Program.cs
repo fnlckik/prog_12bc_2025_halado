@@ -86,10 +86,11 @@ namespace People
             var oldestPerson = people.First(x => x.Age == people.Select(y => y.Age).Max());
             Console.WriteLine("3. Legidősebb ember adatai: ");
             Console.WriteLine(oldestPerson);
+            Console.WriteLine();
 
             // 4. Igaz-e, hogy minden 40 év feletti házas?
-            //Console.WriteLine("4. Minden 40 év feletti házas? " + ???);
-            //Console.WriteLine();
+            Console.WriteLine("4. Minden 40 év feletti házas? " + people.All(p => p.Age <= 40 || p.IsMarried));
+            Console.WriteLine("4. Minden 40 év feletti házas? " + !people.Any(p => p.Age > 40 && !p.IsMarried));
 
             // 5. Összesen hány darab L vagy l betűt tartalmaznak a nevek?
             Console.WriteLine();
@@ -100,7 +101,8 @@ namespace People
             // 6. Add meg minden ember esetén, hogy hány fiatalabb van nála!
             // Az embereket életkor szerint növekvően jelenítsd meg!
             // Pl.: { Name = Kiss Anna, Age = 28, YoungerCount = 2 }
-            //Write("6. Fiatalabbak száma: ", youngerCounts);
+            var youngerCounts = people.OrderBy(p => p.Age).Select(p => new { p.Name, p.Age, YoungerCount = people.Count(o => o.Age < p.Age) });
+            Write("6. Fiatalabbak száma: ", youngerCounts);
         }
     }
 }
