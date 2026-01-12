@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace Names
 {
@@ -60,24 +61,31 @@ namespace Names
             List<Name> names = Seed();
             Print("Adatok:", names);
 
+            Console.Clear();
+
             // F1 - 2 pont
-
-
+            // lambda expression
+            var a = names.Any(x => x.Last > x.First);
+            Console.WriteLine("A: " + a);
 
             // F2 - 3 pont
-
-
+            var b = names.Where(x => x.IsMale && x.NameText[0] == 'B').Select(x => x.NameText);
+            Print("B: ", b);
 
             // F3 - 3 pont
-
-
+            var c = names.Where(x => !x.IsMale).OrderByDescending(x => x.First).Take(5);
+            Print("C: ", c);
 
             // F4 - 2 pont
-
-
+            //var d = names.OrderByDescending(x => x.First + x.Last).First();
+            //Console.WriteLine("D: " + (d.First + d.Last));
+            //var d = names.Select(x => x.First + x.Last).Max();
+            var d = names.Max(x => x.First + x.Last);
+            Console.WriteLine("D: " + d);
 
             // F5 - 2 pont
-
+            var e = Math.Round(names.Average(x => x.NameText.Length), 2);
+            Console.WriteLine("E: " + e);
 
 
             // F6 - 3 pont
