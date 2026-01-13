@@ -89,13 +89,17 @@ namespace Names
 
 
             // F6 - 3 pont
-
+            /*
+             * SELECT NameText, (First + Last) AS Freq
+             * FROM names
+             * */
+            var f = names.Where(x => x.NameText.Length < 5).Select(x => new { x.NameText, Freq = x.First + x.Last });
+            Print("F: ", f);
 
 
             // F7 - 4 pont
-
-
-
+            var g = names.Last(x => !x.IsMale).NameText.ToLower().Distinct().Count();
+            Console.WriteLine("G: " + g);
         }
     }
 }
