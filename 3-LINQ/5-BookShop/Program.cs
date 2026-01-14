@@ -82,6 +82,7 @@ namespace BookShop
             Console.Clear();
             #endregion
 
+            #region GroupBy [6-9]
             // 6. Műfajonként csoportok
             Console.WriteLine("6. Műfajonként csoportok: ");
             IEnumerable<IGrouping<string, Book>> groups = books.GroupBy(b => b.Genre);
@@ -105,6 +106,76 @@ namespace BookShop
                     Console.WriteLine("\t" + item);
                 }
             }
+
+            // 7. Műfajonként hány könyv, átlagos oldalszám
+
+            var m7 = books.GroupBy(b => b.Genre)
+                          .Select(g => 
+                          new { 
+                              Genre = g.Key,
+                              Amount = g.Count(),
+                              AveragePages = g.Average(b => b.Pages) 
+                          });
+            Print("7. Műfajonként hány könyv, átlagos oldalszám:", m7);
+
+            // SQL
+            // Csoportosítás esetén SELECT részbe:
+            // 1. Csoportosító mező lehet
+            // 2. Aggregáló függvény mehet: COUNT, SUM, AVG, MIN, MAX
+            // SELECT Genre, COUNT(*) AS Mennyiség, AVG(Pages)
+            // FROM books
+            // GROUP BY Genre;
+            var q7 = from b in books
+                     group b.Pages by b.Genre into g
+                     select new
+                     { 
+                         Genre = g.Key,
+                         Amount = g.Count(),
+                         AveragePages = Math.Round(g.Average(), 2)
+                     };
+            Print("7. Műfajonként hány könyv, átlagos oldalszám:", q7);
+
+            // 8. Legalább 3 könyves műfajok
+            // Mik azok a műfajok, amikből legalább 3 könyv van?
+
+            var m8 = books.GroupBy(b => b.Genre)
+                          .Where(g => g.Count() >= 3)
+                          .Select(g => g.Key);
+            Print("8. Legalább 3 könyves műfajok:", m8);
+
+            // SELECT Genre
+            // FROM books
+            // GROUP BY Genre
+            // HAVING COUNT(*) >= 3;
+            var q8 = from b in books
+                     group b by b.Genre into g
+                     where g.Count() >= 3
+                     select g.Key;
+            Print("8. Legalább 3 könyves műfajok:", q8);
+
+            // 9. Csoportosítás hossz (hány száz oldal?)
+            var q9 = from b in books
+                     orderby b.Pages
+                     group b by new { Size = b.Pages / 100, b.Genre };
+            // Egy csoporton belül: azonos "hossz" és műfaj
+
+            Console.WriteLine("\n9. Csoportosítás hossz szerint:");
+            foreach (var group in q9)
+            {
+                Console.WriteLine($"{group.Key.Size * 100} - {group.Key.Size * 100 + 99}. oldalas {group.Key.Genre} könyvek:");
+                foreach (var item in group)
+                {
+                    Console.WriteLine("\t" + item);
+                }
+            }
+            #endregion
+
+            // 10. Szerző és könyv címek
+            // { Author = "J. K. Rowling", Title = "Harry Potter és a Bölcsek Köve" } ...
+            var q10 = from a in authors
+                      join b in books on a.Id equals b.AuthorId
+                      select new { Author = a.Name, b.Title };
+            Print("10. Szerző és könyv címek", q10);
         }
     }
 }
