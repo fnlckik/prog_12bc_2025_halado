@@ -172,10 +172,73 @@ namespace BookShop
 
             // 10. Szerző és könyv címek
             // { Author = "J. K. Rowling", Title = "Harry Potter és a Bölcsek Köve" } ...
+            var m10 = authors.Join(books,
+                                   a => a.Id,
+                                   b => b.AuthorId,
+                                   (a, b) => new { Author = a.Name, b.Title });
+            Print("10. Szerző és könyv címek", m10);
+
             var q10 = from a in authors
                       join b in books on a.Id equals b.AuthorId
                       select new { Author = a.Name, b.Title };
             Print("10. Szerző és könyv címek", q10);
+
+            // Kitekintés: tuple
+            (string Szin, int Ertek) xy = ("Pikk", 6);
+            Console.WriteLine(xy);
+            Console.WriteLine($"{xy.Item1}_{xy.Item2}");
+            Console.WriteLine($"{xy.Szin}_{xy.Ertek}");
+
+            // 11. Hányat adtak el az egyes könyvekből:
+            var m11 = books.Join(orders, b => b.Id, o => o.BookId, (book, order) => (book, order))
+                           .GroupBy(e => e.book)
+                           .Select(g => new
+                           {
+                               g.Key.Title,
+                               Amount = g.Sum(e => e.order.Quantity)
+                           });
+
+            /*
+            var q11 = from b in books
+                      join o in orders on b.Id equals o.BookId
+                      group (b, o) by b into g
+                      select new
+                      {
+                          g.Key.Title,
+                          Amount = g.Sum(e => e.o.Quantity)
+                      };
+            */
+
+            /*
+            var q11 = from b in books
+                      join o in orders on b.Id equals o.BookId
+                      group o by b into g
+                      select new
+                      {
+                          g.Key.Title,
+                          Amount = g.Sum(o => o.Quantity)
+                      };
+            */
+
+            var q11 = from b in books
+                      join o in orders on b.Id equals o.BookId
+                      group o.Quantity by b into g
+                      select new
+                      {
+                          g.Key.Title,
+                          Amount = g.Sum()
+                      };
+
+            /*
+            select new 
+            { 
+                Book = b ,
+                Order = o
+            };
+            */
+            //select (b, o);
+            //Console.WriteLine(q11.First().Book.Year);
+            Print("11. Hányat adtak el a könyvekből:", q11);
         }
     }
 }
