@@ -239,6 +239,40 @@ namespace BookShop
             //select (b, o);
             //Console.WriteLine(q11.First().Book.Year);
             Print("11. Hányat adtak el a könyvekből:", q11);
+
+            // 12. Fantasy írók nevei, legdrágább könyvük ára
+            // { Author = "J. K. Rowling", MaxPrice = 6500 }
+            var q12 = from b in books
+                      where b.Genre == "Fantasy"
+                      join a in authors on b.AuthorId equals a.Id
+                      group (a, b) by a into g
+                      let maxPrice = g.Max(e => e.b.Price)
+                      select new
+                      {
+                          Author = g.Key.Name,
+                          MaxPrice = maxPrice,
+                          Book = g.Where(e => e.b.Price == maxPrice).First()
+                      };
+            Print("12. ", q12);
+
+            // 13. Írónként vásárolt könyvek száma, összes bevétel
+            // { Author = "J. K. Rowling", Amount = 415, Revenue = 142511 }
+
+            var full = from author in authors
+                       join book in books on author.Id equals book.AuthorId
+                       join order in orders on book.Id equals order.BookId
+                       select (author, book, order);
+            Print("Három tábla kapcsolata:", full);
+
+            var q13 = from e in full
+                      group e by e.author into g
+                      select new
+                      {
+                          Author = g.Key.Name,
+                          Amount = g.Sum(e => e.order.Quantity),
+                          Revenue = g.Sum(e => e.book.Price * e.order.Quantity)
+                      };
+            Print("13. Írónként vásárolt könyvek száma, összes bevétel: ", q13);
         }
     }
 }
