@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,15 @@ namespace _1_Hello
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void HelloBtn_Click(object sender, EventArgs e)
+        {
+            // Project properties -> Output Type -> Console Application
+            //Console.WriteLine("Hello Világ!");
+            //Debug.WriteLine("Hello Világ!");
+            DialogResult result = MessageBox.Show("Hello Világ!", "Felhasználó köszöntése", MessageBoxButtons.YesNo);
+            MessageBox.Show((result == DialogResult.Yes).ToString());
         }
     }
 }
