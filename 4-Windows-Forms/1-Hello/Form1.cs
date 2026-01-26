@@ -13,6 +13,14 @@ namespace _1_Hello
 {
     public partial class Form1 : Form
     {
+        // enum => felsorolás
+        private enum Hetvege
+        {
+            Pentek = 5,
+            Szombat = 6,
+            Vasarnap = 7
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -23,8 +31,34 @@ namespace _1_Hello
             // Project properties -> Output Type -> Console Application
             //Console.WriteLine("Hello Világ!");
             //Debug.WriteLine("Hello Világ!");
-            DialogResult result = MessageBox.Show("Hello Világ!", "Felhasználó köszöntése", MessageBoxButtons.YesNo);
-            MessageBox.Show((result == DialogResult.Yes).ToString());
+            // (MessageBoxButtons)4 == MessageBoxButtons.YesNo
+            string name = NameTextBox.Text;
+            DialogResult result = MessageBox.Show($"Hello {name}!", "Felhasználó köszöntése", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+            //if (result == DialogResult.Yes)
+            //{
+            //    MessageBox.Show("Az IGEN gombra nyomtál!");
+            //}
+            //else if (result == DialogResult.No)
+            //{
+            //    MessageBox.Show("Az NEM gombra nyomtál!");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("A MÉGSE gombra nyomtál!");
+            //}
+            //switch (result)
+            //{
+            //    case DialogResult.Cancel:
+            //        MessageBox.Show("A MÉGSE gombra nyomtál!");
+            //        break;
+            //    case DialogResult.Yes:
+            //        MessageBox.Show("Az IGEN gombra nyomtál!");
+            //        break;
+            //    case DialogResult.No:
+            //        MessageBox.Show("Az NEM gombra nyomtál!");
+            //        break;
+            //}
+            //MessageBox.Show($"{(int)Hetvege.Szombat}");
         }
     }
 }
