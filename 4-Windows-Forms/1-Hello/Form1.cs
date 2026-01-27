@@ -33,7 +33,11 @@ namespace _1_Hello
             //Debug.WriteLine("Hello Világ!");
             // (MessageBoxButtons)4 == MessageBoxButtons.YesNo
             string name = NameTextBox.Text;
-            DialogResult result = MessageBox.Show($"Hello {name}!", "Felhasználó köszöntése", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+            if (name != "")
+            {
+                GreetLabel.Text = $"Hello {name}!";
+            }
+            //DialogResult result = MessageBox.Show($"Hello {name}!", "Felhasználó köszöntése", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
             //if (result == DialogResult.Yes)
             //{
             //    MessageBox.Show("Az IGEN gombra nyomtál!");
@@ -59,6 +63,24 @@ namespace _1_Hello
             //        break;
             //}
             //MessageBox.Show($"{(int)Hetvege.Szombat}");
+        }
+
+        private void NameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string name = NameTextBox.Text;
+            HelloBtn.Enabled = name != "";
+            //if (name != "")
+            //{
+            //    GreetLabel.Text = $"Hello {name}!";
+            //}
+        }
+
+        private void BoldCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            //GreetLabel.Font.Bold = false;
+            FontStyle newStyle = BoldCheckBox.Checked ? FontStyle.Bold | FontStyle.Italic : FontStyle.Italic;
+            GreetLabel.Font = new Font(GreetLabel.Font, newStyle);
+            //GreetLabel.Font = new Font(GreetLabel.Font, (FontStyle)(BoldCheckBox.Checked ? 1 : 0) + 2);
         }
     }
 }
