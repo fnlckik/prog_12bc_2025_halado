@@ -82,5 +82,36 @@ namespace _1_Hello
             GreetLabel.Font = new Font(GreetLabel.Font, newStyle);
             //GreetLabel.Font = new Font(GreetLabel.Font, (FontStyle)(BoldCheckBox.Checked ? 1 : 0) + 2);
         }
+
+        // e => event (Esemény objektum.)
+        // sender => e.target (Ő váltotta ki az eseményt.)
+        private void ColorRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            if (!rb.Checked) return;
+            switch (rb.Tag) // rb.Text
+            {
+                case "R":
+                    GreetLabel.ForeColor = Color.FromArgb(192, 0, 0);
+                    break;
+                case "G":
+                    GreetLabel.ForeColor = Color.Green;
+                    break;
+                case "B":
+                    GreetLabel.ForeColor = Color.Blue;
+                    break;
+            }
+        }
+
+        private void Panel_Click(object sender, EventArgs e)
+        {
+            MouseEventArgs ev = e as MouseEventArgs;
+            PositionLabel.Text = $"P({ev.X};{ev.Y})";
+
+            //int x = (Panel.Size.Width - PositionLabel.Size.Width) / 2;
+            //int y = PositionLabel.Location.Y;
+            //PositionLabel.Location = new Point(x, y);
+            PositionLabel.Left = (Panel.Width - PositionLabel.Width) / 2;
+        }
     }
 }
