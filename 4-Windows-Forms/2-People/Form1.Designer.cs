@@ -35,10 +35,11 @@
             this.ageNumUpDown = new System.Windows.Forms.NumericUpDown();
             this.addButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.selectedSalary = new System.Windows.Forms.Label();
             this.selectedAge = new System.Windows.Forms.Label();
             this.selectedName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.selectedSalary = new System.Windows.Forms.Label();
+            this.sortButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ageNumUpDown)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -132,6 +133,16 @@
             this.panel1.Size = new System.Drawing.Size(339, 238);
             this.panel1.TabIndex = 6;
             // 
+            // selectedSalary
+            // 
+            this.selectedSalary.AutoSize = true;
+            this.selectedSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.selectedSalary.Location = new System.Drawing.Point(31, 175);
+            this.selectedSalary.Name = "selectedSalary";
+            this.selectedSalary.Size = new System.Drawing.Size(97, 29);
+            this.selectedSalary.TabIndex = 3;
+            this.selectedSalary.Text = "Fizetés:";
+            // 
             // selectedAge
             // 
             this.selectedAge.AutoSize = true;
@@ -162,21 +173,23 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Kiválasztott személy adatai";
             // 
-            // selectedSalary
+            // sortButton
             // 
-            this.selectedSalary.AutoSize = true;
-            this.selectedSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.selectedSalary.Location = new System.Drawing.Point(31, 175);
-            this.selectedSalary.Name = "selectedSalary";
-            this.selectedSalary.Size = new System.Drawing.Size(97, 29);
-            this.selectedSalary.TabIndex = 3;
-            this.selectedSalary.Text = "Fizetés:";
+            this.sortButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sortButton.Location = new System.Drawing.Point(264, 186);
+            this.sortButton.Name = "sortButton";
+            this.sortButton.Size = new System.Drawing.Size(139, 51);
+            this.sortButton.TabIndex = 7;
+            this.sortButton.Text = "Rendezés";
+            this.sortButton.UseVisualStyleBackColor = true;
+            this.sortButton.Click += new System.EventHandler(this.sortButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 547);
+            this.Controls.Add(this.sortButton);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.ageNumUpDown);
@@ -208,6 +221,7 @@
         private System.Windows.Forms.Label selectedAge;
         private System.Windows.Forms.Label selectedName;
         private System.Windows.Forms.Label selectedSalary;
+        private System.Windows.Forms.Button sortButton;
     }
 }
 
