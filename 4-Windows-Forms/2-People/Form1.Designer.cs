@@ -34,14 +34,15 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.ageNumUpDown = new System.Windows.Forms.NumericUpDown();
             this.addButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel = new System.Windows.Forms.Panel();
             this.selectedSalary = new System.Windows.Forms.Label();
             this.selectedAge = new System.Windows.Forms.Label();
             this.selectedName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.sortButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ageNumUpDown)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // peopleListBox
@@ -120,18 +121,19 @@
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // panel1
+            // panel
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.selectedSalary);
-            this.panel1.Controls.Add(this.selectedAge);
-            this.panel1.Controls.Add(this.selectedName);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(64, 262);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(339, 238);
-            this.panel1.TabIndex = 6;
+            this.panel.BackColor = System.Drawing.Color.White;
+            this.panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel.Controls.Add(this.selectedSalary);
+            this.panel.Controls.Add(this.selectedAge);
+            this.panel.Controls.Add(this.selectedName);
+            this.panel.Controls.Add(this.label1);
+            this.panel.Location = new System.Drawing.Point(64, 262);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(339, 238);
+            this.panel.TabIndex = 6;
+            this.panel.Visible = false;
             // 
             // selectedSalary
             // 
@@ -184,13 +186,25 @@
             this.sortButton.UseVisualStyleBackColor = true;
             this.sortButton.Click += new System.EventHandler(this.sortButton_Click);
             // 
+            // saveButton
+            // 
+            this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.saveButton.Location = new System.Drawing.Point(479, 59);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(127, 51);
+            this.saveButton.TabIndex = 8;
+            this.saveButton.Text = "Mentés";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 547);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.sortButton);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.ageNumUpDown);
             this.Controls.Add(this.nameTextBox);
@@ -199,10 +213,10 @@
             this.Controls.Add(this.peopleListBox);
             this.MinimumSize = new System.Drawing.Size(816, 596);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "TESCO munkások (nem szénbánya)";
             ((System.ComponentModel.ISupportInitialize)(this.ageNumUpDown)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel.ResumeLayout(false);
+            this.panel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,12 +230,13 @@
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.NumericUpDown ageNumUpDown;
         private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label selectedAge;
         private System.Windows.Forms.Label selectedName;
         private System.Windows.Forms.Label selectedSalary;
         private System.Windows.Forms.Button sortButton;
+        private System.Windows.Forms.Button saveButton;
     }
 }
 
