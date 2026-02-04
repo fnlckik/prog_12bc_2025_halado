@@ -106,5 +106,57 @@ namespace _2_People
                 }
             }
         }
+
+        private void loadButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.InitialDirectory = Application.StartupPath;
+            dialog.Filter = "Szöveges fájl|*.txt|CSV fájl|*.csv";
+            DialogResult result = dialog.ShowDialog();
+            if (result != DialogResult.OK) return;
+            string path = dialog.FileName;
+            string extension = path.Split('.').Last();
+            string[] accepted = { "txt", "csv" };
+            if (!accepted.Contains(extension))
+            {
+                string msg = "Nem támogatott fájl kiterjesztés. Adj meg .txt vagy .csv fájlt.";
+                MessageBox.Show(msg, "Hiba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            people.Clear();
+            //List<Person> x = new List<Person>();
+            try
+            {
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        string[] temp = sr.ReadLine().Split(',');
+                        string name = temp[0];
+                        int age = int.Parse(temp[1]);
+                        int salary = int.Parse(temp[2]);
+                        Person p = new Person(name, age, salary);
+                        people.Add(p); //x.Add(p);
+                    }
+                }
+                //people = new List<Person>(x);
+            }
+            catch (Exception ex)
+            {
+                string msg = "Nem sikerült a megnyitás.";
+                result = MessageBox.Show(msg, "Hiba!", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                switch (result)
+                {
+                    case DialogResult.Retry:
+                        loadButton_Click(sender, e);
+                        break;
+                    case DialogResult.Cancel:
+                        people = peopleListBox.Items.Cast<Person>().ToList();
+                        //this.Close();
+                        break;
+                }
+            }
+            UpdateListBox();
+        }
     }
 }
