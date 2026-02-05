@@ -1,0 +1,348 @@
+﻿namespace _3_Tergeometria
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.SphereRBtn = new System.Windows.Forms.RadioButton();
+            this.CylinderRBtn = new System.Windows.Forms.RadioButton();
+            this.ConeRadioBtn = new System.Windows.Forms.RadioButton();
+            this.GenerateButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.ImgPanel = new System.Windows.Forms.Panel();
+            this.ShapeListBox = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.AreaNumUpDown = new System.Windows.Forms.NumericUpDown();
+            this.VolumeNumUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.RadiusNumUpDown = new System.Windows.Forms.NumericUpDown();
+            this.HeightNumUpDown = new System.Windows.Forms.NumericUpDown();
+            this.CalculateButton = new System.Windows.Forms.Button();
+            this.CheckButton = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.SaveButton = new System.Windows.Forms.Button();
+            this.OpenButton = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AreaNumUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VolumeNumUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RadiusNumUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeightNumUpDown)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.ConeRadioBtn);
+            this.groupBox1.Controls.Add(this.CylinderRBtn);
+            this.groupBox1.Controls.Add(this.SphereRBtn);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox1.Location = new System.Drawing.Point(37, 37);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 172);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Test típusa";
+            // 
+            // SphereRBtn
+            // 
+            this.SphereRBtn.AutoSize = true;
+            this.SphereRBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SphereRBtn.Location = new System.Drawing.Point(18, 46);
+            this.SphereRBtn.Name = "SphereRBtn";
+            this.SphereRBtn.Size = new System.Drawing.Size(80, 28);
+            this.SphereRBtn.TabIndex = 0;
+            this.SphereRBtn.TabStop = true;
+            this.SphereRBtn.Text = "Gömb";
+            this.SphereRBtn.UseVisualStyleBackColor = true;
+            this.SphereRBtn.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
+            // 
+            // CylinderRBtn
+            // 
+            this.CylinderRBtn.AutoSize = true;
+            this.CylinderRBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.CylinderRBtn.Location = new System.Drawing.Point(18, 80);
+            this.CylinderRBtn.Name = "CylinderRBtn";
+            this.CylinderRBtn.Size = new System.Drawing.Size(92, 28);
+            this.CylinderRBtn.TabIndex = 1;
+            this.CylinderRBtn.TabStop = true;
+            this.CylinderRBtn.Text = "Henger";
+            this.CylinderRBtn.UseVisualStyleBackColor = true;
+            // 
+            // ConeRadioBtn
+            // 
+            this.ConeRadioBtn.AutoSize = true;
+            this.ConeRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ConeRadioBtn.Location = new System.Drawing.Point(18, 119);
+            this.ConeRadioBtn.Name = "ConeRadioBtn";
+            this.ConeRadioBtn.Size = new System.Drawing.Size(62, 28);
+            this.ConeRadioBtn.TabIndex = 2;
+            this.ConeRadioBtn.TabStop = true;
+            this.ConeRadioBtn.Text = "Kúp";
+            this.ConeRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // GenerateButton
+            // 
+            this.GenerateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.GenerateButton.Location = new System.Drawing.Point(20, 34);
+            this.GenerateButton.Name = "GenerateButton";
+            this.GenerateButton.Size = new System.Drawing.Size(90, 43);
+            this.GenerateButton.TabIndex = 1;
+            this.GenerateButton.Text = "button1";
+            this.GenerateButton.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.AddButton);
+            this.panel1.Controls.Add(this.CheckButton);
+            this.panel1.Controls.Add(this.CalculateButton);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.VolumeNumUpDown);
+            this.panel1.Controls.Add(this.AreaNumUpDown);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.GenerateButton);
+            this.panel1.Enabled = false;
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.panel1.Location = new System.Drawing.Point(37, 241);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(477, 240);
+            this.panel1.TabIndex = 7;
+            // 
+            // ImgPanel
+            // 
+            this.ImgPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ImgPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ImgPanel.Location = new System.Drawing.Point(636, 265);
+            this.ImgPanel.Name = "ImgPanel";
+            this.ImgPanel.Size = new System.Drawing.Size(254, 216);
+            this.ImgPanel.TabIndex = 8;
+            // 
+            // ShapeListBox
+            // 
+            this.ShapeListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ShapeListBox.FormattingEnabled = true;
+            this.ShapeListBox.ItemHeight = 24;
+            this.ShapeListBox.Location = new System.Drawing.Point(636, 27);
+            this.ShapeListBox.Name = "ShapeListBox";
+            this.ShapeListBox.Size = new System.Drawing.Size(254, 196);
+            this.ShapeListBox.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(306, 122);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 24);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(306, 159);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 24);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(50, 127);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 24);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "label3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(258, 127);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 24);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "label4";
+            // 
+            // AreaNumUpDown
+            // 
+            this.AreaNumUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.AreaNumUpDown.Location = new System.Drawing.Point(111, 127);
+            this.AreaNumUpDown.Name = "AreaNumUpDown";
+            this.AreaNumUpDown.Size = new System.Drawing.Size(120, 29);
+            this.AreaNumUpDown.TabIndex = 7;
+            // 
+            // VolumeNumUpDown
+            // 
+            this.VolumeNumUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.VolumeNumUpDown.Location = new System.Drawing.Point(335, 126);
+            this.VolumeNumUpDown.Name = "VolumeNumUpDown";
+            this.VolumeNumUpDown.Size = new System.Drawing.Size(120, 29);
+            this.VolumeNumUpDown.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(50, 189);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 24);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "label5";
+            // 
+            // RadiusNumUpDown
+            // 
+            this.RadiusNumUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RadiusNumUpDown.Location = new System.Drawing.Point(372, 117);
+            this.RadiusNumUpDown.Name = "RadiusNumUpDown";
+            this.RadiusNumUpDown.Size = new System.Drawing.Size(120, 29);
+            this.RadiusNumUpDown.TabIndex = 12;
+            // 
+            // HeightNumUpDown
+            // 
+            this.HeightNumUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.HeightNumUpDown.Location = new System.Drawing.Point(372, 159);
+            this.HeightNumUpDown.Name = "HeightNumUpDown";
+            this.HeightNumUpDown.Size = new System.Drawing.Size(120, 29);
+            this.HeightNumUpDown.TabIndex = 13;
+            // 
+            // CalculateButton
+            // 
+            this.CalculateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.CalculateButton.Location = new System.Drawing.Point(132, 34);
+            this.CalculateButton.Name = "CalculateButton";
+            this.CalculateButton.Size = new System.Drawing.Size(90, 43);
+            this.CalculateButton.TabIndex = 10;
+            this.CalculateButton.Text = "button2";
+            this.CalculateButton.UseVisualStyleBackColor = true;
+            // 
+            // CheckButton
+            // 
+            this.CheckButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.CheckButton.Location = new System.Drawing.Point(242, 34);
+            this.CheckButton.Name = "CheckButton";
+            this.CheckButton.Size = new System.Drawing.Size(90, 43);
+            this.CheckButton.TabIndex = 11;
+            this.CheckButton.Text = "button3";
+            this.CheckButton.UseVisualStyleBackColor = true;
+            // 
+            // AddButton
+            // 
+            this.AddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.AddButton.Location = new System.Drawing.Point(365, 34);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(90, 43);
+            this.AddButton.TabIndex = 12;
+            this.AddButton.Text = "button4";
+            this.AddButton.UseVisualStyleBackColor = true;
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SaveButton.ForeColor = System.Drawing.Color.Blue;
+            this.SaveButton.Location = new System.Drawing.Point(310, 37);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(60, 56);
+            this.SaveButton.TabIndex = 13;
+            this.SaveButton.Text = "💾";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            // 
+            // OpenButton
+            // 
+            this.OpenButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.OpenButton.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.OpenButton.Location = new System.Drawing.Point(433, 37);
+            this.OpenButton.Name = "OpenButton";
+            this.OpenButton.Size = new System.Drawing.Size(59, 56);
+            this.OpenButton.TabIndex = 14;
+            this.OpenButton.Text = "📂";
+            this.OpenButton.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(923, 527);
+            this.Controls.Add(this.OpenButton);
+            this.Controls.Add(this.SaveButton);
+            this.Controls.Add(this.HeightNumUpDown);
+            this.Controls.Add(this.RadiusNumUpDown);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ShapeListBox);
+            this.Controls.Add(this.ImgPanel);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.panel1);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AreaNumUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VolumeNumUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RadiusNumUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeightNumUpDown)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton ConeRadioBtn;
+        private System.Windows.Forms.RadioButton CylinderRBtn;
+        private System.Windows.Forms.RadioButton SphereRBtn;
+        private System.Windows.Forms.Button GenerateButton;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel ImgPanel;
+        private System.Windows.Forms.ListBox ShapeListBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown VolumeNumUpDown;
+        private System.Windows.Forms.NumericUpDown AreaNumUpDown;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown RadiusNumUpDown;
+        private System.Windows.Forms.NumericUpDown HeightNumUpDown;
+        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.Button CheckButton;
+        private System.Windows.Forms.Button CalculateButton;
+        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button OpenButton;
+    }
+}
+
