@@ -21,7 +21,19 @@ namespace _3_Tergeometria
         {
             RadioButton rb = sender as RadioButton;
             if (!rb.Checked) return;
-            ImgPanel.BackgroundImage = Image.FromFile("../../assets/sphere.png");
+            //ImgPanel.BackgroundImage = Image.FromFile($"../../assets/{rb.Tag}.png");
+            switch (rb.Tag)
+            {
+                case "sphere":
+                    ImgPanel.BackgroundImage = Properties.Resources.sphere;
+                    break;
+                case "cylinder":
+                    ImgPanel.BackgroundImage = Properties.Resources.cylinder;
+                    break;
+                case "cone":
+                    ImgPanel.BackgroundImage = Properties.Resources.cone;
+                    break;
+            }
         }
     }
 }
