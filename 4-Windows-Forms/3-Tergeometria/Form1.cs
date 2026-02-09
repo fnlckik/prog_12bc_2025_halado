@@ -34,6 +34,14 @@ namespace _3_Tergeometria
                     ImgPanel.BackgroundImage = Properties.Resources.cone;
                     break;
             }
+            HeightNumUpDown.Enabled = rb.Tag.ToString() != "sphere";
+            ButtonPanel.Enabled = true;
+        }
+
+        private void GenerateButton_Click(object sender, EventArgs e)
+        {
+            Random random = new Random();
+            MessageBox.Show(random.Next(100).ToString());
         }
     }
 }

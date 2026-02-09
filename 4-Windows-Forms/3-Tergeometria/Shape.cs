@@ -6,27 +6,73 @@ using System.Threading.Tasks;
 
 namespace _3_Tergeometria
 {
-    internal interface IShape
+    internal abstract class Shape
     {
-        double R { get; set; }
-        double H { get; set; }
-        double Area { get; }
-        double Volume { get; }
-    }
+        public double r;
+        public double h;
 
-    internal class Sphere : IShape
-    {
-        public Sphere(double r)
+        protected Shape(double r, double h)
         {
-            R = r;
-            H = 0;
+            this.r = r;
+            this.h = h;
         }
 
-        public double R { get; set; }
-        public double H { get; set; }
+        public abstract double Area { get; }
+        public abstract double Volume { get; }
+    }
 
-        public double Area => 4 * R * R * Math.PI;
+    internal class Sphere : Shape
+    {
+        public Sphere(double r) : base(r, 0)
+        {
+        }
 
-        public double Volume => 4 * R * R * R * Math.PI / 3;
+        public override double Area => 4 * r * r * Math.PI;
+
+        public override double Volume => 4 * r * r * r * Math.PI / 3;
+
+        public override string ToString()
+        {
+            return $"Gömb: R = {r}";
+        }
+    }
+
+    internal class Cylinder : Shape
+    {
+        public Cylinder(double r, double h) : base(r, h)
+        {
+        }
+
+        public override double Area => 2 * r * r * Math.PI + 2 * r * Math.PI * h;
+
+        public override double Volume => r * r * Math.PI * h;
+
+        public override string ToString()
+        {
+            return $"Henger: R = {r}, M = {h}";
+        }
+    }
+
+    internal class Cone : Shape
+    {
+        public Cone(double r, double h) : base(r, h)
+        {
+        }
+
+        public override double Area
+        {
+            get
+            {
+                double a = Math.Sqrt(h * h + r * r); // alkotó
+                return r * r * Math.PI + a * r * Math.PI;
+            }
+        }
+
+        public override double Volume => r * r * Math.PI * h / 3;
+
+        public override string ToString()
+        {
+            return $"Kúp: R = {r}, M = {h}";
+        }
     }
 }
