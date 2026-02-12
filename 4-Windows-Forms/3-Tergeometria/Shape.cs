@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _3_Tergeometria
 {
-    internal abstract class Shape
+    internal abstract class Shape : ICloneable
     {
         public double r;
         public double h;
@@ -19,6 +19,14 @@ namespace _3_Tergeometria
 
         public abstract double Area { get; }
         public abstract double Volume { get; }
+
+        // shallow copy: adattagokat másolja le
+        // deep copy: minden adatból másolatot készít
+        // Listák, referencia típusok esetén van különbség.
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
     }
 
     internal class Sphere : Shape

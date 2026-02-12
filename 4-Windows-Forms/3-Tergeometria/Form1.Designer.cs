@@ -30,8 +30,8 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ConeRadioBtn = new System.Windows.Forms.RadioButton();
-            this.CylinderRBtn = new System.Windows.Forms.RadioButton();
-            this.SphereRBtn = new System.Windows.Forms.RadioButton();
+            this.CylinderRadioBtn = new System.Windows.Forms.RadioButton();
+            this.SphereRadioBtn = new System.Windows.Forms.RadioButton();
             this.GenerateButton = new System.Windows.Forms.Button();
             this.ButtonPanel = new System.Windows.Forms.Panel();
             this.AddButton = new System.Windows.Forms.Button();
@@ -61,8 +61,8 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.ConeRadioBtn);
-            this.groupBox1.Controls.Add(this.CylinderRBtn);
-            this.groupBox1.Controls.Add(this.SphereRBtn);
+            this.groupBox1.Controls.Add(this.CylinderRadioBtn);
+            this.groupBox1.Controls.Add(this.SphereRadioBtn);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox1.Location = new System.Drawing.Point(37, 37);
             this.groupBox1.Name = "groupBox1";
@@ -85,33 +85,33 @@
             this.ConeRadioBtn.UseVisualStyleBackColor = true;
             this.ConeRadioBtn.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
-            // CylinderRBtn
+            // CylinderRadioBtn
             // 
-            this.CylinderRBtn.AutoSize = true;
-            this.CylinderRBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.CylinderRBtn.Location = new System.Drawing.Point(18, 85);
-            this.CylinderRBtn.Name = "CylinderRBtn";
-            this.CylinderRBtn.Size = new System.Drawing.Size(92, 28);
-            this.CylinderRBtn.TabIndex = 68;
-            this.CylinderRBtn.TabStop = true;
-            this.CylinderRBtn.Tag = "cylinder";
-            this.CylinderRBtn.Text = "Henger";
-            this.CylinderRBtn.UseVisualStyleBackColor = true;
-            this.CylinderRBtn.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
+            this.CylinderRadioBtn.AutoSize = true;
+            this.CylinderRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.CylinderRadioBtn.Location = new System.Drawing.Point(18, 85);
+            this.CylinderRadioBtn.Name = "CylinderRadioBtn";
+            this.CylinderRadioBtn.Size = new System.Drawing.Size(92, 28);
+            this.CylinderRadioBtn.TabIndex = 68;
+            this.CylinderRadioBtn.TabStop = true;
+            this.CylinderRadioBtn.Tag = "cylinder";
+            this.CylinderRadioBtn.Text = "Henger";
+            this.CylinderRadioBtn.UseVisualStyleBackColor = true;
+            this.CylinderRadioBtn.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
-            // SphereRBtn
+            // SphereRadioBtn
             // 
-            this.SphereRBtn.AutoSize = true;
-            this.SphereRBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.SphereRBtn.Location = new System.Drawing.Point(18, 46);
-            this.SphereRBtn.Name = "SphereRBtn";
-            this.SphereRBtn.Size = new System.Drawing.Size(80, 28);
-            this.SphereRBtn.TabIndex = 67;
-            this.SphereRBtn.TabStop = true;
-            this.SphereRBtn.Tag = "sphere";
-            this.SphereRBtn.Text = "Gömb";
-            this.SphereRBtn.UseVisualStyleBackColor = true;
-            this.SphereRBtn.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
+            this.SphereRadioBtn.AutoSize = true;
+            this.SphereRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SphereRadioBtn.Location = new System.Drawing.Point(18, 46);
+            this.SphereRadioBtn.Name = "SphereRadioBtn";
+            this.SphereRadioBtn.Size = new System.Drawing.Size(80, 28);
+            this.SphereRadioBtn.TabIndex = 67;
+            this.SphereRadioBtn.TabStop = true;
+            this.SphereRadioBtn.Tag = "sphere";
+            this.SphereRadioBtn.Text = "Gömb";
+            this.SphereRadioBtn.UseVisualStyleBackColor = true;
+            this.SphereRadioBtn.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // GenerateButton
             // 
@@ -151,6 +151,7 @@
             this.AddButton.TabIndex = 12;
             this.AddButton.Text = "Tárol";
             this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // CheckButton
             // 
@@ -188,6 +189,11 @@
             // 
             this.VolumeNumUpDown.DecimalPlaces = 1;
             this.VolumeNumUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.VolumeNumUpDown.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.VolumeNumUpDown.Location = new System.Drawing.Point(335, 126);
             this.VolumeNumUpDown.Maximum = new decimal(new int[] {
             100000,
@@ -202,6 +208,11 @@
             // 
             this.AreaNumUpDown.DecimalPlaces = 1;
             this.AreaNumUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.AreaNumUpDown.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.AreaNumUpDown.Location = new System.Drawing.Point(111, 125);
             this.AreaNumUpDown.Maximum = new decimal(new int[] {
             100000,
@@ -251,6 +262,7 @@
             this.ShapeListBox.Name = "ShapeListBox";
             this.ShapeListBox.Size = new System.Drawing.Size(254, 172);
             this.ShapeListBox.TabIndex = 9;
+            this.ShapeListBox.SelectedIndexChanged += new System.EventHandler(this.ShapeListBox_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -276,6 +288,11 @@
             // 
             this.RadiusNumUpDown.DecimalPlaces = 1;
             this.RadiusNumUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RadiusNumUpDown.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.RadiusNumUpDown.Location = new System.Drawing.Point(422, 121);
             this.RadiusNumUpDown.Maximum = new decimal(new int[] {
             10,
@@ -291,6 +308,11 @@
             // 
             this.HeightNumUpDown.DecimalPlaces = 1;
             this.HeightNumUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.HeightNumUpDown.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.HeightNumUpDown.Location = new System.Drawing.Point(422, 163);
             this.HeightNumUpDown.Maximum = new decimal(new int[] {
             10,
@@ -358,8 +380,8 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton ConeRadioBtn;
-        private System.Windows.Forms.RadioButton CylinderRBtn;
-        private System.Windows.Forms.RadioButton SphereRBtn;
+        private System.Windows.Forms.RadioButton CylinderRadioBtn;
+        private System.Windows.Forms.RadioButton SphereRadioBtn;
         private System.Windows.Forms.Button GenerateButton;
         private System.Windows.Forms.Panel ButtonPanel;
         private System.Windows.Forms.Panel ImgPanel;
