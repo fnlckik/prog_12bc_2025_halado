@@ -334,6 +334,7 @@
             this.SaveButton.TabIndex = 13;
             this.SaveButton.Text = "💾";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // OpenButton
             // 
@@ -345,6 +346,7 @@
             this.OpenButton.TabIndex = 14;
             this.OpenButton.Text = "📂";
             this.OpenButton.UseVisualStyleBackColor = true;
+            this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
             // 
             // Form1
             // 

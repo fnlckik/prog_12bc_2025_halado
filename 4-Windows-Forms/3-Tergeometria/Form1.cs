@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _3_Tergeometria
@@ -119,6 +117,71 @@ namespace _3_Tergeometria
             if (shape is Sphere) SphereRadioBtn.Checked = true;
             else if (shape is Cylinder) CylinderRadioBtn.Checked = true;
             else if (shape is Cone) ConeRadioBtn.Checked = true;
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.DefaultExt = ".txt";
+            dialog.InitialDirectory = Application.StartupPath;
+            dialog.Filter = "Szöveges fájl|*.txt|Minden fájl|*.*";
+            DialogResult result = dialog.ShowDialog();
+            if (result != DialogResult.OK) return;
+            string path = dialog.FileName;
+            using (StreamWriter sw = new StreamWriter(path))
+            {
+                foreach (var shape in shapes)
+                {
+                    char type = shape.ToString()[0];
+                    if (shape is Sphere)
+                    {
+                        sw.WriteLine($"{type};{shape.r}");
+                    }
+                    else
+                    {
+                        sw.WriteLine($"{type};{shape.r};{shape.h}");
+                    }
+                }
+            }
+        }
+
+        private Shape ReadLine(StreamReader sr)
+        {
+            string[] temp = sr.ReadLine().Split(';');
+            Shape shape;
+            double r = double.Parse(temp[1]);
+            if (temp[0] == "G")
+            {
+                shape = new Sphere(r);
+            }
+            else if (temp[0] == "H")
+            {
+                shape = new Cylinder(r, double.Parse(temp[2]));
+            }
+            else
+            {
+                shape = new Cone(r, double.Parse(temp[2]));
+            }
+            return shape;
+        }
+
+        private void OpenButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.InitialDirectory = Application.StartupPath;
+            dialog.Filter = "Szöveges fájl|*.txt|Minden fájl|*.*";
+            DialogResult result = dialog.ShowDialog();
+            if (result != DialogResult.OK) return;
+            string path = dialog.FileName;
+            using (StreamReader sr = new StreamReader(path))
+            {
+                shapes.Clear();
+                while (!sr.EndOfStream)
+                {
+                    shapes.Add(ReadLine(sr));
+                }
+            }
+            UpdateListBox();
         }
     }
 }
