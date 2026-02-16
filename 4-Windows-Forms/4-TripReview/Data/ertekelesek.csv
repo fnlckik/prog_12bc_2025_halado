@@ -1,0 +1,65 @@
+ErtekelesID;UtazasNeve;UtasID;ErtekelesDatum;Programok;Helyszin;Szoveges
+1;Római antik örökség túra;12;2024-09-22;5;5;Lenyűgöző volt a Colosseum, de a tömeg miatt a bejutás nehézkes.
+2;Toszkána dombjai és borvidékei;25;2024-10-22;4;4;A borkóstolók kiválóak voltak, a táj pedig egyszerűen festői.
+3;Velencei karnevál és maszkabál;8;2024-09-05;3;5;A város hangulata páratlan, bár a csatornák környékén nagy volt a zsúfoltság.
+4;Milánói divathét és vásárlás;3;2024-10-18;2;3;Sajnos a legtöbb bemutató zártkörű volt, így inkább csak a boltokat jártuk.
+5;Szicíliai vulkántúra és strandolás;19;2024-12-15;5;4;Az Etna megmászása életre szóló élmény, a tengerpart pedig kristálytiszta.
+6;Párizsi fények és múzeumok;2;2024-03-18;3;5;A Louvre-ra egy nap nem elég, a sorban állás viszont kimerítő volt.
+7;Barcelona és Gaudi művészete;3;2024-04-28;2;4;A Sagrada Família gyönyörű, de a szervezett programok kicsit sietősek voltak.
+8;Londoni történelmi séták;4;2024-02-18;4;5;A British Museum ingyenessége szuper, a városnéző busz viszont sokat késett.
+9;Bécsi adventi vásár;5;2024-06-13;3;5;A városháza előtti tér hangulata varázslatos, a puncs pedig isteni.
+10;Prágai sörfőzdék és várnegyed;7;2024-07-18;4;4;A Károly-híd hajnalban a legszebb, a helyi sörök pedig tényleg világhírűek.
+11;Amszterdami csatornák és virágok;8;2024-05-09;5;4;A tulipánmezők látványa felejthetetlen, a biciklis közlekedést viszont szokni kell.
+12;Lisszaboni fado est és tengerpart;10;2024-11-18;3;3;A zene melankolikus és szép, de a városnéző villamosra esélytelen volt felszállni.
+13;Athéni Akropolisz felfedezése;11;2024-08-10;2;5;A hőség ellenére a romok lenyűgözőek, de a környező utcák elég szemetesek.
+14;Dubrovniki falak és Adria;13;2024-02-25;4;4;A várfalról a kilátás pazar, a Trónok harca rajongóknak kötelező program.
+15;Izlandi északi fény keresés;15;2024-09-13;5;5;Szerencsénk volt, láttuk az aurórát! A természet ereje itt tényleg érezhető.
+16;Skót felföld és Loch Ness;17;2024-12-06;3;4;A táj vadregényes, a kastélyok pedig mintha egy meséből léptek volna elő.
+17;Norvég fjordok hajóút;19;2024-07-09;4;5;A hajóról nézve a vízesések monumentálisak, a levegő pedig haraphatóan friss.
+18;Svájci Alpok trekking;21;2024-04-08;5;4;A túraútvonalak jól jelzettek, a hegyi levegő és a panoráma minden pénzt megér.
+19;Bajor kastélyok túra;23;2024-04-15;4;3;Neuschwanstein pont olyan, mint a Disney logóban, de belülről kicsit csalódás.
+20;Máltai lovagrend nyomában;25;2024-06-20;3;4;Valletta utcái történelmet árasztanak, a kikötői hajózás nagyon hangulatos volt.
+21;Krétai minószi kultúra;27;2024-08-23;2;5;Knósszosz érdekes, de a tájékoztató táblák hiányosak voltak.
+22;Ciprusi Aphrodité-part;29;2024-10-28;4;4;A sziklák és a kék víz látványa pihentető, a helyi ételek pedig nagyon laktatóak.
+23;Madeirai örök tavasz;31;2024-12-13;5;5;A botanikus kertek virágba borultak, a levada-túrák pedig izgalmasak voltak.
+24;Tenerifei Teide-túra;32;2024-05-05;4;4;A vulkáni táj olyan, mintha a Marson járnánk, a felvonóhoz viszont sokat vártunk.
+25;Mallorcai öböl-túra;33;2024-05-12;3;5;A rejtett öblök vize türkizkék, érdemes autót bérelni a felfedezésükhöz.
+26;Ibiza és Formentera strandok;34;2024-05-19;5;3;A bulik világa mellett a partok is csodásak, bár az árak elég magasak.
+27;Azori-szigetek bálnatúra;35;2024-06-13;2;5;Láttunk delfineket! A természet érintetlensége lenyűgöző ezen a vidéken.
+28;Korfui Sissi kastély túra;36;2024-09-23;3;4;Az Achilleion kertje gyönyörű, Sissi története pedig nagyon megérintett.
+29;Rodoszi középkori város;37;2024-07-18;4;5;A lovagok utcája visszarepített az időben, az óváros este a leghangulatosabb.
+30;Szantorini naplemente túra;38;2024-06-16;2;4;Oia naplementéje szép, de a tömeg miatt alig lehetett látni valamit.
+31;Zakynthos hajóroncs öböl;39;2024-10-08;4;5;A Navagio-öböl látványa felülről és alulról is lélegzetelállító.
+32;Kefalónia barlangtúra;40;2024-11-18;3;4;A Melissani-barlang vize hihetetlenül tiszta, a csónakázás rövid, de szép.
+33;Nápolyi pizza és Pompeji;41;2024-08-10;5;3;A pizza verhetetlen, Pompeji pedig egy hatalmas, megdöbbentő időutazás.
+34;Szardínia smaragdpart;42;2024-07-14;4;5;A tenger színe itt a legszebb Európában, a fehér homok pedig mintha liszt lenne.
+35;Francia riviéra nizzai pihenés;1;2024-07-21;3;4;A sétány elegáns, a környező kisvárosokba pedig könnyű átjutni vonattal.
+36;Monaco és Monte Carlo luxus;2;2024-07-28;2;5;A kaszinó környéke csillogó, a hercegi palota őrségváltása pedig látványos.
+37;Andalúziai körutazás;3;2024-09-13;5;4;Sevilla és Granada építészete lenyűgöző, a flamenco est pedig magával ragadó.
+38;Madridi Prado múzeum látogatás;4;2024-08-11;4;3;A festmények csodásak, de a múzeum tájékoztató rendszere kicsit zavaros.
+39;Valenciai oceanográfiai park;5;2024-12-06;3;5;A modern épületek látványosak, az akvárium pedig az egyik legjobb, ahol jártam.
+40;Bilbaói Guggenheim múzeum;6;2024-08-25;5;4;Már maga az épület is egy műalkotás, a kortárs kiállítások elgondolkodtatóak.
+41;Portói borkóstoló és hajóút;7;2024-09-01;4;5;A Douro-folyón hajózni a hidak alatt fantasztikus, a portói bor pedig édes.
+42;Algarvei szikláspartok;8;2024-10-18;5;4;A barlangokba csak hajóval lehet bejutni, de megéri, mert káprázatosak.
+43;Marokkói királyi városok;9;2024-09-15;3;3;A bazárok hangulata és az illatok egzotikusak, de az alkudozás fárasztó.
+44;Tuniszi Karthágó túra;10;2024-09-22;4;5;A romok között sétálva megelevenedik a történelem, a mozaikok pedig épek.
+45;Egyiptomi piramisok és Nílus;11;2024-09-29;5;4;Gíza monumentális, a Nílus-parti naplemente pedig örök emlék marad.
+46;Török riviéra Antalya;12;2024-10-06;4;3;A tengerparti szállodák kényelmesek, az óváros pedig tele van élettel.
+47;Isztambuli kék mecset túra;14;2024-10-20;5;5;A Hagia Sophia és a Kék mecset látványa minden várakozást felülmúlt.
+48;Kappadokiai hőlégballonozás;15;2024-10-27;3;4;Hajnalban a több száz ballon a levegőben valami egészen szürreális élmény.
+49;Jeruzsálemi zarándokút;16;2024-11-03;4;5;A vallási helyszínek energiája akkor is megérinti az embert, ha nem hívő.
+50;Jordániai Petra felfedezése;17;2024-11-10;5;4;A kanyonon átvezető út végén feltáruló kincstár látványa sokkolóan szép.
+51;Dubaji felhőkarcoló túra;31;2024-11-17;3;5;A Burj Khalifa tetejéről a kilátás elképesztő, a sivatagi szafari pedig vicces.
+52;Abu Dhabi Nagymecset;19;2024-12-13;5;4;A fehér márvány és az arany díszítés káprázatos, a tisztaság pedig makulátlan.
+53;Krakkói történelmi belváros;20;2024-12-01;4;5;A főtér és a Posztócsarnok gyönyörű, a sóbánya pedig kötelező látnivaló.
+54;Varsói felkelés múzeuma;21;2024-12-08;3;4;A múzeum modern és interaktív, mély nyomot hagy az emberben a történet.
+55;Pozsonyi vártúra;22;2024-12-15;2;5;A várból remekül belátni a Dunát, az óváros pedig kicsi, de nagyon hangulatos.
+56;Ljubljanai sárkányos híd;23;2024-12-22;5;5;A város tiszta, zöld és nagyon barátságos, a várba vezető sikló pedig gyors.
+57;Bledi-tó és várkastély;24;2024-12-29;4;4;A szigetre evezni a pletnával igazi romantikus program, a krémes pedig kihagyhatatlan.
+58;Spliti Diocletianus palota;25;2024-07-18;3;5;A palota falaiba épült városrész egyedülálló, a tengerparti sétány pedig nyüzsgő.
+59;Zadari tengeri orgona;26;2024-05-09;5;4;A hullámok zenéje és a naplemente fényjátéka különleges spirituális élmény.
+60;Plitvicei-tavak nemzeti park;27;2024-10-08;4;5;A vízesések és a tavak színe leírhatatlan, a fapallókon sétálni pedig kalandos.
+61;Montenegrói Kotori-öböl;28;2024-11-18;3;4;A hegyek közé ékelődött öböl látványa a skandináv fjordokra emlékeztet.
+62;Florenci művészeti séta;3;2024-10-18;4;4;A Dóm kupolája és az Uffizi képtár a reneszánsz igazi csúcspontja.
+63;Velencei dózsé palota;4;2024-03-18;4;4;A Sóhajok hídja és a börtönök története nagyon érdekes volt a vezetés alatt.
+64;Amalfi-parti szerpentin túra;8;2024-09-22;5;5;A kanyargós utak kicsit ijesztőek, de a kilátás Positanóra mindenért kárpótol.
