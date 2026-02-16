@@ -14,7 +14,7 @@ namespace TripReview
         public Main()
         {
             InitializeComponent();
-            //LoadTravellers("../../Data/utasok.txt");
+            LoadTravellers("../../Data/utasok.txt");
             //LoadReviews("../../Data/ertekelesek.csv");
         }
 
@@ -35,6 +35,19 @@ namespace TripReview
                     travellers.Add(t);
                 }
             }
+            TravellersComboBox.DataSource = travellers;
+            TravellersComboBox.SelectedIndex = -1;
+            TravellersComboBox.SelectedIndexChanged += TravellersComboBox_SelectedIndexChanged;
+        }
+
+        private void TravellersComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Traveller t = TravellersComboBox.SelectedItem as Traveller;
+            if (t == null) return;
+            NameLabel.Text = "Név: " + t.Name;
+            EmailLabel.Text = "Email: " + t.Email;
+            //DateLabel.Text = "Születési dátum: " + t.BirthDate.ToShortDateString();
+            DateLabel.Text = $"Születési dátum: {t.BirthDate:d}";
         }
     }
 }

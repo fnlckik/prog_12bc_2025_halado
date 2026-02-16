@@ -36,6 +36,7 @@
             this.DateLabel = new System.Windows.Forms.Label();
             this.EmailLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
+            this.TravellersComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,11 +111,21 @@
             this.NameLabel.TabIndex = 0;
             this.NameLabel.Text = "Név:";
             // 
+            // TravellersComboBox
+            // 
+            this.TravellersComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.TravellersComboBox.FormattingEnabled = true;
+            this.TravellersComboBox.Location = new System.Drawing.Point(84, 98);
+            this.TravellersComboBox.Name = "TravellersComboBox";
+            this.TravellersComboBox.Size = new System.Drawing.Size(312, 28);
+            this.TravellersComboBox.TabIndex = 4;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 503);
+            this.Controls.Add(this.TravellersComboBox);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -137,6 +148,7 @@
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox TravellersComboBox;
     }
 }
 
