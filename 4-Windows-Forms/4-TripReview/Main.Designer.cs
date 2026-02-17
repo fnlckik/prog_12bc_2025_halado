@@ -37,7 +37,16 @@
             this.EmailLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.TravellersComboBox = new System.Windows.Forms.ComboBox();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.fájlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TravellersMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.RatingsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ExitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -113,12 +122,77 @@
             // 
             // TravellersComboBox
             // 
+            this.TravellersComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.TravellersComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.TravellersComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.TravellersComboBox.FormattingEnabled = true;
             this.TravellersComboBox.Location = new System.Drawing.Point(84, 98);
             this.TravellersComboBox.Name = "TravellersComboBox";
             this.TravellersComboBox.Size = new System.Drawing.Size(312, 28);
             this.TravellersComboBox.TabIndex = 4;
+            // 
+            // menuStrip
+            // 
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fájlToolStripMenuItem});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(1184, 38);
+            this.menuStrip.TabIndex = 5;
+            this.menuStrip.Text = "menuStrip1";
+            // 
+            // fájlToolStripMenuItem
+            // 
+            this.fájlToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.OpenMenuItem,
+            this.SaveMenuItem,
+            this.toolStripSeparator1,
+            this.ExitMenuItem});
+            this.fájlToolStripMenuItem.Name = "fájlToolStripMenuItem";
+            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(55, 34);
+            this.fájlToolStripMenuItem.Text = "Fájl";
+            // 
+            // OpenMenuItem
+            // 
+            this.OpenMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TravellersMenuItem,
+            this.RatingsMenuItem});
+            this.OpenMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("OpenMenuItem.Image")));
+            this.OpenMenuItem.Name = "OpenMenuItem";
+            this.OpenMenuItem.Size = new System.Drawing.Size(182, 34);
+            this.OpenMenuItem.Text = "Megnyitás";
+            // 
+            // TravellersMenuItem
+            // 
+            this.TravellersMenuItem.Name = "TravellersMenuItem";
+            this.TravellersMenuItem.Size = new System.Drawing.Size(236, 34);
+            this.TravellersMenuItem.Text = "Utasok (txt)";
+            this.TravellersMenuItem.Click += new System.EventHandler(this.TravellersMenuItem_Click);
+            // 
+            // RatingsMenuItem
+            // 
+            this.RatingsMenuItem.Name = "RatingsMenuItem";
+            this.RatingsMenuItem.Size = new System.Drawing.Size(236, 34);
+            this.RatingsMenuItem.Text = "Értékelések (csv)";
+            // 
+            // SaveMenuItem
+            // 
+            this.SaveMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("SaveMenuItem.Image")));
+            this.SaveMenuItem.Name = "SaveMenuItem";
+            this.SaveMenuItem.Size = new System.Drawing.Size(182, 34);
+            this.SaveMenuItem.Text = "Mentés";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(179, 6);
+            // 
+            // ExitMenuItem
+            // 
+            this.ExitMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ExitMenuItem.Image")));
+            this.ExitMenuItem.Name = "ExitMenuItem";
+            this.ExitMenuItem.Size = new System.Drawing.Size(182, 34);
+            this.ExitMenuItem.Text = "Bezárás";
             // 
             // Main
             // 
@@ -128,13 +202,17 @@
             this.Controls.Add(this.TravellersComboBox);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.menuStrip);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.MainMenuStrip = this.menuStrip;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1200, 542);
             this.Name = "Main";
             this.Text = "TripReview";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,6 +227,14 @@
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox TravellersComboBox;
+        private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.ToolStripMenuItem fájlToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem OpenMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SaveMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ExitMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem TravellersMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem RatingsMenuItem;
     }
 }
 

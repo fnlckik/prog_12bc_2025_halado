@@ -14,7 +14,7 @@ namespace TripReview
         public Main()
         {
             InitializeComponent();
-            LoadTravellers("../../Data/utasok.txt");
+            //LoadTravellers("../../Data/utasok.txt");
             //LoadReviews("../../Data/ertekelesek.csv");
         }
 
@@ -48,6 +48,18 @@ namespace TripReview
             EmailLabel.Text = "Email: " + t.Email;
             //DateLabel.Text = "Születési dátum: " + t.BirthDate.ToShortDateString();
             DateLabel.Text = $"Születési dátum: {t.BirthDate:d}";
+        }
+
+        private void TravellersMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Szöveges fájl|*.txt";
+            string[] temp = Application.StartupPath.Split('\\');
+            string path = string.Join("\\", temp.Take(temp.Length - 2)) + "\\Data";
+            dialog.InitialDirectory = path;
+            DialogResult result = dialog.ShowDialog();
+            if (result != DialogResult.OK) return;
+            LoadTravellers(dialog.FileName);
         }
     }
 }
