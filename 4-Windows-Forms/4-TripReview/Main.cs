@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace TripReview
 {
@@ -14,8 +15,35 @@ namespace TripReview
         public Main()
         {
             InitializeComponent();
+            openFileDialog = new OpenFileDialog();
+            string path = GetParentPath(Application.StartupPath, 2) + "\\Data";
+            openFileDialog.InitialDirectory = path;
             //LoadTravellers("../../Data/utasok.txt");
             //LoadReviews("../../Data/ertekelesek.csv");
+        }
+
+        private void LoadReviews(string path)
+        {
+            using (StreamReader sr = new StreamReader(path))
+            {
+                ratings.Clear();
+                sr.ReadLine();
+                while (!sr.EndOfStream)
+                {
+                    string[] temp = sr.ReadLine().Split(';');
+                    int id = int.Parse(temp[0]);
+                    string tripName = temp[1];
+                    int travellerId = int.Parse(temp[2]);
+                    DateTime reviewDate = DateTime.Parse(temp[3]);
+                    int activitiesRating = int.Parse(temp[4]);
+                    int locationRating = int.Parse(temp[5]);
+                    string comment = temp[6];
+                    Rating r = new Rating(id, tripName, travellerId, reviewDate, activitiesRating, locationRating, comment);
+                    ratings.Add(r);
+                }
+            }
+            TravellersComboBox.DataSource = null;
+            TravellersComboBox.DataSource = ratings;
         }
 
         private void LoadTravellers(string path)
@@ -50,16 +78,33 @@ namespace TripReview
             DateLabel.Text = $"Születési dátum: {t.BirthDate:d}";
         }
 
+        private string GetParentPath(string path, int n)
+        {
+            string[] temp = path.Split('\\');
+            return string.Join("\\", temp.Take(temp.Length - n));
+        }
+
         private void TravellersMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Szöveges fájl|*.txt";
-            string[] temp = Application.StartupPath.Split('\\');
-            string path = string.Join("\\", temp.Take(temp.Length - 2)) + "\\Data";
-            dialog.InitialDirectory = path;
-            DialogResult result = dialog.ShowDialog();
+            openFileDialog.Filter = "Szöveges fájl|*.txt";
+            DialogResult result = openFileDialog.ShowDialog();
             if (result != DialogResult.OK) return;
-            LoadTravellers(dialog.FileName);
+            LoadTravellers(openFileDialog.FileName);
+        }
+
+        private void ExitMenuItem_Click(object sender, EventArgs e)
+        {
+            //this.Close();
+            Application.Exit();
+        }
+
+        private void RatingsMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialog.Filter = "CSV fájl|*.csv";
+            openFileDialog.FileName = "";
+            DialogResult result = openFileDialog.ShowDialog();
+            if (result != DialogResult.OK) return;
+            LoadReviews(openFileDialog.FileName);
         }
     }
 }

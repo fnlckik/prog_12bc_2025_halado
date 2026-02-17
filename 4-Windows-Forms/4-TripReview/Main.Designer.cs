@@ -45,6 +45,7 @@
             this.SaveMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ExitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -174,6 +175,7 @@
             this.RatingsMenuItem.Name = "RatingsMenuItem";
             this.RatingsMenuItem.Size = new System.Drawing.Size(236, 34);
             this.RatingsMenuItem.Text = "Értékelések (csv)";
+            this.RatingsMenuItem.Click += new System.EventHandler(this.RatingsMenuItem_Click);
             // 
             // SaveMenuItem
             // 
@@ -193,6 +195,11 @@
             this.ExitMenuItem.Name = "ExitMenuItem";
             this.ExitMenuItem.Size = new System.Drawing.Size(182, 34);
             this.ExitMenuItem.Text = "Bezárás";
+            this.ExitMenuItem.Click += new System.EventHandler(this.ExitMenuItem_Click);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog";
             // 
             // Main
             // 
@@ -235,6 +242,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem TravellersMenuItem;
         private System.Windows.Forms.ToolStripMenuItem RatingsMenuItem;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 
