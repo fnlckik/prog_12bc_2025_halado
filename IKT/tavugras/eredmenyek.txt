@@ -1,0 +1,30 @@
+Wass Albert;Szeged;5,75;5,85;5,65;5,90;0,00
+Kovács Antal;Budapest;7,12;0,00;7,45;6,98;7,33
+Major László;Székesfehérvár;0,00;5,50;5,65;5,45;5,70
+Herczeg Béla;Budapest;0,00;7,40;7,65;7,50;7,55
+Bakos Gergő;Debrecen;6,30;6,45;6,20;6,50;6,40
+Szőke István;Miskolc;7,90;8,05;7,85;7,95;8,38
+Orosz Ákos;Nyíregyháza;7,40;7,55;0,00;7,60;7,45
+Tóth László;Győr;7,82;7,95;0,00;7,70;8,30
+Balla Dominik;Kecskemét;6,10;6,25;6,15;6,30;6,20
+Simon Attila;Eger;7,30;7,45;7,20;7,55;7,40
+Fekete Dávid;Békéscsaba;5,80;5,95;6,10;0,00;6,00
+Varga János;Szombathely;0,00;0,00;5,40;5,65;5,50
+Nagy Péter Richárd;Debrecen;6,54;6,78;0,00;6,42;6,90
+Molnár Bence;Cegléd;6,15;6,22;6,40;6,10;6,35
+Király Zsolt;Veszprém;7,15;7,30;7,20;0,00;7,25
+Kiss Balázs;Miskolc;0,00;7,10;6,85;7,25;0,00
+Dudás Bertalan;Szombathely;5,95;6,10;5,80;6,05;0,00
+Lukács Márk;Veszprém;6,20;6,35;0,00;6,25;6,45
+Papp Krisztián;Győr;7,25;0,00;7,40;7,35;7,30
+Gulyás Iván;Salgótarján;5,10;5,25;0,00;5,30;5,15
+Horváth Milán;Nyíregyháza;6,75;6,80;6,95;7,10;6,88
+Takács Roland;Békéscsaba;6,40;6,55;6,35;6,60;6,45
+Bodnár Szabolcs;Miskolc;6,65;6,75;6,85;0,00;6,70
+Sárközi Jenő;Eger;6,85;6,95;7,05;6,75;7,00
+Tóth Gábor;Szeged;5,45;5,60;5,30;0,00;5,55
+Szalai Tamás;Miskolc;6,45;6,60;6,30;6,55;6,50
+Rácz Erik;Kaposvár;7,60;7,75;7,50;8,45;0,00
+Kocsis Ferenc Dominik;Budapest;6,90;7,00;7,15;6,85;7,05
+Farkas Adám;Budapest;7,05;7,15;7,00;0,00;7,20
+Balogh Zoltán;Kecskemét;5,90;0,00;6,10;5,85;6,05
