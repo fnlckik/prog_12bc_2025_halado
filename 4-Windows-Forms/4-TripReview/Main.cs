@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace TripReview
 {
@@ -42,8 +41,26 @@ namespace TripReview
                     ratings.Add(r);
                 }
             }
-            TravellersComboBox.DataSource = null;
-            TravellersComboBox.DataSource = ratings;
+            //TravellersComboBox.DataSource = null;
+            //TravellersComboBox.DataSource = ratings;
+            //RatingsDataGrid.Columns.Clear();
+            //RatingsDataGrid.DataSource = ratings;
+            ShowRatings();
+        }
+
+        private void ShowRatings()
+        {
+            RatingsDataGrid.Columns.Clear();
+            RatingsDataGrid.Columns.Add("TripName", "Utazás célja");
+            RatingsDataGrid.Columns.Add("TravellerId", "Utazó azonosítója");
+            RatingsDataGrid.Columns.Add("ReviewDate", "Értékelés dátuma");
+            RatingsDataGrid.Columns.Add("ActivitiesRating", "Programok");
+            RatingsDataGrid.Columns.Add("LocationRating", "Helyszín");
+            RatingsDataGrid.Columns.Add("Comment", "Szöveges értékelés");
+            foreach (var r in ratings)
+            {
+                RatingsDataGrid.Rows.Add();
+            }
         }
 
         private void LoadTravellers(string path)

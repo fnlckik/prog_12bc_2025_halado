@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.EditButton = new System.Windows.Forms.Button();
@@ -46,8 +47,13 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ExitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.RatingsDataGrid = new System.Windows.Forms.DataGridView();
+            this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AgeColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.GenderColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1.SuspendLayout();
             this.menuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RatingsDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -201,11 +207,63 @@
             // 
             this.openFileDialog.FileName = "openFileDialog";
             // 
+            // RatingsDataGrid
+            // 
+            this.RatingsDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RatingsDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.RatingsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.RatingsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NameColumn,
+            this.AgeColumn,
+            this.GenderColumn});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.RatingsDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
+            this.RatingsDataGrid.Location = new System.Drawing.Point(476, 41);
+            this.RatingsDataGrid.Name = "RatingsDataGrid";
+            this.RatingsDataGrid.Size = new System.Drawing.Size(696, 449);
+            this.RatingsDataGrid.TabIndex = 6;
+            // 
+            // NameColumn
+            // 
+            this.NameColumn.HeaderText = "Név";
+            this.NameColumn.Name = "NameColumn";
+            this.NameColumn.Width = 58;
+            // 
+            // AgeColumn
+            // 
+            this.AgeColumn.HeaderText = "Életkor";
+            this.AgeColumn.Items.AddRange(new object[] {
+            "18-26",
+            "27-36",
+            "37-46",
+            "47-56",
+            "57-65",
+            "65-"});
+            this.AgeColumn.Name = "AgeColumn";
+            this.AgeColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.AgeColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.AgeColumn.Width = 77;
+            // 
+            // GenderColumn
+            // 
+            this.GenderColumn.HeaderText = "Porszívó?";
+            this.GenderColumn.Name = "GenderColumn";
+            this.GenderColumn.Width = 76;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 503);
+            this.Controls.Add(this.RatingsDataGrid);
             this.Controls.Add(this.TravellersComboBox);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -220,6 +278,7 @@
             this.groupBox1.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RatingsDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,6 +302,10 @@
         private System.Windows.Forms.ToolStripMenuItem TravellersMenuItem;
         private System.Windows.Forms.ToolStripMenuItem RatingsMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.DataGridView RatingsDataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn AgeColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn GenderColumn;
     }
 }
 
