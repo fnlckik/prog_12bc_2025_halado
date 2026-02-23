@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.EditButton = new System.Windows.Forms.Button();
@@ -189,6 +188,7 @@
             this.SaveMenuItem.Name = "SaveMenuItem";
             this.SaveMenuItem.Size = new System.Drawing.Size(182, 34);
             this.SaveMenuItem.Text = "Mentés";
+            this.SaveMenuItem.Click += new System.EventHandler(this.SaveMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -209,6 +209,8 @@
             // 
             // RatingsDataGrid
             // 
+            this.RatingsDataGrid.AllowUserToAddRows = false;
+            this.RatingsDataGrid.AllowUserToOrderColumns = true;
             this.RatingsDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -218,17 +220,9 @@
             this.NameColumn,
             this.AgeColumn,
             this.GenderColumn});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.RatingsDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
-            this.RatingsDataGrid.Location = new System.Drawing.Point(476, 41);
+            this.RatingsDataGrid.Location = new System.Drawing.Point(417, 41);
             this.RatingsDataGrid.Name = "RatingsDataGrid";
-            this.RatingsDataGrid.Size = new System.Drawing.Size(696, 449);
+            this.RatingsDataGrid.Size = new System.Drawing.Size(755, 444);
             this.RatingsDataGrid.TabIndex = 6;
             // 
             // NameColumn
@@ -262,7 +256,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 503);
+            this.ClientSize = new System.Drawing.Size(1184, 498);
             this.Controls.Add(this.RatingsDataGrid);
             this.Controls.Add(this.TravellersComboBox);
             this.Controls.Add(this.groupBox1);

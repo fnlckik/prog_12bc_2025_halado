@@ -17,8 +17,8 @@ namespace TripReview
             openFileDialog = new OpenFileDialog();
             string path = GetParentPath(Application.StartupPath, 2) + "\\Data";
             openFileDialog.InitialDirectory = path;
-            //LoadTravellers("../../Data/utasok.txt");
-            //LoadReviews("../../Data/ertekelesek.csv");
+            LoadTravellers("../../Data/utasok.txt");
+            LoadReviews("../../Data/ertekelesek.csv");
         }
 
         private void LoadReviews(string path)
@@ -57,9 +57,10 @@ namespace TripReview
             RatingsDataGrid.Columns.Add("ActivitiesRating", "Programok");
             RatingsDataGrid.Columns.Add("LocationRating", "Helyszín");
             RatingsDataGrid.Columns.Add("Comment", "Szöveges értékelés");
-            foreach (var r in ratings)
+            foreach (Rating r in ratings)
             {
-                RatingsDataGrid.Rows.Add();
+                string date = r.ReviewDate.ToShortDateString();
+                RatingsDataGrid.Rows.Add(r.TripName, r.TravellerId, date, r.ActivitiesRating, r.LocationRating, r.Comment);
             }
         }
 
@@ -122,6 +123,34 @@ namespace TripReview
             DialogResult result = openFileDialog.ShowDialog();
             if (result != DialogResult.OK) return;
             LoadReviews(openFileDialog.FileName);
+        }
+
+        private void SaveMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            string path = GetParentPath(Application.StartupPath, 2) + "\\Data";
+            dialog.InitialDirectory = path;
+            DialogResult result = dialog.ShowDialog();
+            if (result != DialogResult.OK) return;
+            string fileName = dialog.FileName;
+            using (StreamWriter sw = new StreamWriter(fileName))
+            {
+                foreach (DataGridViewRow row in RatingsDataGrid.Rows)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        if (cell.ColumnIndex == RatingsDataGrid.ColumnCount - 1)
+                        {
+                            sw.Write(cell.Value);
+                        }
+                        else
+                        {
+                            sw.Write(cell.Value + ";");
+                        }
+                    }
+                    sw.WriteLine();
+                }
+            }
         }
     }
 }
