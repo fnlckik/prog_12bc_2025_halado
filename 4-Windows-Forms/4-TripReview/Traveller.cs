@@ -4,10 +4,10 @@ namespace TripReview
 {
     internal class Traveller
     {
-        public Traveller(int iD, string nev, string email, DateTime birthDate)
+        public Traveller(int iD, string name, string email, DateTime birthDate)
         {
             ID = iD;
-            Name = nev;
+            Name = name;
             Email = email;
             BirthDate = birthDate;
         }

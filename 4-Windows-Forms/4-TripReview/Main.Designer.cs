@@ -89,6 +89,7 @@
             this.EditButton.TabIndex = 4;
             this.EditButton.Text = "Szerkesztés";
             this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // panel1
             // 
@@ -136,6 +137,7 @@
             this.TravellersComboBox.Name = "TravellersComboBox";
             this.TravellersComboBox.Size = new System.Drawing.Size(312, 28);
             this.TravellersComboBox.TabIndex = 4;
+            this.TravellersComboBox.SelectedIndexChanged += new System.EventHandler(this.TravellersComboBox_SelectedIndexChanged);
             // 
             // menuStrip
             // 
@@ -165,7 +167,7 @@
             this.RatingsMenuItem});
             this.OpenMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("OpenMenuItem.Image")));
             this.OpenMenuItem.Name = "OpenMenuItem";
-            this.OpenMenuItem.Size = new System.Drawing.Size(182, 34);
+            this.OpenMenuItem.Size = new System.Drawing.Size(225, 34);
             this.OpenMenuItem.Text = "Megnyitás";
             // 
             // TravellersMenuItem
@@ -186,20 +188,21 @@
             // 
             this.SaveMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("SaveMenuItem.Image")));
             this.SaveMenuItem.Name = "SaveMenuItem";
-            this.SaveMenuItem.Size = new System.Drawing.Size(182, 34);
+            this.SaveMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.SaveMenuItem.Size = new System.Drawing.Size(225, 34);
             this.SaveMenuItem.Text = "Mentés";
             this.SaveMenuItem.Click += new System.EventHandler(this.SaveMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(179, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(222, 6);
             // 
             // ExitMenuItem
             // 
             this.ExitMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ExitMenuItem.Image")));
             this.ExitMenuItem.Name = "ExitMenuItem";
-            this.ExitMenuItem.Size = new System.Drawing.Size(182, 34);
+            this.ExitMenuItem.Size = new System.Drawing.Size(225, 34);
             this.ExitMenuItem.Text = "Bezárás";
             this.ExitMenuItem.Click += new System.EventHandler(this.ExitMenuItem_Click);
             // 
@@ -222,6 +225,7 @@
             this.GenderColumn});
             this.RatingsDataGrid.Location = new System.Drawing.Point(417, 41);
             this.RatingsDataGrid.Name = "RatingsDataGrid";
+            this.RatingsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.RatingsDataGrid.Size = new System.Drawing.Size(755, 444);
             this.RatingsDataGrid.TabIndex = 6;
             // 

@@ -51,6 +51,7 @@ namespace TripReview
         private void ShowRatings()
         {
             RatingsDataGrid.Columns.Clear();
+            RatingsDataGrid.Columns.Add("ID", "Értékelés azonosítója");
             RatingsDataGrid.Columns.Add("TripName", "Utazás célja");
             RatingsDataGrid.Columns.Add("TravellerId", "Utazó azonosítója");
             RatingsDataGrid.Columns.Add("ReviewDate", "Értékelés dátuma");
@@ -60,8 +61,11 @@ namespace TripReview
             foreach (Rating r in ratings)
             {
                 string date = r.ReviewDate.ToShortDateString();
-                RatingsDataGrid.Rows.Add(r.TripName, r.TravellerId, date, r.ActivitiesRating, r.LocationRating, r.Comment);
+                RatingsDataGrid.Rows.Add(r.ID, r.TripName, r.TravellerId, date, r.ActivitiesRating, r.LocationRating, r.Comment);
             }
+            RatingsDataGrid.Columns["ID"].Visible = false;
+            // Miért van alapból kiválasztott sor?
+            RatingsDataGrid.SelectionChanged += new EventHandler(RatingsDataGrid_SelectionChanged);
         }
 
         private void LoadTravellers(string path)
@@ -83,7 +87,6 @@ namespace TripReview
             }
             TravellersComboBox.DataSource = travellers;
             TravellersComboBox.SelectedIndex = -1;
-            TravellersComboBox.SelectedIndexChanged += TravellersComboBox_SelectedIndexChanged;
         }
 
         private void TravellersComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -94,6 +97,7 @@ namespace TripReview
             EmailLabel.Text = "Email: " + t.Email;
             //DateLabel.Text = "Születési dátum: " + t.BirthDate.ToShortDateString();
             DateLabel.Text = $"Születési dátum: {t.BirthDate:d}";
+            EditButton.Enabled = true;
         }
 
         private string GetParentPath(string path, int n)
@@ -130,13 +134,18 @@ namespace TripReview
             SaveFileDialog dialog = new SaveFileDialog();
             string path = GetParentPath(Application.StartupPath, 2) + "\\Data";
             dialog.InitialDirectory = path;
+            dialog.Filter = "CSV fájl|*.csv";
             DialogResult result = dialog.ShowDialog();
             if (result != DialogResult.OK) return;
             string fileName = dialog.FileName;
             using (StreamWriter sw = new StreamWriter(fileName))
             {
+                sw.WriteLine("Fejlec");
+                //int counter = 0;
                 foreach (DataGridViewRow row in RatingsDataGrid.Rows)
                 {
+                    //sw.Write(++counter + ";");
+                    //sw.Write(row.Index + 1 + ";");
                     foreach (DataGridViewCell cell in row.Cells)
                     {
                         if (cell.ColumnIndex == RatingsDataGrid.ColumnCount - 1)
@@ -151,6 +160,23 @@ namespace TripReview
                     sw.WriteLine();
                 }
             }
+        }
+
+        private void RatingsDataGrid_SelectionChanged(object sender, EventArgs e)
+        {
+            if (RatingsDataGrid.SelectedRows.Count == 0) return;
+            DataGridViewRow row = RatingsDataGrid.SelectedRows[0]; // legutóbb kijelölt
+            int travellerID = (int)row.Cells["TravellerID"].Value;
+            TravellersComboBox.SelectedItem = travellers.FirstOrDefault(t => t.ID == travellerID);
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            Traveller editedTraveller = TravellersComboBox.SelectedItem as Traveller;
+            EditForm edit = new EditForm(editedTraveller);
+            DialogResult result = edit.ShowDialog();
+            // 1. eset: Bezárták (X)
+            // 2. eset: Módosítani kell a travellers listát.
         }
     }
 }
