@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataForm));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.MagnitudeLabel = new System.Windows.Forms.Label();
@@ -41,10 +42,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.MaterialDataGrid = new System.Windows.Forms.DataGridView();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.DataMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.RandomMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TopNumUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BottomNumUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaterialDataGrid)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -168,21 +175,70 @@
             // 
             // panel1
             // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel1.Location = new System.Drawing.Point(207, 50);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 178);
             this.panel1.TabIndex = 5;
+            // 
+            // MaterialDataGrid
+            // 
+            this.MaterialDataGrid.AllowUserToAddRows = false;
+            this.MaterialDataGrid.AllowUserToDeleteRows = false;
+            this.MaterialDataGrid.AllowUserToResizeColumns = false;
+            this.MaterialDataGrid.AllowUserToResizeRows = false;
+            this.MaterialDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.MaterialDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MaterialDataGrid.ColumnHeadersVisible = false;
+            this.MaterialDataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.MaterialDataGrid.Location = new System.Drawing.Point(425, 37);
+            this.MaterialDataGrid.Name = "MaterialDataGrid";
+            this.MaterialDataGrid.RowHeadersVisible = false;
+            this.MaterialDataGrid.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.MaterialDataGrid.Size = new System.Drawing.Size(472, 384);
+            this.MaterialDataGrid.TabIndex = 6;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.DataMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(909, 36);
+            this.menuStrip1.TabIndex = 7;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // DataMenuItem
+            // 
+            this.DataMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.RandomMenuItem});
+            this.DataMenuItem.Name = "DataMenuItem";
+            this.DataMenuItem.Size = new System.Drawing.Size(88, 32);
+            this.DataMenuItem.Text = "Adatok";
+            // 
+            // RandomMenuItem
+            // 
+            this.RandomMenuItem.Name = "RandomMenuItem";
+            this.RandomMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.RandomMenuItem.Size = new System.Drawing.Size(227, 32);
+            this.RandomMenuItem.Text = "Random";
+            this.RandomMenuItem.Click += new System.EventHandler(this.RandomMenuItem_Click);
             // 
             // DataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(909, 435);
+            this.Controls.Add(this.MaterialDataGrid);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "DataForm";
@@ -193,7 +249,11 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TopNumUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BottomNumUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaterialDataGrid)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -211,6 +271,10 @@
         private System.Windows.Forms.NumericUpDown BottomNumUpDown;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView MaterialDataGrid;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem DataMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem RandomMenuItem;
     }
 }
 
