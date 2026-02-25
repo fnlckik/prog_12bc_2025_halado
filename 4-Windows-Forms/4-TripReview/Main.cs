@@ -11,14 +11,12 @@ namespace TripReview
         private List<Traveller> travellers = new List<Traveller>();
         private List<Rating> ratings = new List<Rating>();
 
+        // 1. Konstruktor: adattagok létrejönnek a memóriában
+        // 2. Load: grafikus elemek is létrejönnek
+        // 3. Show: grafikus elemeket látja a felhasználó
         public Main()
         {
             InitializeComponent();
-            openFileDialog = new OpenFileDialog();
-            string path = GetParentPath(Application.StartupPath, 2) + "\\Data";
-            openFileDialog.InitialDirectory = path;
-            LoadTravellers("../../Data/utasok.txt");
-            LoadReviews("../../Data/ertekelesek.csv");
         }
 
         private void LoadReviews(string path)
@@ -50,6 +48,7 @@ namespace TripReview
 
         private void ShowRatings()
         {
+            RatingsDataGrid.SelectionChanged -= RatingsDataGrid_SelectionChanged;
             RatingsDataGrid.Columns.Clear();
             RatingsDataGrid.Columns.Add("ID", "Értékelés azonosítója");
             RatingsDataGrid.Columns.Add("TripName", "Utazás célja");
@@ -65,11 +64,13 @@ namespace TripReview
             }
             RatingsDataGrid.Columns["ID"].Visible = false;
             // Miért van alapból kiválasztott sor?
-            RatingsDataGrid.SelectionChanged += new EventHandler(RatingsDataGrid_SelectionChanged);
+            RatingsDataGrid.ClearSelection();
+            RatingsDataGrid.SelectionChanged += RatingsDataGrid_SelectionChanged;
         }
 
         private void LoadTravellers(string path)
         {
+            TravellersComboBox.SelectedIndexChanged -= TravellersComboBox_SelectedIndexChanged;
             using (StreamReader sr = new StreamReader(path))
             {
                 travellers.Clear();
@@ -87,6 +88,7 @@ namespace TripReview
             }
             TravellersComboBox.DataSource = travellers;
             TravellersComboBox.SelectedIndex = -1;
+            TravellersComboBox.SelectedIndexChanged += TravellersComboBox_SelectedIndexChanged;
         }
 
         private void TravellersComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -176,7 +178,20 @@ namespace TripReview
             EditForm edit = new EditForm(editedTraveller);
             DialogResult result = edit.ShowDialog();
             // 1. eset: Bezárták (X)
+            if (result != DialogResult.OK) return;
             // 2. eset: Módosítani kell a travellers listát.
+            travellers[TravellersComboBox.SelectedIndex] = edit.EditedTraveller;
+            TravellersComboBox.DataSource = null;
+            TravellersComboBox.DataSource = travellers;
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            openFileDialog = new OpenFileDialog();
+            string path = GetParentPath(Application.StartupPath, 2) + "\\Data";
+            openFileDialog.InitialDirectory = path;
+            LoadTravellers("../../Data/utasok.txt");
+            LoadReviews("../../Data/ertekelesek.csv");
         }
     }
 }

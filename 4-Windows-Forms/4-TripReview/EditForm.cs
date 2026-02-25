@@ -29,7 +29,8 @@ namespace TripReview
             string email = EmailTextBox.Text;
             DateTime birthDate = BirthDateTime.Value;
             EditedTraveller = new Traveller(EditedTraveller.ID, name, email, birthDate);
-            Close();
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

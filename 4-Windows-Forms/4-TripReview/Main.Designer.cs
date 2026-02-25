@@ -137,7 +137,6 @@
             this.TravellersComboBox.Name = "TravellersComboBox";
             this.TravellersComboBox.Size = new System.Drawing.Size(312, 28);
             this.TravellersComboBox.TabIndex = 4;
-            this.TravellersComboBox.SelectedIndexChanged += new System.EventHandler(this.TravellersComboBox_SelectedIndexChanged);
             // 
             // menuStrip
             // 
@@ -145,7 +144,7 @@
             this.fájlToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1184, 38);
+            this.menuStrip.Size = new System.Drawing.Size(1184, 36);
             this.menuStrip.TabIndex = 5;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -157,7 +156,7 @@
             this.toolStripSeparator1,
             this.ExitMenuItem});
             this.fájlToolStripMenuItem.Name = "fájlToolStripMenuItem";
-            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(55, 34);
+            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(53, 32);
             this.fájlToolStripMenuItem.Text = "Fájl";
             // 
             // OpenMenuItem
@@ -167,20 +166,20 @@
             this.RatingsMenuItem});
             this.OpenMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("OpenMenuItem.Image")));
             this.OpenMenuItem.Name = "OpenMenuItem";
-            this.OpenMenuItem.Size = new System.Drawing.Size(225, 34);
+            this.OpenMenuItem.Size = new System.Drawing.Size(216, 32);
             this.OpenMenuItem.Text = "Megnyitás";
             // 
             // TravellersMenuItem
             // 
             this.TravellersMenuItem.Name = "TravellersMenuItem";
-            this.TravellersMenuItem.Size = new System.Drawing.Size(236, 34);
+            this.TravellersMenuItem.Size = new System.Drawing.Size(225, 32);
             this.TravellersMenuItem.Text = "Utasok (txt)";
             this.TravellersMenuItem.Click += new System.EventHandler(this.TravellersMenuItem_Click);
             // 
             // RatingsMenuItem
             // 
             this.RatingsMenuItem.Name = "RatingsMenuItem";
-            this.RatingsMenuItem.Size = new System.Drawing.Size(236, 34);
+            this.RatingsMenuItem.Size = new System.Drawing.Size(225, 32);
             this.RatingsMenuItem.Text = "Értékelések (csv)";
             this.RatingsMenuItem.Click += new System.EventHandler(this.RatingsMenuItem_Click);
             // 
@@ -189,20 +188,20 @@
             this.SaveMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("SaveMenuItem.Image")));
             this.SaveMenuItem.Name = "SaveMenuItem";
             this.SaveMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.SaveMenuItem.Size = new System.Drawing.Size(225, 34);
+            this.SaveMenuItem.Size = new System.Drawing.Size(216, 32);
             this.SaveMenuItem.Text = "Mentés";
             this.SaveMenuItem.Click += new System.EventHandler(this.SaveMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(222, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(213, 6);
             // 
             // ExitMenuItem
             // 
             this.ExitMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ExitMenuItem.Image")));
             this.ExitMenuItem.Name = "ExitMenuItem";
-            this.ExitMenuItem.Size = new System.Drawing.Size(225, 34);
+            this.ExitMenuItem.Size = new System.Drawing.Size(216, 32);
             this.ExitMenuItem.Text = "Bezárás";
             this.ExitMenuItem.Click += new System.EventHandler(this.ExitMenuItem_Click);
             // 
@@ -272,6 +271,7 @@
             this.MinimumSize = new System.Drawing.Size(1200, 542);
             this.Name = "Main";
             this.Text = "TripReview";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.menuStrip.ResumeLayout(false);
