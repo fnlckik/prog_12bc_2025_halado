@@ -46,6 +46,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.DataMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RandomMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TopNumUpDown)).BeginInit();
@@ -212,7 +213,8 @@
             // DataMenuItem
             // 
             this.DataMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.RandomMenuItem});
+            this.RandomMenuItem,
+            this.FileMenuItem});
             this.DataMenuItem.Name = "DataMenuItem";
             this.DataMenuItem.Size = new System.Drawing.Size(88, 32);
             this.DataMenuItem.Text = "Adatok";
@@ -224,6 +226,13 @@
             this.RandomMenuItem.Size = new System.Drawing.Size(227, 32);
             this.RandomMenuItem.Text = "Random";
             this.RandomMenuItem.Click += new System.EventHandler(this.RandomMenuItem_Click);
+            // 
+            // FileMenuItem
+            // 
+            this.FileMenuItem.Name = "FileMenuItem";
+            this.FileMenuItem.Size = new System.Drawing.Size(227, 32);
+            this.FileMenuItem.Text = "Fájlból";
+            this.FileMenuItem.Click += new System.EventHandler(this.FileMenuItem_Click);
             // 
             // DataForm
             // 
@@ -275,6 +284,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem DataMenuItem;
         private System.Windows.Forms.ToolStripMenuItem RandomMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem FileMenuItem;
     }
 }
 
