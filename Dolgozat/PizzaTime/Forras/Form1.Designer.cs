@@ -129,6 +129,7 @@
             this.DeleteButton.Text = "Törlés";
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Visible = false;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // AddButton
             // 
@@ -260,6 +261,7 @@
             this.PizzaListBox.Name = "PizzaListBox";
             this.PizzaListBox.Size = new System.Drawing.Size(305, 244);
             this.PizzaListBox.TabIndex = 7;
+            this.PizzaListBox.SelectedIndexChanged += new System.EventHandler(this.PizzaListBox_SelectedIndexChanged);
             // 
             // SaveButton
             // 
@@ -279,12 +281,13 @@
             this.LoadButton.TabIndex = 8;
             this.LoadButton.Text = "Betöltés";
             this.LoadButton.UseVisualStyleBackColor = true;
+            this.LoadButton.Click += new System.EventHandler(this.LoadButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 535);
+            this.ClientSize = new System.Drawing.Size(748, 525);
             this.Controls.Add(this.LoadButton);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.PizzaListBox);
