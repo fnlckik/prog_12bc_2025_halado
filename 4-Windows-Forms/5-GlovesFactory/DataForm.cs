@@ -25,24 +25,29 @@ namespace GlovesFactory
                 data.Add(Generate(r));
             }
             ShowData();
-            Control.ControlCollection controls = this.Controls;
-            foreach (Control control in controls)
-            {
-                control.Enabled = true;
-            }
         }
 
         private void ShowData()
         {
             MaterialDataGrid.Columns.Clear();
             MaterialDataGrid.ColumnCount = 8;
-            MaterialDataGrid.RowCount = (int)Math.Ceiling(1d * 101 / 8);
+            MaterialDataGrid.RowCount = (int)Math.Ceiling(1d * data.Count / 8);
             for (int i = 0; i < data.Count; i++)
             {
                 MaterialDataGrid.Rows[i / 8].Cells[i % 8].Value = data[i];
                 MaterialDataGrid.Rows[i / 8].Height = MaterialDataGrid.Columns[i % 8].Width;
             }
+            EnableControls();
             CalculateStats();
+        }
+
+        private void EnableControls()
+        {
+            Control.ControlCollection controls = this.Controls;
+            foreach (Control control in controls)
+            {
+                control.Enabled = true;
+            }
         }
 
         private void CalculateStats()
@@ -68,6 +73,8 @@ namespace GlovesFactory
                 // Index: 2 3 -> n/2 - 1 és n/2
                 MedianLabel.Text = "Medián: " + (ordered[n / 2 - 1] + ordered[n / 2]) / 2.0;
             }
+            BottomNumUpDown.Value = data.Min();
+            TopNumUpDown.Value = data.Max();
         }
 
         // 25% 50-59; 70% 60-89; 5% 90-99
@@ -88,6 +95,29 @@ namespace GlovesFactory
             if (result != DialogResult.OK) return;
             string fileName = dialog.FileName;
             using (StreamReader sr = new StreamReader(fileName))
+            {
+                string[] temp = sr.ReadLine().Split();
+                data = temp.Select(x => int.Parse(x)).ToList();
+            }
+            ShowData();
+        }
+
+        private void ExtremeCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ExtremeCheckBox.Checked)
+            {
+                int min = (int)BottomNumUpDown.Value;
+                int max = (int)TopNumUpDown.Value;
+                foreach (DataGridViewRow row in MaterialDataGrid.Rows)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        // Vizsgálni kéne a cella értékét.
+                        cell.Style.BackColor = Color.LightPink;
+                    }
+                }
+            }
+            else
             {
 
             }

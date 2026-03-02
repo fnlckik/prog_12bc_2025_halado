@@ -141,6 +141,7 @@
             this.ExtremeCheckBox.TabIndex = 4;
             this.ExtremeCheckBox.Text = "Kiugró értékek";
             this.ExtremeCheckBox.UseVisualStyleBackColor = true;
+            this.ExtremeCheckBox.CheckedChanged += new System.EventHandler(this.ExtremeCheckBox_CheckedChanged);
             // 
             // TopNumUpDown
             // 
@@ -206,7 +207,7 @@
             this.DataMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(909, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(909, 38);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -216,21 +217,21 @@
             this.RandomMenuItem,
             this.FileMenuItem});
             this.DataMenuItem.Name = "DataMenuItem";
-            this.DataMenuItem.Size = new System.Drawing.Size(88, 32);
+            this.DataMenuItem.Size = new System.Drawing.Size(91, 34);
             this.DataMenuItem.Text = "Adatok";
             // 
             // RandomMenuItem
             // 
             this.RandomMenuItem.Name = "RandomMenuItem";
             this.RandomMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.RandomMenuItem.Size = new System.Drawing.Size(227, 32);
+            this.RandomMenuItem.Size = new System.Drawing.Size(236, 34);
             this.RandomMenuItem.Text = "Random";
             this.RandomMenuItem.Click += new System.EventHandler(this.RandomMenuItem_Click);
             // 
             // FileMenuItem
             // 
             this.FileMenuItem.Name = "FileMenuItem";
-            this.FileMenuItem.Size = new System.Drawing.Size(227, 32);
+            this.FileMenuItem.Size = new System.Drawing.Size(236, 34);
             this.FileMenuItem.Text = "Fájlból";
             this.FileMenuItem.Click += new System.EventHandler(this.FileMenuItem_Click);
             // 
