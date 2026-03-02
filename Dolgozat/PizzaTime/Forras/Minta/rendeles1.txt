@@ -1,0 +1,4 @@
+Farkas Norbert;Kossuth Ferenc utca 32.
+Magyaros;1;2
+Songoku;0;5
+Négysajtos;0;1

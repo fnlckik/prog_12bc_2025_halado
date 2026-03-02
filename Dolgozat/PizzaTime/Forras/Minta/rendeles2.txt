@@ -1,0 +1,6 @@
+Polgár Jenő;Polgármesteri hivatal
+Magyaros;0;1
+Négysajtos;0;2
+Songoku;1;1
+Négysajtos;1;1
+Magyaros;1;4
