@@ -24,10 +24,11 @@ namespace GlovesFactory
             {
                 data.Add(Generate(r));
             }
-            ShowData();
+            EnableControls();
+            CategoryComboBox.SelectedIndex = 0;
         }
 
-        private void ShowData()
+        private void ShowData(List<int> data)
         {
             MaterialDataGrid.Columns.Clear();
             MaterialDataGrid.ColumnCount = 8;
@@ -37,16 +38,22 @@ namespace GlovesFactory
                 MaterialDataGrid.Rows[i / 8].Cells[i % 8].Value = data[i];
                 MaterialDataGrid.Rows[i / 8].Height = MaterialDataGrid.Columns[i % 8].Width;
             }
-            EnableControls();
             CalculateStats();
         }
 
+        // 50-54; 55-59; 60-64; ...; 95-99
         private void EnableControls()
         {
             Control.ControlCollection controls = this.Controls;
             foreach (Control control in controls)
             {
                 control.Enabled = true;
+            }
+            CategoryComboBox.Items.Clear();
+            CategoryComboBox.Items.Add("Minden adat..");
+            for (int i = 50; i <= 95; i += 5)
+            {
+                CategoryComboBox.Items.Add($"{i} - {i+4} m\u00B2");
             }
         }
 
@@ -99,28 +106,49 @@ namespace GlovesFactory
                 string[] temp = sr.ReadLine().Split();
                 data = temp.Select(x => int.Parse(x)).ToList();
             }
-            ShowData();
+            EnableControls();
+            CategoryComboBox.SelectedIndex = 0;
         }
 
         private void ExtremeCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (ExtremeCheckBox.Checked)
+            int min = (int)BottomNumUpDown.Value;
+            int max = (int)TopNumUpDown.Value;
+            foreach (DataGridViewRow row in MaterialDataGrid.Rows)
             {
-                int min = (int)BottomNumUpDown.Value;
-                int max = (int)TopNumUpDown.Value;
-                foreach (DataGridViewRow row in MaterialDataGrid.Rows)
+                foreach (DataGridViewCell cell in row.Cells)
                 {
-                    foreach (DataGridViewCell cell in row.Cells)
-                    {
-                        // Vizsgálni kéne a cella értékét.
-                        cell.Style.BackColor = Color.LightPink;
-                    }
+                    ColorCell(cell, min, max);
                 }
             }
-            else
-            {
+        }
 
+        private void ColorCell(DataGridViewCell cell, int min, int max)
+        {
+            cell.Style.BackColor = Color.White;
+            if (!ExtremeCheckBox.Checked) return;
+            if (cell.Value != null && Convert.ToInt32(cell.Value) < min)
+            {
+                cell.Style.BackColor = Color.LightPink;
             }
+            else if (cell.Value != null && Convert.ToInt32(cell.Value) > max)
+            {
+                cell.Style.BackColor = Color.LightGreen;
+            }
+        }
+
+        private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CategoryComboBox.SelectedIndex == 0)
+            {
+                ShowData(data);
+                return;
+            }
+            string category = CategoryComboBox.SelectedItem.ToString();
+            int min = int.Parse(category.Substring(0, 2)); // Take(2)
+            int max = min + 4;
+            var filtered = data.Where(x => min <= x && x <= max).ToList();
+            ShowData(filtered);
         }
     }
 }

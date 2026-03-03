@@ -47,6 +47,7 @@
             this.DataMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RandomMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CategoryComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TopNumUpDown)).BeginInit();
@@ -67,6 +68,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.CategoryComboBox);
             this.groupBox1.Controls.Add(this.MagnitudeLabel);
             this.groupBox1.Controls.Add(this.MedianLabel);
             this.groupBox1.Controls.Add(this.SpreadLabel);
@@ -149,6 +151,7 @@
             this.TopNumUpDown.Name = "TopNumUpDown";
             this.TopNumUpDown.Size = new System.Drawing.Size(80, 26);
             this.TopNumUpDown.TabIndex = 3;
+            this.TopNumUpDown.ValueChanged += new System.EventHandler(this.ExtremeCheckBox_CheckedChanged);
             // 
             // BottomNumUpDown
             // 
@@ -156,6 +159,7 @@
             this.BottomNumUpDown.Name = "BottomNumUpDown";
             this.BottomNumUpDown.Size = new System.Drawing.Size(80, 26);
             this.BottomNumUpDown.TabIndex = 2;
+            this.BottomNumUpDown.ValueChanged += new System.EventHandler(this.ExtremeCheckBox_CheckedChanged);
             // 
             // label3
             // 
@@ -235,6 +239,16 @@
             this.FileMenuItem.Text = "Fájlból";
             this.FileMenuItem.Click += new System.EventHandler(this.FileMenuItem_Click);
             // 
+            // CategoryComboBox
+            // 
+            this.CategoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CategoryComboBox.FormattingEnabled = true;
+            this.CategoryComboBox.Location = new System.Drawing.Point(148, 43);
+            this.CategoryComboBox.Name = "CategoryComboBox";
+            this.CategoryComboBox.Size = new System.Drawing.Size(188, 28);
+            this.CategoryComboBox.TabIndex = 4;
+            this.CategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.CategoryComboBox_SelectedIndexChanged);
+            // 
             // DataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -286,6 +300,7 @@
         private System.Windows.Forms.ToolStripMenuItem DataMenuItem;
         private System.Windows.Forms.ToolStripMenuItem RandomMenuItem;
         private System.Windows.Forms.ToolStripMenuItem FileMenuItem;
+        private System.Windows.Forms.ComboBox CategoryComboBox;
     }
 }
 
