@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace GlovesFactory
 {
@@ -55,6 +57,7 @@ namespace GlovesFactory
             {
                 CategoryComboBox.Items.Add($"{i} - {i+4} m\u00B2");
             }
+            StatsMenuItem.Enabled = true;
         }
 
         private void CalculateStats()
@@ -149,6 +152,41 @@ namespace GlovesFactory
             int max = min + 4;
             var filtered = data.Where(x => min <= x && x <= max).ToList();
             ShowData(filtered);
+        }
+
+        private void ColumnMenuItem_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(((int)SeriesChartType.Column).ToString());
+            List<int> selected = GetSelection();
+            if (selected.Count == 0) return;
+            DiagramForm diagram = new DiagramForm(selected, SeriesChartType.Column);
+            diagram.Show();
+        }
+
+        private void LineMenuItem_Click(object sender, EventArgs e)
+        {
+            List<int> selected = GetSelection();
+            if (selected.Count == 0) return;
+            DiagramForm diagram = new DiagramForm(selected, SeriesChartType.Line);
+            diagram.Show();
+        }
+
+        private List<int> GetSelection()
+        {
+            var temp = MaterialDataGrid.SelectedCells;
+            List<int> result = new List<int>();
+            foreach (DataGridViewCell cell in temp)
+            {
+                if (cell.Value != null)
+                {
+                    result.Add((int)cell.Value);
+                }
+            }
+            result.Reverse();
+            // selected.Reverse<int>().ToList()
+            // (selected as IEnumerable<int>).Reverse().ToList()
+            // Enumerable.Reverse(selected).ToList()
+            return result;
         }
     }
 }

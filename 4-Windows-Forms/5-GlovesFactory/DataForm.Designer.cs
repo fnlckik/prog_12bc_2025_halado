@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataForm));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CategoryComboBox = new System.Windows.Forms.ComboBox();
             this.MagnitudeLabel = new System.Windows.Forms.Label();
             this.MedianLabel = new System.Windows.Forms.Label();
             this.SpreadLabel = new System.Windows.Forms.Label();
@@ -47,7 +48,10 @@
             this.DataMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RandomMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CategoryComboBox = new System.Windows.Forms.ComboBox();
+            this.StatsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DiagramMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ColumnMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LineMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TopNumUpDown)).BeginInit();
@@ -81,6 +85,16 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Statisztikák";
+            // 
+            // CategoryComboBox
+            // 
+            this.CategoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CategoryComboBox.FormattingEnabled = true;
+            this.CategoryComboBox.Location = new System.Drawing.Point(148, 43);
+            this.CategoryComboBox.Name = "CategoryComboBox";
+            this.CategoryComboBox.Size = new System.Drawing.Size(188, 28);
+            this.CategoryComboBox.TabIndex = 4;
+            this.CategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.CategoryComboBox_SelectedIndexChanged);
             // 
             // MagnitudeLabel
             // 
@@ -208,10 +222,11 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.DataMenuItem});
+            this.DataMenuItem,
+            this.StatsMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(909, 38);
+            this.menuStrip1.Size = new System.Drawing.Size(909, 36);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -221,33 +236,55 @@
             this.RandomMenuItem,
             this.FileMenuItem});
             this.DataMenuItem.Name = "DataMenuItem";
-            this.DataMenuItem.Size = new System.Drawing.Size(91, 34);
+            this.DataMenuItem.Size = new System.Drawing.Size(88, 32);
             this.DataMenuItem.Text = "Adatok";
             // 
             // RandomMenuItem
             // 
             this.RandomMenuItem.Name = "RandomMenuItem";
             this.RandomMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.RandomMenuItem.Size = new System.Drawing.Size(236, 34);
+            this.RandomMenuItem.Size = new System.Drawing.Size(227, 32);
             this.RandomMenuItem.Text = "Random";
             this.RandomMenuItem.Click += new System.EventHandler(this.RandomMenuItem_Click);
             // 
             // FileMenuItem
             // 
             this.FileMenuItem.Name = "FileMenuItem";
-            this.FileMenuItem.Size = new System.Drawing.Size(236, 34);
+            this.FileMenuItem.Size = new System.Drawing.Size(227, 32);
             this.FileMenuItem.Text = "Fájlból";
             this.FileMenuItem.Click += new System.EventHandler(this.FileMenuItem_Click);
             // 
-            // CategoryComboBox
+            // StatsMenuItem
             // 
-            this.CategoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CategoryComboBox.FormattingEnabled = true;
-            this.CategoryComboBox.Location = new System.Drawing.Point(148, 43);
-            this.CategoryComboBox.Name = "CategoryComboBox";
-            this.CategoryComboBox.Size = new System.Drawing.Size(188, 28);
-            this.CategoryComboBox.TabIndex = 4;
-            this.CategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.CategoryComboBox_SelectedIndexChanged);
+            this.StatsMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.DiagramMenuItem});
+            this.StatsMenuItem.Enabled = false;
+            this.StatsMenuItem.Name = "StatsMenuItem";
+            this.StatsMenuItem.Size = new System.Drawing.Size(122, 32);
+            this.StatsMenuItem.Text = "Statisztikák";
+            // 
+            // DiagramMenuItem
+            // 
+            this.DiagramMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ColumnMenuItem,
+            this.LineMenuItem});
+            this.DiagramMenuItem.Name = "DiagramMenuItem";
+            this.DiagramMenuItem.Size = new System.Drawing.Size(181, 32);
+            this.DiagramMenuItem.Text = "Diagramok";
+            // 
+            // ColumnMenuItem
+            // 
+            this.ColumnMenuItem.Name = "ColumnMenuItem";
+            this.ColumnMenuItem.Size = new System.Drawing.Size(180, 32);
+            this.ColumnMenuItem.Text = "Oszlop";
+            this.ColumnMenuItem.Click += new System.EventHandler(this.ColumnMenuItem_Click);
+            // 
+            // LineMenuItem
+            // 
+            this.LineMenuItem.Name = "LineMenuItem";
+            this.LineMenuItem.Size = new System.Drawing.Size(180, 32);
+            this.LineMenuItem.Text = "Vonal";
+            this.LineMenuItem.Click += new System.EventHandler(this.LineMenuItem_Click);
             // 
             // DataForm
             // 
@@ -301,6 +338,10 @@
         private System.Windows.Forms.ToolStripMenuItem RandomMenuItem;
         private System.Windows.Forms.ToolStripMenuItem FileMenuItem;
         private System.Windows.Forms.ComboBox CategoryComboBox;
+        private System.Windows.Forms.ToolStripMenuItem StatsMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem DiagramMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ColumnMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem LineMenuItem;
     }
 }
 
