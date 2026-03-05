@@ -40,13 +40,22 @@
             this.DataChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea1.AxisX.IsLabelAutoFit = false;
+            chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            chartArea1.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            chartArea1.AxisY.IsLabelAutoFit = false;
+            chartArea1.AxisY.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            chartArea1.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             chartArea1.Name = "ChartArea1";
             this.DataChart.ChartAreas.Add(chartArea1);
+            legend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            legend1.IsTextAutoFit = false;
             legend1.Name = "Legend1";
             this.DataChart.Legends.Add(legend1);
             this.DataChart.Location = new System.Drawing.Point(12, 12);
             this.DataChart.Name = "DataChart";
             series1.ChartArea = "ChartArea1";
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             series1.YValuesPerPoint = 6;
