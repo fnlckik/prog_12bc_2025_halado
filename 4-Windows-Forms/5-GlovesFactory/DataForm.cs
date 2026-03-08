@@ -188,5 +188,11 @@ namespace GlovesFactory
             // Enumerable.Reverse(selected).ToList()
             return result;
         }
+
+        private void FreqMenuItem_Click(object sender, EventArgs e)
+        {
+            //List<string> categories = CategoryComboBox.Items.Cast;
+            //CategoryForm form = new CategoryForm(data, categories);
+        }
     }
 }

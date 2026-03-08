@@ -25,8 +25,17 @@ namespace GlovesFactory
             Series series = DataChart.Series[0];
             series.ChartType = type;
             series.Color = Color.Black;
-            series.BorderWidth = 6;
+            series.BorderWidth = 3;
             series.LegendText = "Felhasznált bőr (\u33A1)";
+            //series.CustomProperties = "PointWidth = 0.1";
+            series["PointWidth"] = "0.5";
+
+            if (type == SeriesChartType.Line)
+            {
+                series.MarkerStyle = MarkerStyle.Circle;
+                series.MarkerSize = 12;
+                series.MarkerColor = Color.Blue;
+            }
 
             DataPointCollection points = series.Points;
             //points.AddXY("Kis János", 79);
@@ -38,7 +47,7 @@ namespace GlovesFactory
             {
                 //points.AddXY(i + 1, data[i]);
                 DataPoint p = new DataPoint();
-                p.SetValueXY(i + 1, data[i]);
+                p.SetValueXY(i+1, data[i]);
                 p.ToolTip = data[i].ToString();
                 //p.Color = Color.FromArgb((int)(data[i] / 100.0 * 255), 0, 0);
                 points.Add(p);
@@ -48,12 +57,17 @@ namespace GlovesFactory
             ChartArea area = DataChart.ChartAreas[0];
 
             area.AxisX.Title = "Nap";
+            area.AxisX.MajorGrid.LineColor = Color.Gray;
+            area.AxisX.MajorGrid.LineDashStyle = type == SeriesChartType.Column ? ChartDashStyle.NotSet : ChartDashStyle.Dash;
 
             area.AxisY.Title = "Felhasznált bőr (\u33A1)";
             //area.AxisY.Minimum = data.Min() - 10;
+            //area.AxisY.Minimum = -50;
             //area.AxisY.Maximum = data.Max() + 10;
             //area.AxisY.Interval = 10;
             area.AxisY.IntervalAutoMode = IntervalAutoMode.VariableCount;
+            area.AxisY.MajorGrid.LineColor = Color.Gray;
+            area.AxisY.MajorGrid.LineDashStyle = ChartDashStyle.Dash;
         }
     }
 }

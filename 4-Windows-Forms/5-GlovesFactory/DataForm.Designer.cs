@@ -52,6 +52,7 @@
             this.DiagramMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ColumnMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LineMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FreqMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TopNumUpDown)).BeginInit();
@@ -257,7 +258,8 @@
             // StatsMenuItem
             // 
             this.StatsMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.DiagramMenuItem});
+            this.DiagramMenuItem,
+            this.FreqMenuItem});
             this.StatsMenuItem.Enabled = false;
             this.StatsMenuItem.Name = "StatsMenuItem";
             this.StatsMenuItem.Size = new System.Drawing.Size(122, 32);
@@ -269,22 +271,29 @@
             this.ColumnMenuItem,
             this.LineMenuItem});
             this.DiagramMenuItem.Name = "DiagramMenuItem";
-            this.DiagramMenuItem.Size = new System.Drawing.Size(181, 32);
+            this.DiagramMenuItem.Size = new System.Drawing.Size(204, 32);
             this.DiagramMenuItem.Text = "Diagramok";
             // 
             // ColumnMenuItem
             // 
             this.ColumnMenuItem.Name = "ColumnMenuItem";
-            this.ColumnMenuItem.Size = new System.Drawing.Size(180, 32);
+            this.ColumnMenuItem.Size = new System.Drawing.Size(145, 32);
             this.ColumnMenuItem.Text = "Oszlop";
             this.ColumnMenuItem.Click += new System.EventHandler(this.ColumnMenuItem_Click);
             // 
             // LineMenuItem
             // 
             this.LineMenuItem.Name = "LineMenuItem";
-            this.LineMenuItem.Size = new System.Drawing.Size(180, 32);
+            this.LineMenuItem.Size = new System.Drawing.Size(145, 32);
             this.LineMenuItem.Text = "Vonal";
             this.LineMenuItem.Click += new System.EventHandler(this.LineMenuItem_Click);
+            // 
+            // FreqMenuItem
+            // 
+            this.FreqMenuItem.Name = "FreqMenuItem";
+            this.FreqMenuItem.Size = new System.Drawing.Size(204, 32);
+            this.FreqMenuItem.Text = "Gyakoriságok";
+            this.FreqMenuItem.Click += new System.EventHandler(this.FreqMenuItem_Click);
             // 
             // DataForm
             // 
@@ -342,6 +351,7 @@
         private System.Windows.Forms.ToolStripMenuItem DiagramMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ColumnMenuItem;
         private System.Windows.Forms.ToolStripMenuItem LineMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem FreqMenuItem;
     }
 }
 
