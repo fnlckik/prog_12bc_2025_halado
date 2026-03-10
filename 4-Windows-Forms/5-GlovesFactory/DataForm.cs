@@ -22,7 +22,7 @@ namespace GlovesFactory
         {
             data = new List<int>();
             Random r = new Random();
-            for (int i = 0; i < 101; i++)
+            for (int i = 0; i < 123; i++)
             {
                 data.Add(Generate(r));
             }

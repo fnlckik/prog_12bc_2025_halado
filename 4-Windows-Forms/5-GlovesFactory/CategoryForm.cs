@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace GlovesFactory
 {
@@ -30,9 +27,61 @@ namespace GlovesFactory
             for (int i = 0; i < categories.Count; i++)
             {
                 CategoriesDataGrid.Rows[i].HeaderCell.Value = categories[i];
+                CategoriesDataGrid.Rows[i].Cells[0].Value = CountCategory(categories[i]);
             }
             CategoriesDataGrid.TopLeftHeaderCell.Value = "Kategóriák";
             CategoriesDataGrid.Columns[0].HeaderCell.Value = "Gyakoriságok";
+            ShowDiagram();
+        }
+
+        private void ShowDiagram()
+        {
+            Series series = CategoriesChart.Series[0];
+            series.ChartType = SeriesChartType.Pie;
+            series["PieLabelStyle"] = "Outside"; // CustomProperties
+
+            foreach (DataGridViewRow row in CategoriesDataGrid.Rows)
+            {
+                double value = double.Parse(row.Cells[0].Value.ToString());
+                string category = row.HeaderCell.Value.ToString();
+                double degree = value / data.Count * 360;
+
+                if (value != 0)
+                {
+                    DataPoint p = new DataPoint();
+                    p.SetValueY(value);
+                    p.LegendText = category;
+                    p.ToolTip = $"{Math.Round(degree)}°";
+                    p.BorderColor = Color.Black;
+                    p.Label = value.ToString();
+                    series.Points.Add(p);
+                }
+            }
+        }
+
+        // "50 - 54 m^2", "55 - 59 m^2"
+        private int CountCategory(string category)
+        {
+            int min = int.Parse(category.Split(' ')[0]);
+            int max = min + 4;
+            return data.Count(x => min <= x && x <= max);
+        }
+
+        private void CategoriesDataGrid_SelectionChanged(object sender, EventArgs e)
+        {
+            if (CategoriesDataGrid.Rows.Count == 0) return;
+            if (CategoriesDataGrid.SelectedCells.Count == 0) return;
+            if (CategoriesChart.Series[0].Points.Count == 0) return;
+            
+            DataGridViewCell selectedCell = CategoriesDataGrid.SelectedCells[0];
+            int rowIndex = selectedCell.RowIndex;
+
+            foreach (DataPoint point in CategoriesChart.Series[0].Points)
+            {
+                point["Exploded"] = "false";
+            }
+            DataPoint p = CategoriesChart.Series[0].Points[rowIndex];
+            p["Exploded"] = "true";
         }
     }
 }
