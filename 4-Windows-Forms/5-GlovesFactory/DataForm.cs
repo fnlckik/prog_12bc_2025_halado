@@ -191,8 +191,9 @@ namespace GlovesFactory
 
         private void FreqMenuItem_Click(object sender, EventArgs e)
         {
-            //List<string> categories = CategoryComboBox.Items.Cast;
-            //CategoryForm form = new CategoryForm(data, categories);
+            List<string> categories = CategoryComboBox.Items.Cast<string>().Skip(1).ToList();
+            CategoryForm form = new CategoryForm(data, categories);
+            form.Show();
         }
     }
 }

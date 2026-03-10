@@ -21,5 +21,18 @@ namespace GlovesFactory
             this.data = data;
             this.categories = categories;
         }
+
+        private void CategoryForm_Load(object sender, EventArgs e)
+        {
+            CategoriesDataGrid.Font = new Font("Microsoft Sans Serif", 12);
+            //CategoriesDataGrid.Columns.Add("Frequencies", "Gyakoriságok");
+            CategoriesDataGrid.RowCount = categories.Count;
+            for (int i = 0; i < categories.Count; i++)
+            {
+                CategoriesDataGrid.Rows[i].HeaderCell.Value = categories[i];
+            }
+            CategoriesDataGrid.TopLeftHeaderCell.Value = "Kategóriák";
+            CategoriesDataGrid.Columns[0].HeaderCell.Value = "Gyakoriságok";
+        }
     }
 }

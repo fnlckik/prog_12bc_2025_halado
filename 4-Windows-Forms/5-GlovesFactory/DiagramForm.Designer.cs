@@ -60,7 +60,7 @@
             series1.Name = "Series1";
             series1.YValuesPerPoint = 6;
             this.DataChart.Series.Add(series1);
-            this.DataChart.Size = new System.Drawing.Size(1161, 477);
+            this.DataChart.Size = new System.Drawing.Size(1161, 469);
             this.DataChart.TabIndex = 0;
             this.DataChart.Text = "chart1";
             // 
@@ -68,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1185, 501);
+            this.ClientSize = new System.Drawing.Size(1185, 493);
             this.Controls.Add(this.DataChart);
             this.Name = "DiagramForm";
             this.Text = "DiagramForm";
