@@ -28,9 +28,11 @@ namespace GlovesFactory
             {
                 CategoriesDataGrid.Rows[i].HeaderCell.Value = categories[i];
                 CategoriesDataGrid.Rows[i].Cells[0].Value = CountCategory(categories[i]);
+                CategoriesDataGrid.Rows[i].Cells[0].Tag = i;
             }
             CategoriesDataGrid.TopLeftHeaderCell.Value = "Kategóriák";
             CategoriesDataGrid.Columns[0].HeaderCell.Value = "Gyakoriságok";
+            //CategoriesDataGrid.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
             ShowDiagram();
         }
 
@@ -74,7 +76,8 @@ namespace GlovesFactory
             if (CategoriesChart.Series[0].Points.Count == 0) return;
             
             DataGridViewCell selectedCell = CategoriesDataGrid.SelectedCells[0];
-            int rowIndex = selectedCell.RowIndex;
+            //int rowIndex = selectedCell.RowIndex;
+            int rowIndex = (int)selectedCell.Tag;
 
             foreach (DataPoint point in CategoriesChart.Series[0].Points)
             {
