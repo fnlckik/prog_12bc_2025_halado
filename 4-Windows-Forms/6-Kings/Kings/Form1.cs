@@ -45,10 +45,19 @@ namespace Kings
                     kings.Add(k);
                 }
             }
-            ShowKings();
+            ShowKings(kings);
+            ShowDynasty();
         }
 
-        private void ShowKings()
+        private void ShowDynasty()
+        {
+            var dynasties = kings.Select(k => k.Dynasty).Distinct().ToArray();
+            DynastyComboBox.Items.Clear();
+            DynastyComboBox.Items.Add("Minden adat...");
+            DynastyComboBox.Items.AddRange(dynasties);
+        }
+
+        private void ShowKings(List<King> kings)
         {
             KingsDataGrid.ColumnCount = headers.Length - 1;
             for (int i = 0; i < KingsDataGrid.ColumnCount; i++)
@@ -77,6 +86,25 @@ namespace Kings
         private void Form1_Load(object sender, EventArgs e)
         {
             ReadFromFile("kings.txt");
+        }
+
+        private void DynastyComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string dynasty = DynastyComboBox.SelectedItem.ToString();
+            //if (dynasty == "Minden adat...")
+            //{
+            //    ShowKings(kings);
+            //    return;
+            //}
+            var selected = kings.Where(k => k.Dynasty == dynasty).ToList();
+            ShowKings(dynasty == "Minden adat..." ?  kings : selected);
+        }
+
+        private void EditMenuItem_Click(object sender, EventArgs e)
+        {
+            string name = KingsDataGrid.SelectedRows[0].Cells[2].Value.ToString();
+            King selectedKing = kings.First(k => k.Name == name);
+            
         }
     }
 }
