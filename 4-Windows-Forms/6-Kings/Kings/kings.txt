@@ -1,0 +1,55 @@
+Uralkodás kezdete;Uralkodás vége;Név;Koronázás éve;Koronázás helye;Uralkodóház
+1000;1038;I. István;1000;Esztergom vagy Székesfehérvár;Árpád-ház
+1038;1041;Péter;1038;Székesfehérvár;Árpád-ház
+1041;1044;Sámuel;1044;Csanád vagy Székesfehérvár;Árpád-ház
+1046;1060;I. András;1047;Székesfehérvár;Árpád-ház
+1060;1063;I. Béla;1060;Székesfehérvár;Árpád-ház
+1063;1074;Salamon;1063;Székesfehérvár;Árpád-ház
+1074;1077;I. Géza;-1;Székesfehérvár;Árpád-ház
+1077;1095;I. László;1077;Székesfehérvár;Árpád-ház
+1095;1116;Kálmán;1095;Székesfehérvár;Árpád-ház
+1116;1131;II. István;1116;Székesfehérvár;Árpád-ház
+1131;1141;II. Béla;1131;Székesfehérvár;Árpád-ház
+1141;1162;II. Géza;1141;Székesfehérvár;Árpád-ház
+1162;1172;III. István;1162;Székesfehérvár;Árpád-ház
+1162;1163;II. László;1162;Székesfehérvár;Árpád-ház
+1163;1165;IV. István;1163;Székesfehérvár;Árpád-ház
+1172;1196;III. Béla;1173;Székesfehérvár;Árpád-ház
+1196;1204;Imre;1182;Székesfehérvár;Árpád-ház
+1204;1205;III. László;1204;Székesfehérvár;Árpád-ház
+1205;1235;II. András;1205;Székesfehérvár;Árpád-ház
+1235;1270;IV. Béla;1235;Székesfehérvár;Árpád-ház
+1262;1272;V. István;1246;Székesfehérvár;Árpád-ház
+1272;1290;IV. László;1272;Székesfehérvár;Árpád-ház
+1290;1301;III. András;1290;Székesfehérvár;Árpád-ház
+1301;1305;Vencel;1301;Székesfehérvár;Přemysl-ház
+1305;1307;Ottó;1305;Székesfehérvár;Wittelsbach-ház
+1301;1342;I. Károly;1301;Esztergom;Anjou-ház
+1342;1382;I. Lajos;1342;Székesfehérvár;Anjou-ház
+1382;1385;Mária;1382;Székesfehérvár;Anjou-ház
+1385;1386;II. Károly;1385;Székesfehérvár;Anjou-ház
+1387;1437;Zsigmond;1387;Székesfehérvár;Luxemburgi
+1437;1439;Albert;1438;Székesfehérvár;Habsburg-ház
+1440;1444;I. Ulászló;1440;Székesfehérvár;Jagelló
+1453;1457;V. László;1440;Székesfehérvár;Habsburg-ház
+1458;1490;I. Mátyás;1464;Székesfehérvár;Hunyadi
+1490;1516;II. Ulászló;1490;Székesfehérvár;Jagelló
+1516;1526;II. Lajos;1508;Székesfehérvár;Jagelló
+1526;1540;I. János;1526;Székesfehérvár;Szapolyai-ház
+1526;1564;I. Ferdinánd;1527;Székesfehérvár;Habsburg-ház
+1564;1576;Miksa;1563;Pozsony;Habsburg-ház
+1576;1608;Rudolf;1572;Pozsony;Habsburg-ház
+1608;1619;II. Mátyás;1608;Pozsony;Habsburg-ház
+1619;1637;II. Ferdinánd;1618;Pozsony;Habsburg-ház
+1637;1657;III. Ferdinánd;1625;Sopron;Habsburg-ház
+1647;1654;IV. Ferdinánd;1647;Pozsony;Habsburg-ház
+1657;1705;I. Lipót;1655;Pozsony;Habsburg-ház
+1705;1711;I. József;1687;Pozsony;Habsburg-ház
+1711;1740;III. Károly;1712;Pozsony;Habsburg-ház
+1740;1780;Mária Terézia;1741;Pozsony;Habsburg-ház
+1780;1790;II. József;-1;-;Habsburg–Lotaringiai-ház
+1790;1792;II. Lipót;1790;Pozsony;Habsburg–Lotaringiai-ház
+1792;1835;Ferenc;1792;Buda;Habsburg–Lotaringiai-ház
+1835;1848;V. Ferdinánd;1830;Pozsony;Habsburg–Lotaringiai-ház
+1848;1916;I. Ferenc József;1867;Buda;Habsburg–Lotaringiai-ház
+1916;1918;IV. Károly;1916;Budapest;Habsburg–Lotaringiai-ház

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace Kings
@@ -85,7 +86,7 @@ namespace Kings
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ReadFromFile("kings.txt");
+            //ReadFromFile("kings.txt");
         }
 
         private void DynastyComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -104,7 +105,49 @@ namespace Kings
         {
             string name = KingsDataGrid.SelectedRows[0].Cells[2].Value.ToString();
             King selectedKing = kings.First(k => k.Name == name);
-            
+            EditForm form = new EditForm(selectedKing);
+            form.ShowDialog();
+            int selectedIndex = kings.IndexOf(selectedKing);
+            kings[selectedIndex] = form.EditedKing;
+            ShowKings(kings);
+        }
+
+        private void RangeMenuItem_Click(object sender, EventArgs e)
+        {
+            var selectedRows = KingsDataGrid.SelectedRows.Cast<DataGridViewRow>();
+            var selectedKings = kings.Where(k => selectedRows.Any(r => r.Cells[2].Value.ToString() == k.Name));
+
+            Series series = Chart.Series[0];
+            series.ChartType = SeriesChartType.Pie;
+            series.Points.Clear();
+            foreach (King king in selectedKings)
+            {
+                DataPoint p = new DataPoint();
+                int range = king.End - king.Start;
+                p.SetValueY(range);
+                p.Label = range.ToString();
+                p.LegendText = king.Name;
+                series.Points.Add(p);
+            }
+            Chart.Visible = true;
+        }
+
+        private void DynastyMenuItem_Click(object sender, EventArgs e)
+        {
+            Dictionary<string, int> freq = new Dictionary<string, int>();
+            foreach (King king in kings)
+            {
+                if (freq.ContainsKey(king.Dynasty))
+                {
+                    freq[king.Dynasty]++;
+                }
+                else
+                {
+                    freq.Add(king.Dynasty, 1);
+                }
+            }
+            DynastyForm form = new DynastyForm(freq);
+            form.Show();
         }
     }
 }

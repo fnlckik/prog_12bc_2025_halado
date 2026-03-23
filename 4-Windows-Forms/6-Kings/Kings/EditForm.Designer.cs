@@ -85,6 +85,16 @@
             // YearNumUpDown
             // 
             this.YearNumUpDown.Location = new System.Drawing.Point(152, 108);
+            this.YearNumUpDown.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.YearNumUpDown.Minimum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            -2147483648});
             this.YearNumUpDown.Name = "YearNumUpDown";
             this.YearNumUpDown.Size = new System.Drawing.Size(120, 26);
             this.YearNumUpDown.TabIndex = 5;
@@ -97,6 +107,7 @@
             this.SaveButton.TabIndex = 6;
             this.SaveButton.Text = "Mentés";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // EditForm
             // 
@@ -114,6 +125,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "EditForm";
             this.Text = "EditForm";
+            this.Load += new System.EventHandler(this.EditForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.YearNumUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
