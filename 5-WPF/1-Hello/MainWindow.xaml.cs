@@ -23,7 +23,9 @@ namespace _1_Hello
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Heló világ!", "Köszöntés", MessageBoxButton.OK, MessageBoxImage.Information);
+            //MessageBox.Show("Heló világ!", "Köszöntés", MessageBoxButton.OK, MessageBoxImage.Information);
+            string name = NameTextBox.Text;
+            GreetingOutput.Text = $"Helló {name}!";
         }
     }
 }
