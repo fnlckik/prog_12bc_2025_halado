@@ -9,7 +9,7 @@
         Height="600"
         Width="1200"
         MinHeight="400"
-        MinWidth="400">
+        MinWidth="800">
     <!-- Komment -->
     <!-- XAML: eXtensible Application Markup Language -->
     <!-- Hotkey: CTRL + K + C (comment), CTRL + K + U (uncomment) -->
@@ -17,18 +17,33 @@
     <!-- CTRL + K + D -->
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
         <StackPanel Grid.Column="0"
+                    Grid.Row="0"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-            <Label Content="Név:" />
-            <TextBox x:Name="NameTextBox"
-                     BorderBrush="Black"
-                     Text=""
-                     Padding="10" />
+            <StackPanel Orientation="Horizontal">
+                <Label VerticalAlignment="Center"
+                       Background="White"
+                       Grid.Column="0"
+                       Content="Név:"
+                       Padding="10"/>
+                <TextBox Grid.Column="1"
+                         x:Name="NameTextBox"
+                         BorderBrush="Black"
+                         Text=""
+                         Padding="10"
+                         MinWidth="100"
+                         MaxWidth="200"
+                         TextWrapping="Wrap"/>
+            </StackPanel>
             <Button Width="200"
                     Height="100"
                     FontSize="24"
@@ -40,11 +55,31 @@
             <TextBlock x:Name="GreetingOutput"
                        Background="LightGray"
                        Padding="10"
-                       Text="Üres köszönés..." />
+                       Text="Üres köszönés..."
+                       TextWrapping="Wrap"/>
+        </StackPanel>
+        <StackPanel Grid.Column="0"
+                    Grid.Row="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+            <Button Content="Hozzáadás"
+                    Padding="10"
+                    Margin="10"
+                    Click="AddButton_Click" />
+            <Button Content="Szerkesztés"
+                    Padding="10"
+                    Margin="10" />
+            <Button Content="Törlés"
+                    Padding="10"
+                    Margin="10" />
         </StackPanel>
         <ListBox Grid.Column="1"
+                 Grid.Row="0"
+                 Grid.RowSpan="2"
                  BorderBrush="Black"
-                 MinWidth="200">
+                 MinWidth="200"
+                 x:Name="NamesListBox">
             <ListBoxItem>Sándor</ListBoxItem>
             <ListBoxItem>József</ListBoxItem>
             <ListBoxItem>Benedek</ListBoxItem>

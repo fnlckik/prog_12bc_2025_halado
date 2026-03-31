@@ -16,6 +16,8 @@ namespace _1_Hello
     /// </summary>
     public partial class MainWindow : Window
     {
+        public List<string> Names { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -26,6 +28,12 @@ namespace _1_Hello
             //MessageBox.Show("Heló világ!", "Köszöntés", MessageBoxButton.OK, MessageBoxImage.Information);
             string name = NameTextBox.Text;
             GreetingOutput.Text = $"Helló {name}!";
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            string name = NameTextBox.Text;
+            NamesListBox.Items.Add(name);
         }
     }
 }
