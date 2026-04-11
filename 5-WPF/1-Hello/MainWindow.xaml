@@ -38,7 +38,7 @@
                 <TextBox Grid.Column="1"
                          x:Name="NameTextBox"
                          BorderBrush="Black"
-                         Text=""
+                         Text="{Binding PersonName}"
                          Padding="10"
                          MinWidth="100"
                          MaxWidth="200"
@@ -49,7 +49,7 @@
                     FontSize="24"
                     FontStyle="Italic"
                     FontWeight="Bold"
-                    Click="Button_Click"
+                    Click="GreetButton_Click"
                     Margin="0,20,0,20"
                     Content="Kattints!" />
             <TextBlock x:Name="GreetingOutput"
@@ -79,10 +79,11 @@
                  Grid.RowSpan="2"
                  BorderBrush="Black"
                  MinWidth="200"
-                 x:Name="NamesListBox">
-            <ListBoxItem>Sándor</ListBoxItem>
+                 x:Name="NamesListBox"
+                 ItemsSource="{Binding Names}">
+            <!--<ListBoxItem>Sándor</ListBoxItem>
             <ListBoxItem>József</ListBoxItem>
-            <ListBoxItem>Benedek</ListBoxItem>
+            <ListBoxItem>Benedek</ListBoxItem>-->
         </ListBox>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Collections.ObjectModel;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,24 +17,38 @@ namespace _1_Hello
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<string> Names { get; set; }
+        // Binding: összekötés, összekapcsolás
+        // Csak property-re lehet használni! (get, set)
+        // Observable: megfigyelhető
+        public ObservableCollection<string> Names { get; set; }
+        public string PersonName { get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
+            //Names = new ObservableCollection<string>();
+            //Names = new();
+            //Names = new ObservableCollection<string>() { "Sándor", "József", "Benedek" };
+            Names = ["Sándor", "József", "Benedek"];
+            PersonName = "";
+            DataContext = this; // Azért kell, hogy a Binding tudja, hogy hol van a Names property.
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void GreetButton_Click(object sender, RoutedEventArgs e)
         {
             //MessageBox.Show("Heló világ!", "Köszöntés", MessageBoxButton.OK, MessageBoxImage.Information);
-            string name = NameTextBox.Text;
-            GreetingOutput.Text = $"Helló {name}!";
+            //string name = NameTextBox.Text;
+            GreetingOutput.Text = $"Helló {PersonName}!";
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            string name = NameTextBox.Text;
-            NamesListBox.Items.Add(name);
+            //string name = NameTextBox.Text;
+            //NamesListBox.Items.Add(name);
+            Names.Add(PersonName);
+            //NamesListBox.ItemsSource = null;
+            //NamesListBox.ItemsSource = Names;
+            //bool? b; -> true, false, null
         }
     }
 }
