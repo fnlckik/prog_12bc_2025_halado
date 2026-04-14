@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -15,7 +16,7 @@ namespace _1_Hello
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
         // Binding: összekötés, összekapcsolás
         // Csak property-re lehet használni! (get, set)
@@ -49,6 +50,14 @@ namespace _1_Hello
             //NamesListBox.ItemsSource = null;
             //NamesListBox.ItemsSource = Names;
             //bool? b; -> true, false, null
+        }
+
+        private void NamesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // ?.ToString() -> ha null értéken hívom, akkor null legyen az eredmény
+            // null-coalescing operator
+            PersonName = NamesListBox.SelectedItem?.ToString() ?? "";
+            //NameTextBox.Text = PersonName;
         }
     }
 }

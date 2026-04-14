@@ -79,8 +79,10 @@
                  Grid.RowSpan="2"
                  BorderBrush="Black"
                  MinWidth="200"
+                 Margin="20"
                  x:Name="NamesListBox"
-                 ItemsSource="{Binding Names}">
+                 ItemsSource="{Binding Names}"
+                 SelectionChanged="NamesListBox_SelectionChanged">
             <!--<ListBoxItem>Sándor</ListBoxItem>
             <ListBoxItem>József</ListBoxItem>
             <ListBoxItem>Benedek</ListBoxItem>-->
