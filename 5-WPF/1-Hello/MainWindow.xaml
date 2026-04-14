@@ -69,10 +69,12 @@
                     Click="AddButton_Click" />
             <Button Content="Szerkesztés"
                     Padding="10"
-                    Margin="10" />
+                    Margin="10"
+                    Click="EditButton_Click" />
             <Button Content="Törlés"
                     Padding="10"
-                    Margin="10" />
+                    Margin="10"
+                    Click="DeleteButton_Click"/>
         </StackPanel>
         <ListBox Grid.Column="1"
                  Grid.Row="0"
@@ -82,7 +84,8 @@
                  Margin="20"
                  x:Name="NamesListBox"
                  ItemsSource="{Binding Names}"
-                 SelectionChanged="NamesListBox_SelectionChanged">
+                 SelectedItem="{Binding PersonName}">
+            <!-- SelectionChanged="NamesListBox_SelectionChanged" -->
             <!--<ListBoxItem>Sándor</ListBoxItem>
             <ListBoxItem>József</ListBoxItem>
             <ListBoxItem>Benedek</ListBoxItem>-->
