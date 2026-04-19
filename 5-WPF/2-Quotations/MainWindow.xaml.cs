@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using Microsoft.Win32;
+using System.Collections.ObjectModel;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,9 +18,21 @@ namespace _2_Quotations
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ObservableCollection<Quotation> quotes;
+
         public MainWindow()
         {
             InitializeComponent();
+            quotes = [];
+        }
+
+        private void LoadButton_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dialog = new();
+            bool success = dialog.ShowDialog() ?? false;
+            if (!success) return;
+            //bool? success = dialog.ShowDialog();
+            //if (success != true) return;
         }
     }
 }
