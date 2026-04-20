@@ -20,5 +20,13 @@ namespace _2_Quotations
         public string Title { get; set; }
         public int Year { get; set; }
         public string Text { get; set; }
+
+        public override string ToString()
+        {
+            //string result = string.Join("", Text.Take(20));
+            //$"{Text[..20]}..."
+            int n = Math.Min(Text.Length, 20);
+            return $"{Text[..n].Trim()}...";
+        }
     }
 }

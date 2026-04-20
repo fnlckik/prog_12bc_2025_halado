@@ -40,7 +40,8 @@
                         VerticalAlignment="Center">
                 <Label Content="Idézet:" />
                 <ComboBox MinWidth="200"
-                          IsEditable="False" />
+                          IsEditable="False"
+                          ItemsSource="{Binding Quotes}"/>
             </StackPanel>
             <TextBlock  Background="LightGoldenrodYellow"
                         Margin="30"
