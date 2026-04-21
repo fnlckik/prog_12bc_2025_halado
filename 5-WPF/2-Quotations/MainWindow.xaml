@@ -11,6 +11,9 @@
         Width="800" MinWidth="700">
     <!--Nuget Package Manager-->
     <!--Extended WPF Toolkit-->
+    <!--<Window.DataContext>
+        <local:MainWindow />
+    </Window.DataContext>-->
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -39,14 +42,23 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">
                 <Label Content="Idézet:" />
-                <ComboBox MinWidth="200"
+                <ComboBox x:Name="QuoteComboBox"
+                          MinWidth="200"
                           IsEditable="False"
-                          ItemsSource="{Binding Quotes}"/>
+                          ItemsSource="{Binding Quotes}"
+                          SelectionChanged="ComboBox_SelectionChanged"
+                          SelectedItem="{Binding Selected}"/>
             </StackPanel>
-            <TextBlock  Background="LightGoldenrodYellow"
-                        Margin="30"
+            <TextBlock  x:Name="QuoteTextBlock"
+                        Background="LightGoldenrodYellow"
+                        Margin="20"
                         Grid.Row="2"
-                        Visibility="Hidden" />
+                        Visibility="Hidden"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        TextWrapping="Wrap"
+                        Padding="10"
+                        Text="{Binding Selected.Text}"/>
         </Grid>
         <Grid Grid.Column="1"
               Margin="0,0,0,20">
@@ -64,9 +76,12 @@
                         VerticalAlignment="Center">
                 <Label Content="Költő:"
                        VerticalAlignment="Center"/>
-                <TextBox MinWidth="200"
+                <TextBox x:Name="AuthorTextBox"
+                         MinWidth="200"
                          MaxWidth="300"
-                         Padding="10"/>
+                         Padding="10"
+                         Text="{Binding Answer.Author, UpdateSourceTrigger=PropertyChanged}"
+                         Background="{Binding AuthorBackground}"/>
             </StackPanel>
             <StackPanel Grid.Row="2"
                         Orientation="Horizontal"
@@ -76,7 +91,9 @@
                        VerticalAlignment="Center" />
                 <TextBox MinWidth="200"
                          MaxWidth="300"
-                         Padding="10" />
+                         Padding="10"
+                         Text="{Binding Answer.Title, UpdateSourceTrigger=PropertyChanged}"
+                         Background="{Binding TitleBackground}"/>
             </StackPanel>
             <StackPanel Grid.Row="3"
                         Orientation="Horizontal"
@@ -87,12 +104,14 @@
                 <tk:IntegerUpDown MinWidth="100"
                                   Minimum="1000"
                                   Maximum="2000"
-                                  Value="1800"
+                                  Value="{Binding Answer.Year}"
                                   VerticalAlignment="Center"
-                                  Padding="10"/>
+                                  Padding="10"
+                                  Background="{Binding YearBackground}"/>
                 <Button Content="Ellenőriz"
                         Padding="10"
-                        Margin="10"/>
+                        Margin="10"
+                        Click="CheckButton_Click" />
             </StackPanel>
         </Grid>
     </Grid>
