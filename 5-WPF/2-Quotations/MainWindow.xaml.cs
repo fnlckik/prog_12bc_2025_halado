@@ -25,9 +25,9 @@ namespace _2_Quotations
         //private ObservableCollection<Quotation> quotes; // field
         private Quotation selected; // field
         private Quotation answer;
-        private Brush authorBackground;
-        private Brush titleBackground;
-        private Brush yearBackground;
+        private Brush? authorBackground;
+        private Brush? titleBackground;
+        private Brush? yearBackground;
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -35,12 +35,15 @@ namespace _2_Quotations
         {
             InitializeComponent();
             Quotes = [];
+            Answers = [];
             selected = new();
             answer = new();
             DataContext = this;
         }
 
         public ObservableCollection<Quotation> Quotes{ get; set; } // property
+        public ObservableCollection<Quotation> Answers { get; set; }
+
         public Quotation Selected
         {
             get => selected;
@@ -51,8 +54,17 @@ namespace _2_Quotations
             }
         }
 
-        public Quotation Answer { get => answer; set => answer = value; }
-        public Brush AuthorBackground
+        public Quotation Answer
+        { 
+            get => answer;
+            set
+            {
+                answer = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Answer)));
+            }
+        }
+
+        public Brush? AuthorBackground
         { 
             get => authorBackground;
             set
@@ -62,7 +74,7 @@ namespace _2_Quotations
             }
         }
 
-        public Brush TitleBackground
+        public Brush? TitleBackground
         {
             get => titleBackground;
             set
@@ -72,7 +84,7 @@ namespace _2_Quotations
             }
         }
 
-        public Brush YearBackground
+        public Brush? YearBackground
         {
             get => yearBackground;
             set
@@ -113,6 +125,13 @@ namespace _2_Quotations
             //selected = QuoteComboBox.SelectedItem as Quotation ?? new();
             QuoteTextBlock.Visibility = Visibility.Visible;
             //QuoteTextBlock.Text = selected.Text;
+            Answer.Text = Selected.Text;
+            Answer.Author = "";
+            Answer.Title = "";
+            Answer.Year = 1000;
+            AuthorBackground = Brushes.White;
+            TitleBackground = Brushes.White;
+            YearBackground = Brushes.White;
         }
 
         private void CheckButton_Click(object sender, RoutedEventArgs e)
@@ -143,6 +162,17 @@ namespace _2_Quotations
             AuthorBackground = selected.Author == answer.Author ? g : r;
             TitleBackground = selected.Title == answer.Title ? g : r;
             YearBackground = selected.Year == answer.Year? g : r;
+        }
+
+        private void StoreButton_Click(object sender, RoutedEventArgs e)
+        {
+            Answers.Add(Answer.Clone());
+        }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //MessageBox.Show(Answers[0].ToString());
+            //MessageBox.Show(Answers[Answers.Count-1].ToString());
         }
     }
 }

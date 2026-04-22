@@ -35,7 +35,7 @@
                         Click="LoadButton_Click" />
                 <Button Content="Tárolás"
                         Padding="10"
-                        Margin="20" />
+                        Margin="20" Click="StoreButton_Click" />
             </StackPanel>
             <StackPanel Grid.Row="1"
                         Orientation="Horizontal"
@@ -69,7 +69,9 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <ListBox BorderBrush="Black"
-                     Margin="20" />
+                     Margin="20"
+                     ItemsSource="{Binding Answers}"
+                     SelectedItem="{Binding Answer}" SelectionChanged="ListBox_SelectionChanged"/>
             <StackPanel Grid.Row="1"
                         Orientation="Horizontal"
                         HorizontalAlignment="Center"

@@ -1,33 +1,61 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace _2_Quotations
 {
-    public class Quotation
+    public class Quotation : INotifyPropertyChanged
     {
+        private string author;
+        private string title;
+        private int year;
+
         public Quotation(string author, string title, int year, string text)
         {
-            Author = author;
-            Title = title;
-            Year = year;
+            this.author = author;
+            this.title = title;
+            this.year = year;
             Text = text;
         }
 
         public Quotation()
         {
-            Author = "";
-            Title = "";
-            Year = 1000;
+            this.author = "";
+            this.title = "";
+            this.year = 1000;
             Text = "";
         }
 
-        public string Author { get; set; }
-        public string Title { get; set; }
-        public int Year { get; set; }
         public string Text { get; set; }
+        public string Author
+        {
+            get => author;
+            set
+            {
+                author = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Author)));
+            }
+        }
+
+        public string Title
+        {
+            get => title;
+            set
+            {
+                title = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Title)));
+            }
+        }
+
+        public int Year
+        {
+            get => year;
+            set
+            {
+                year = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Year)));
+            }
+        }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         public override string ToString()
         {
@@ -35,6 +63,11 @@ namespace _2_Quotations
             //$"{Text[..20]}..."
             int n = Math.Min(Text.Length, 20);
             return $"{Text[..n].Trim()}...";
+        }
+
+        public Quotation Clone()
+        {
+            return new(Author, Title, Year, Text);
         }
     }
 }
