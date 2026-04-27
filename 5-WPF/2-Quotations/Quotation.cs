@@ -55,6 +55,12 @@ namespace _2_Quotations
             }
         }
 
+        // Számított adattag
+        public string DisplayedText
+        {
+            get => $"{Author}: {Text}";
+        }
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public override string ToString()

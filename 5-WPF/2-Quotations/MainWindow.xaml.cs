@@ -28,6 +28,7 @@ namespace _2_Quotations
         private Brush? authorBackground;
         private Brush? titleBackground;
         private Brush? yearBackground;
+        private bool isReloaded;
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -39,9 +40,10 @@ namespace _2_Quotations
             selected = new();
             answer = new();
             DataContext = this;
+            isReloaded = false;
         }
 
-        public ObservableCollection<Quotation> Quotes{ get; set; } // property
+        public ObservableCollection<Quotation> Quotes { get; set; } // property
         public ObservableCollection<Quotation> Answers { get; set; }
 
         public Quotation Selected
@@ -121,14 +123,16 @@ namespace _2_Quotations
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (isReloaded) return;
             // Windows Forms
             //selected = QuoteComboBox.SelectedItem as Quotation ?? new();
             QuoteTextBlock.Visibility = Visibility.Visible;
             //QuoteTextBlock.Text = selected.Text;
+            Answer = new();
             Answer.Text = Selected.Text;
-            Answer.Author = "";
-            Answer.Title = "";
-            Answer.Year = 1000;
+            //Answer.Author = "";
+            //Answer.Title = "";
+            //Answer.Year = 1000;
             AuthorBackground = Brushes.White;
             TitleBackground = Brushes.White;
             YearBackground = Brushes.White;
@@ -136,6 +140,7 @@ namespace _2_Quotations
 
         private void CheckButton_Click(object sender, RoutedEventArgs e)
         {
+            if (Answer == null) return;
             // Ez inkább Windows Forms még!
             //if (selected.Author == answer.Author)
             //{
@@ -166,13 +171,17 @@ namespace _2_Quotations
 
         private void StoreButton_Click(object sender, RoutedEventArgs e)
         {
+            if (Answer == null || Selected == null || Selected.Text == "") return;
             Answers.Add(Answer.Clone());
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //MessageBox.Show(Answers[0].ToString());
-            //MessageBox.Show(Answers[Answers.Count-1].ToString());
+            if (Answer == null) return;
+            isReloaded = true;
+            Selected = Quotes.First(q => q.Text == Answer.Text);
+            isReloaded = false;
+            CheckButton_Click(sender, e);
         }
     }
 }

@@ -71,7 +71,13 @@
             <ListBox BorderBrush="Black"
                      Margin="20"
                      ItemsSource="{Binding Answers}"
-                     SelectedItem="{Binding Answer}" SelectionChanged="ListBox_SelectionChanged"/>
+                     SelectedItem="{Binding Answer}" SelectionChanged="ListBox_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding DisplayedText}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
             <StackPanel Grid.Row="1"
                         Orientation="Horizontal"
                         HorizontalAlignment="Center"
