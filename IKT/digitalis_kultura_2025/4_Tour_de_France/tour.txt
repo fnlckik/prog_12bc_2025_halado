@@ -1,0 +1,112 @@
+ev	gyoztesid	csapat	ido	elony	szakaszok	specszakasz	tav	indulok	feladok	start	orszag
+1903	47	La Française	94:33:14	2:59:21	6	0	2428	60	39	Paris	
+1904	27	Conte	96:05:55	2:16:14	6	0	2428	88	73	Montgeron	
+1905	38	Peugeot-Wolber			11	0	2994	60	36	Paris	
+1906	56	Peugeot-Wolber			13	0	4637	82	68	Paris	
+1907	42	Peugeot-Wolber			14	0	4488	93	60	Paris	
+1908	42	Peugeot-Wolber			14	0	4497	112	76	Paris	
+1909	20	Alcyon-Dunlop			14	0	4498	150	95	Paris	
+1910	50	Alcyon-Dunlop			15	0	4734	110	69	Paris	
+1911	26	Alcyon-Dunlop			15	0	5343	84	56	Paris	
+1912	51	Alcyon-Dunlop			15	0	5289	131	90	Paris	
+1913	55	Peugeot-Wolber	197:54:00	0:08:37	15	0	5287	140	115	Paris	
+1914	55	Peugeot-Wolber	200:28:48	0:01:50	15	0	5380	145	91	Paris	
+1919	19	La Sportive	231:07:15	1:42:54	15	0	5560	69	59	Paris	
+1920	55	La Sportive	228:36:13	0:57:21	15	0	5503	113	91	Paris	
+1921	37	La Sportive	221:50:26	0:18:36	15	0	5485	123	85	Paris	
+1922	19	Peugeot-Wolber	222:08:06	0:41:15	15	0	5375	121	83	Paris	
+1923	28	Automoto-Hutchinson	222:15:30	0:30:41	15	0	5386	139	91	Paris	
+1924	53	Automoto	226:18:21	0:35:36	15	0	5425	157	97	Paris	
+1925	53	Automoto-Hutchinson	219:10:18	0:54:20	18	0	5440	130	81	Paris	
+1926	41	Automoto-Hutchinson	238:44:25	1:22:25	17	0	5745	126	85	Evian	
+1927	49	Alcyon-Dunlop	198:16:42	1:48:41	24	0	5398	142	103	Paris	
+1928	49	Alcyon-Dunlop	192:48:58	0:50:07	22	0	5476	162	121	Paris	
+1929	46	Alcyon-Dunlop	186:39:15	0:44:23	22	0	5286	155	95	Paris	
+1930	2	Alcyon-Dunlop	172:12:16	0:14:13	21	0	4822	100	41	Paris	
+1931	4	Franciaország	177:10:03	0:12:56	24	0	5091	81	46	Paris	
+1932	2	Franciaország	154:11:49	0:24:03	21	0	4479	80	23	Paris	
+1933	22	Franciaország	147:51:37	0:04:01	23	0	4395	80	40	Paris	
+1934	4	Franciaország	147:13:58	0:27:31	23	0	4470	60	21	Paris	
+1935	60	Belgium	141:23:00	0:17:52	21	0	4338	93	47	Paris	
+1936	62	Belgium	142:47:32	0:26:55	21	0	4442	90	47	Paris	
+1937	57	Franciaország	138:58:31	0:07:17	20	0	4415	98	52	Paris	
+1938	24	Olaszország	148:29:12	0:18:27	21	0	4694	96	41	Paris	
+1939	62	Belgium	132:03:17	0:30:38	18	0	4224	79	30	Paris	
+1947	33	Franciaország	148:11:25	0:03:58	21	0	4642	99	46	Paris	
+1948	24	Olaszország	147:10:36	0:26:16	21	0	4922	120	76	Paris	
+1949	15	Olaszország	149:40:49	0:10:55	21	0	4808	120	65	Paris	
+1950	18	Svájc	145:36:56	0:09:30	22	0	4773	116	65	Paris	
+1951	29	Svájc	142:20:14	0:22:00	24	0	4690	123	57	Metz	
+1952	15	Olaszország	151:57:20	0:28:17	23	0	4898	122	44	Brest	
+1953	39	Franciaország	129:23:25	0:14:18	22	0	4476	119	43	Strasbourg	
+1954	39	Franciaország	140:06:05	0:15:49	23	0	4656	110	41	Amsterdam	NLD
+1955	39	Franciaország	130:29:26	0:04:53	22	0	4495	130	61	Le Havre	
+1956	59	Franciaország	124:01:16	0:01:25	22	0	4498	120	32	Reims	
+1957	30	Franciaország	135:44:42	0:14:56	22	0	4669	120	64	Nantes	
+1958	11	Luxemburg	116:59:05	0:03:10	24	0	4319	120	42	Brussels	BEL
+1959	16	Spanyolország	123:46:45	0:04:01	22	0	4358	120	55	Mulhouse	
+1960	21	Olaszország	112:08:42	0:05:02	21	0	4173	128	47	Lille	
+1961	30	Franciaország	122:01:33	0:12:14	21	0	4397	132	60	Rouen	
+1962	30	Saint-Raphaël-Helyett-Hutchinson	114:31:54	0:04:59	22	0	4274	149	55	Nancy	
+1963	30	Saint-Raphaël-Gitane-R. Geminiani	113:30:05	0:03:35	21	0	4138	130	54	Paris	
+1964	30	Saint-Raphaël-Gitane-Dunlop	127:09:44	0:00:55	22	0	4504	132	51	Rennes	
+1965	17	Salvarani	116:42:06	0:02:40	22	0	4188	130	34	Cologne	DEU
+1966	40	Ford France-Hutchinson	117:34:21	0:01:07	22	0	4329	130	48	Nancy	
+1967	58	Peugeot-BP-Michelin	136:53:50	0:03:40	22	1	4779	130	42	Angers	
+1968	31	Pelforth-Sauvage-Lejeune	133:49:42	0:00:38	22	0	4492	110	47	Vittel	
+1969	13	Faema	116:16:02	0:17:54	22	1	4117	130	44	Roubaix	
+1970	13	Faemino-Faema	119:31:49	0:12:41	23	1	4254	150	50	Limoges	
+1971	13	Molteni	96:45:14	0:09:51	20	1	3608	130	36	Mulhouse	
+1972	13	Molteni	108:17:18	0:10:41	20	1	3846	132	44	Angers	
+1973	44	Bic	122:25:34	0:15:51	20	1	4090	132	45	Scheveningen	NLD
+1974	13	Molteni	116:16:58	0:08:04	22	1	4098	130	25	Brest	
+1975	6	Peugeot-BP-Michelin	114:35:31	0:02:47	22	1	4000	140	54	Charleroi	BEL
+1976	43	Gitane-Campagnolo	116:22:23	0:04:14	22	1	4017	130	43	Saint-Jean-de-Monts	
+1977	6	Peugeot-Esso-Michelin	115:38:30	0:00:48	22	1	4096	100	47	Fleurance	
+1978	5	Renault-Gitane-Campagnolo	108:18:00	0:03:56	22	1	3908	110	32	Leiden	NLD
+1979	5	Renault-Gitane	103:06:50	0:13:07	24	1	3765	150	61	Fleurance	
+1980	35	TI-Raleigh-Creda	109:19:14	0:06:55	22	1	3842	130	45	Frankfurt	DEU
+1981	5	Renault-Elf-Gitane	96:19:38	0:14:34	22	1	3753	150	29	Nice	
+1982	5	Renault-Elf-Gitane	92:08:46	0:06:21	21	1	3507	169	44	Basel	CHE
+1983	36	Renault-Elf	105:07:52	0:04:04	22	1	3809	140	52	Nogent-sur-Marne	
+1984	36	Renault-Elf	112:03:40	0:10:32	23	1	4021	170	46	Bondy	
+1985	5	La Vie Claire	113:24:23	0:01:42	22	1	4109	180	36	Vannes	
+1986	25	La Vie Claire	110:35:19	0:03:10	23	1	4094	210	78	Nanterre	
+1987	61	Carrera Jeans-Vagabond	115:27:42	0:00:40	25	1	4231	207	72	West Berlin	DEU
+1988	54	Reynolds	84:27:53	0:07:13	22	1	3286	198	47	Pontchâteau	
+1989	25	AD Renting-W-Cup-Bottecchia	87:38:35	0:00:08	21	1	3285	198	60	Luxembourg City	LUX
+1990	25	Z-Tomasso	90:43:20	0:02:16	21	1	3504	198	42	Futuroscope	
+1991	48	Banesto	101:01:20	0:03:36	22	1	3914	198	40	Lyon	
+1992	48	Banesto	100:49:30	0:04:35	21	1	3983	198	68	San Sebastián	ESP
+1993	48	Banesto	95:57:09	0:04:59	20	1	3714	180	44	Luçon	
+1994	48	Banesto	103:38:38	0:05:39	21	1	3978	189	72	Lille	
+1995	48	Banesto	92:44:59	0:04:35	20	1	3635	189	74	Dinan	
+1996	7	Team Telekom	95:57:16	0:01:41	21	1	3765	197	68	s-Hertogenbosc	NLD
+1997	32	Team Telekom	100:30:35	0:09:09	21	1	3950	198	59	Rouen	
+1998	45	Mercatone Uno-Bianchi	92:49:46	0:03:21	21	1	3875	189	93	Dublin	IRL
+1999					20	1	3687	180	39	Montaigu	
+2000					21	0	3662	197	70	Futuroscope	
+2001					20	1	3458	189	45	Saint-Omer	
+2002					20	1	3278	189	36	Luxembourg City	LUX
+2003					20	1	3427	198	51	Saint-Denis	
+2004					20	1	3391	188	41	Liege	BEL
+2005					21	0	3359	189	34	Fromentine	
+2006	52	Caisse d'Epargne Illes Balears	89:40:27	0:00:32	21	0	3657	176	37	Strasbourg	
+2007	1	Discovery Channel	91:00:26	0:00:23	20	1	3570	189	48	London	GBR
+2008	10	Team CSC	87:52:52	0:00:58	21	0	3559	180	36	Brest	
+2009	1	Astana	85:48:35	0:04:11	21	0	3459	180	25	Monte-Carlo	MCO
+2010	3	Team Saxo Bank	91:59:27	0:01:22	20	1	3642	197	27	Rotterdam	NLD
+2011	9	BMC Racing Team	86:12:22	0:01:34	21	0	3430	198	30	Passage du Gois	
+2012	8	Team Sky	87:34:47	0:03:21	20	1	3496	198	45	Liege	BEL
+2013	12	Team Sky	83:56:20	0:04:20	21	0	3404	198	29	Porto-Vecchio	
+2014	64	Astana	89:59:06	0:07:37	21	0	3660,5	198	34	Leeds	GBR
+2015	12	Team Sky	84:46:14	0:01:12	21	0	3360,3	198	38	Utrecht	NLD
+2016	12	Team Sky	89:04:48	0:04:05	21	0	3529	198	24	Mont Saint-Michel	
+2017	12	Team Sky	86:20:55	0:00:54	21	0	3540	198	31	Düsseldorf	DEU
+2018	23	Team Sky	83:17:13	0:01:51	21	0	3349	176	31	Noirmoutier-en-l'Île	
+2019	14	Team Ineos	82:57:00	0:01:11	21	0	3366	176	21	Brussels	BEL
+2020	63	UAE Team Emirates	87:20:13	0:00:59	21	0	3484	176	30	Nice	
+2021	63	UAE Team Emirates	82:56:36	0:05:20	21	0	3414,4	184	43	Brest	
+2022	34	Team Jumbo Visma	79:32:29	0:02:43	21	0	3328	176	41	Copenhagen	DNK
+2023	34	Team Jumbo Visma	82:05:42	0:07:29	21	0	3406	176	26	Bilbao	ESP
+2024	63	UAE Team Emirates	83:38:56	0:06:17	21	0	3498	176	35	Florence	ITA

@@ -1,0 +1,17 @@
+alapnyeremény	1000
+nyerő dobások	
+
+név	tippek				találat	nyeremény		találat	szelvény	összpontérték
+Béla	i	i	f	f				0
+Dezső	f	f	i	i				1
+Gizi	i	f	i	f				2
+Rozi	i	f	f	i				3
+Eszter	f	i	f	i				4
+Balázs	i	f	i	i
+Amália	f	i	i	i
+Gazsi	i	i	i	i
+Ottó	f	f	i	i
+Kati	f	i	f	i
+Zsuzsa	f	f	i	i
+Józsi	i	f	i	i
+Andrea	f	f	f	f

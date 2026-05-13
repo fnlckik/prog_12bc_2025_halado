@@ -1,0 +1,65 @@
+vazon	vnev	vorszag	szulido	halido
+1	Alberto Contador	ESP	1982.12.06	
+2	André Leducq	FRA	1904.02.27	1980.06.18
+3	Andy Schleck	LUX	1985.06.10	
+4	Antonin Magne	FRA	1904.01.15	1983.09.08
+5	Bernard Hinault	FRA	1954.11.14	
+6	Bernard Thévenet	FRA	1948.01.10	
+7	Bjarne Riis	DNK	1964.04.03	
+8	Bradley Wiggins	GBR	1980.04.28	
+9	Cadel Evans	AUS	1977.02.14	
+10	Carlos Sastre	ESP	1975.04.22	
+11	Charly Gaul	LUX	1932.12.08	2005.12.06
+12	Chris Froome	GBR	1985.05.20	
+13	Eddy Merckx	BEL	1945.06.17	
+14	Egan Bernal	COL	1997.01.13	
+15	Fausto Coppi	ITA	1919.09.15	1960.01.02
+16	Federico Bahamontes	ESP	1928.07.09	2023.08.08
+17	Felice Gimondi	ITA	1942.09.29	2019.08.16
+18	Ferdinand Kübler	CHE	1919.07.24	2016.12.29
+19	Firmin Lambot	BEL	1886.03.14	1964.01.19
+20	François Faber	LUX	1887.01.26	1915.05.09
+21	Gastone Nencini	ITA	1930.03.01	1980.02.01
+22	Georges Speicher	FRA	1907.06.08	1978.01.24
+23	Geraint Thomas	GBR	1986.05.25	
+24	Gino Bartali	ITA	1914.07.18	2000.05.05
+25	Greg LeMond	USA	1961.06.26	
+26	Gustave Garrigou	FRA	1884.09.24	1963.01.28
+27	Henri Cornet	FRA	1884.08.04	1941.03.18
+28	Henri Pélissier	FRA	1889.01.22	1935.05.01
+29	Hugo Koblet	CHE	1925.03.21	1964.11.06
+30	Jacques Anquetil	FRA	1934.01.08	1987.11.18
+31	Jan Janssen	NLD	1940.05.19	
+32	Jan Ullrich	DEU	1973.12.02	
+33	Jean Robic	FRA	1921.06.10	1980.10.06
+34	Jonas Vingegaard	DNK	1996.12.10	
+35	Joop Zoetemelk	NLD	1946.12.03	
+36	Laurent Fignon	FRA	1960.08.12	2010.08.31
+37	Léon Scieur	BEL	1888.03.18	1969.10.07
+38	Louis Trousselier	FRA	1881.06.29	1939.04.24
+39	Louison Bobet	FRA	1925.03.12	1983.03.13
+40	Lucien Aimar	FRA	1941.04.28	
+41	Lucien Buysse	BEL	1892.09.11	1980.01.03
+42	Lucien Petit-Breton	FRA	1882.10.18	1917.12.20
+43	Lucien Van Impe	BEL	1946.10.20	
+44	Luis Ocaña	ESP	1945.06.09	1994.06.19
+45	Marco Pantani	ITA	1970.01.13	2004.02.14
+46	Maurice De Waele	BEL	1896.12.27	1952.02.14
+47	Maurice Garin	FRA	1871.03.03	1957.02.19
+48	Miguel Indurain	ESP	1964.07.16	
+49	Nicolas Frantz	LUX	1899.11.04	1985.11.08
+50	Octave Lapize	FRA	1887.10.24	1917.07.14
+51	Odile Defraye	BEL	1888.07.14	1965.08.21
+52	Óscar Pereiro	ESP	1977.08.03	
+53	Ottavio Bottecchia	ITA	1894.08.01	1927.06.15
+54	Pedro Delgado	ESP	1960.04.15	
+55	Philippe Thys	BEL	1889.10.08	1971.01.16
+56	René Pottier	FRA	1879.06.05	1907.01.25
+57	Roger Lapébie	FRA	1911.01.16	1996.10.12
+58	Roger Pingeon	FRA	1940.08.28	2017.03.19
+59	Roger Walkowiak	FRA	1927.03.02	2017.02.06
+60	Romain Maes	BEL	1912.08.10	1983.02.22
+61	Stephen Roche	IRL	1959.11.28	
+62	Sylvère Maes	BEL	1909.08.27	1966.12.05
+63	Tadej Pogačar	SVN	1998.09.21	
+64	Vincenzo Nibali	ITA	1984.11.14	
