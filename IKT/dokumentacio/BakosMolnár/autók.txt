@@ -1,0 +1,4 @@
+Kia Ceed 1.6 CRDi;2024;12490000;False;új
+Alfa Romeo 147 1.9 JTD;2016;1130000;False;sérült
+Citroen C3 1.4;2003;1460000;True;használt
+Nissan Almera 1.5;2024;14580000;True;új

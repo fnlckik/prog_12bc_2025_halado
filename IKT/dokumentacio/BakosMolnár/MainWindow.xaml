@@ -1,0 +1,98 @@
+﻿<Window x:Class="UsedCarDealership.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UsedCarDealership"
+        xmlns:tk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" 
+        MinHeight="450" MinWidth="750">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0"
+                        Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                <Button Content="Beolvas" 
+                        Padding="10" Margin="10,10,25,10" 
+                        FontSize="16"
+                        Click="LoadButton_Click"/>
+                <Button Content="Kiírás" 
+                        Padding="10" Margin="25,10,10,10"
+                        FontSize="16" Click="SaveButton_Click"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1">
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center" Margin="0,10,0,10">
+                    <Label Content="Márka: " FontSize="16"/>
+                    <TextBox MinWidth="160" 
+                             x:Name="BrandTextBox"
+                             FontSize="16"
+                             VerticalAlignment="Center"
+                             Text="{Binding Selected.Brand}" Width="305"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center" Margin="0,0,0,10">
+                    <Label Content="Állapot: " FontSize="16"/>
+                    <TextBox MinWidth="120"
+                             x:Name="ConditionTextBox"
+                             FontSize="16"
+                             Background="LightBlue"
+                             VerticalAlignment="Center"
+                             HorizontalAlignment="Center"
+                             Text="{Binding Selected.Condition}" TextChanged="TextBox_TextChanged"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center" Margin="0,0,0,10">
+                    <Label Content="Ár: " FontSize="16"/>
+                    <tk:IntegerUpDown MinWidth="160" FontSize="16"
+                        Value="{Binding Selected.Price}"/>
+                </StackPanel>
+                <CheckBox Content="Benzines?" 
+                          HorizontalAlignment="Center"
+                          FontSize="16" Margin="0,0,0,10"
+                          IsChecked="{Binding Selected.IsPetrol}"/>
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center">
+                    <Label Content="Gyártás éve:" FontSize="16"/>
+                    <tk:IntegerUpDown MinWidth="100" 
+                                      FontSize="16"
+                                      Value="{Binding Selected.Year}"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Row="2"
+                        Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                <Button Content="Hozzáad" FontSize="14" Padding="5" Margin="10" Click="AddButton_Click"/>
+                <Button Content="Szerkeszt" FontSize="14" Padding="5" Margin="10" Click="EditButton_Click"/>
+                <Button Content="Töröl" FontSize="14" Padding="5" Margin="10" Click="DeleteButton_Click"/>
+                <Image Source="pack://application:,,,/kisauto.jpg" 
+                       MaxHeight="70"
+                       MaxWidth="70" Margin="20,0,0,0"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1">
+            <ListBox BorderBrush="Black" 
+                     Margin="10"
+                     SelectionMode="Multiple"
+                     x:Name="ListBox"
+                     ItemsSource="{Binding Cars}" 
+                     SelectionChanged="ListBox_SelectionChanged"/>
+        </Grid>
+    </Grid>
+</Window>

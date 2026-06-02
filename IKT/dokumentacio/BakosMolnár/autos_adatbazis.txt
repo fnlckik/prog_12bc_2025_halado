@@ -1,0 +1,30 @@
+BMW E46 320i;2011;5590000;true;használt
+Audi A4 1.9 TDI;2024;10230000;false;új
+Volkswagen Golf 4 1.6;2007;660000;true;sérült
+Opel Astra G 1.4;2022;13760000;true;új
+Ford Focus 1.6 TDCI;2023;14660000;false;új
+Toyota Corolla 1.4 VVTi;2006;670000;true;sérült
+Honda Civic 1.4 i-VTEC;2017;4710000;false;használt
+Mercedes-Benz C200 Kompressor;2023;14260000;false;új
+Suzuki Swift 1.3 GLX;2007;810000;true;használt
+Skoda Octavia 1.9 TDI;2024;11510000;false;új
+Renault Megane 1.5 dCi;2015;730000;false;sérült
+Peugeot 206 1.4 HDi;2010;2050000;false;használt
+Fiat Grande Punto 1.2;2006;4300000;false;használt
+Mazda 3 1.6 MZ-CD;2024;9940000;false;új
+Volvo S40 2.0D;2013;1000000;false;használt
+Seat Leon 1.6;2023;8240000;true;új
+Hyundai i30 1.4;2000;4160000;false;használt
+Kia Ceed 1.6 CRDi;2024;12490000;false;új
+Alfa Romeo 147 1.9 JTD;2016;1130000;false;sérült
+Citroen C3 1.4;2003;1460000;true;használt
+Opel Corsa D 1.2;2018;630000;false;sérült
+Nissan Almera 1.5;2024;14580000;true;új
+Chevrolet Lacetti 1.4;2012;460000;true;sérült
+Mitsubishi Lancer 1.6;2024;8850000;true;új
+Subaru Impreza 2.0;2005;870000;true;sérült
+Ford Mondeo 2.0 TDCI;2000;4370000;false;használt
+Audi A6 3.0 TDI;2006;890000;false;sérült
+Volkswagen Passat B6 2.0 CRDI;2023;10520000;false;új
+BMW E39 525d;2024;9550000;false;új
+Lada Niva 1.7;2019;5620000;false;használt
